@@ -1,0 +1,28 @@
+
+[
+    {
+        "id": 1,
+        "nombre": "Rol",
+        "descripcion": "Juegos de rol."
+    },
+    {
+        "id": 2,
+        "nombre": "Acción",
+        "descripcion": "Juegos de acción."
+    },
+    {
+        "id": 3,
+        "nombre": "Plataformas",
+        "descripcion": "Juegos de plataformas."
+    },
+    {
+        "id": 4,
+        "nombre": "Lucha",
+        "descripcion": "Juegos de lucha."
+    },
+    {
+        "id": 5,
+        "nombre": "Carreras",
+        "descripcion": "Juegos de carreras."
+    }
+]

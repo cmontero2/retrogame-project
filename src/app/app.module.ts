@@ -11,6 +11,7 @@ import { CategoriasComponent } from './categorias/categorias.component';
 import { CategoriasService } from './categorias/categorias.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

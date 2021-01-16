@@ -1,0 +1,58 @@
+.bg-black {
+  background-color: black;
+}
+
+.navbar-retro {
+  border-radius: 20px !important;
+  border-color: #09eaf8 !important;
+  -webkit-box-shadow: 0px 1px 25px #09eaf8;
+          box-shadow: 0px 1px 25px #09eaf8;
+}
+
+span i {
+  color: #09eaf8;
+  text-shadow: #09eaf8 1px 0 15px;
+}
+
+.imgLogo {
+  height: 50px;
+  float: left;
+}
+
+.busqueda {
+  -webkit-box-shadow: 0px 1px 25px #09eaf8;
+          box-shadow: 0px 1px 25px #09eaf8;
+  border-radius: 5px;
+  background-color: black;
+  color: #09eaf8;
+}
+
+.busqueda ::-webkit-input-placeholder {
+  color: #09eaf8;
+}
+
+.loginButton {
+  background-color: black;
+  color: #e607fa;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 25px #e607fa;
+          box-shadow: 0px 1px 25px #e607fa;
+  border-color: #e607fa;
+  text-shadow: #e607fa 1px 0 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.foroEnlace {
+  color: #e607fa;
+  text-shadow: 0px 3px 50px #e607fa;
+  float: left;
+  margin-right: 20px;
+}
+
+.formBusqueda {
+  margin-top: 13px;
+}
+/*# sourceMappingURL=header.component.css.map */

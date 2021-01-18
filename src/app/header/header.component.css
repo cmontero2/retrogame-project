@@ -39,6 +39,7 @@ span i {
           box-shadow: 0px 1px 25px #e607fa;
   border-color: #e607fa;
   text-shadow: #e607fa 1px 0 15px;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
 }
 
 a {
@@ -47,7 +48,7 @@ a {
 
 .foroEnlace {
   color: #e607fa;
-  text-shadow: 0px 3px 50px #e607fa;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
   float: left;
   margin-right: 20px;
 }

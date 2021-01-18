@@ -1,0 +1,18 @@
+a {
+  text-decoration: none;
+  color: #09eaf8;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: block;
+  float: left;
+  color: #09eaf8;
+  padding: 5px;
+}
+/*# sourceMappingURL=categorias.component.css.map */

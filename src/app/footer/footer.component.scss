@@ -1,0 +1,24 @@
+$blue:#09eaf8;
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 120px;
+    width: 100%;
+    background-color: darkgrey;
+    color: $blue;
+}
+.rrss{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.fab {
+    margin: 20px;
+    text-align: center;
+}
+.links {
+    text-align: center;
+    a {
+        margin: 20px;
+    }
+}

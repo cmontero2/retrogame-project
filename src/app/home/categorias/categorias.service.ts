@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Categoria } from './categoria';
 
-import data from '../../assets/json/categorias.json';
+import data from '../../../assets/json/categorias.json';
 
 @Injectable()
 export class CategoriasService {
     constructor() { }
+
 
     getCategorias() :Categoria[] {
         let categorias: Categoria[] = [];

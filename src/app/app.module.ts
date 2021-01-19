@@ -6,11 +6,9 @@ import { HeaderComponent } from './home/header/header.component';
 import { HomeModule } from './home/home.module';
 import { SeccionesComponent } from './foro/secciones/secciones.component';
 import { EntradasComponent } from './foro/entradas/entradas.component';
-import { CategoriasComponent } from './categorias/categorias.component';
-import { CategoriasService } from './categorias/categorias.service';
+import { CategoriasComponent } from './home/categorias/categorias.component';
+import { CategoriasService } from './home/categorias/categorias.service';
 import { FooterComponent } from './home/footer/footer.component';
-import { NoticiasComponent } from './noticias/noticias.component';
-import { NoticiasService } from "./noticias/noticias.service";
 
 
 
@@ -21,8 +19,7 @@ import { NoticiasService } from "./noticias/noticias.service";
     SeccionesComponent,
     EntradasComponent,
     CategoriasComponent,
-    FooterComponent,
-    NoticiasComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Noticia } from './noticia';
 
-import data from '../../assets/json/noticias.json';
+import data from '../../../assets/json/noticias.json';
 
 @Injectable()
 export class NoticiasService {

@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "titulo": "Así jugábamos: las primeras generaciones de consolas (1991-1993)",
+        "texto": "A principios de los 90, el panorama videojueguil en España no podía ser más emocionante, sobre todo en lo que a consola se refiere. Hagamos un pequeño repaso a lo que jugábamos y con qué desde 1991 hasta 1993 y a cómo lo vivimos en los primeros números de Hobby Consolas. Ahora que celebramos el 30 aniversario de Hobby Consolas, no está de más hacer un repaso rápido a lo que jugábamos en aquella época (que ya hemos contado cómo era aquí)."
+    },
+    {
+        "id": 2,
+        "titulo": "Las veteranas de la casa",
+        "texto": "El mercado español de consolas en octubre de 1991, fecha en la que se publicó la primera Hobby Consolas, estaba liderado, principalmente, por Master System y NES, los sistemas de 8 bits de Sega y Nintendo, que llevaban ya varios años a la venta en España. Gran parte de los análisis de los primeros números de Hobby Consolas estaban dedicados a juegos para ellas, aunque no nos olvidábamos de Mega Drive o de las portátiles del momento: Game Boy, Gamer Gear y Lynx."
+    },
+    {
+        "id": 3,
+        "titulo": "Nintendo Entertainment System (NES)",
+        "texto": "Conocida en Japón como Famicon (Family Computer), la NES llegó a España en 1987, cuatro años después de su salida oficial en el mercado nipón. En el momento del estreno de Hobby Consolas, la consola gozaba de una gran salud en nuestro país y por las páginas de la revista desfilaron juegazos como Super Mario Bros 3, Robocop, Star Wars, Kirby…  "
+    }
+]

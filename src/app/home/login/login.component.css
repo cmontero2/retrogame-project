@@ -1,0 +1,75 @@
+.loginDiv {
+  background-color: black;
+  color: #09eaf8;
+  height: 500px;
+  border-radius: 10px;
+  border: 3px #e607fa solid;
+  -webkit-box-shadow: 0px 1px 25px #e607fa;
+          box-shadow: 0px 1px 25px #e607fa;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginDiv h1 {
+  margin: 30px;
+  text-align: center;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa;
+  font-weight: bold;
+}
+
+.loginDiv input {
+  border-radius: 5px;
+  background-color: black;
+  color: #09eaf8;
+}
+
+.formulario {
+  text-align: center;
+}
+
+.formularioDiv {
+  margin-top: 60px;
+}
+
+.label {
+  margin-top: 15px;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa;
+}
+
+/*BOTONES*/
+.botones {
+  margin-top: 70px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginButton {
+  background-color: black;
+  color: #e607fa;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 25px #e607fa;
+          box-shadow: 0px 1px 25px #e607fa;
+  border-color: #e607fa;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa;
+}
+
+.loginButton:hover {
+  background-color: #1C131D;
+}
+
+.loginButton:active {
+  background-color: #140116 !important;
+  color: #e607fa !important;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa !important;
+  border-color: #e607fa !important;
+  border: #e607fa 3px solid !important;
+}
+
+.RegistrateEnlace {
+  color: #e607fa;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa;
+  float: left;
+}
+/*# sourceMappingURL=login.component.css.map */

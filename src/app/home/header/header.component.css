@@ -39,7 +39,19 @@ span i {
           box-shadow: 0px 1px 25px #e607fa;
   border-color: #e607fa;
   text-shadow: #e607fa 1px 0 15px;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa;
+}
+
+.loginButton:hover {
+  background-color: #1C131D;
+}
+
+.loginButton:active {
+  background-color: #140116 !important;
+  color: #e607fa !important;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa !important;
+  border-color: #e607fa !important;
+  border: #e607fa 3px solid !important;
 }
 
 a {
@@ -48,7 +60,7 @@ a {
 
 .foroEnlace {
   color: #e607fa;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa;
   float: left;
   margin-right: 20px;
 }

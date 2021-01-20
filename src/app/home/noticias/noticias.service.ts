@@ -8,7 +8,7 @@ export class NoticiasService {
     constructor() { }
 
     getNoticias() :Noticia[] {
-        let noticias: Noticia[] = [];
+        const noticias: Noticia[] = [];
         data.forEach((not: any) => {
             noticias.push(new Noticia(not.id, not.titulo, not.texto));
         });

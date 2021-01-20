@@ -10,8 +10,6 @@ import { CategoriasComponent } from './home/categorias/categorias.component';
 import { CategoriasService } from './home/categorias/categorias.service';
 import { FooterComponent } from './home/footer/footer.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

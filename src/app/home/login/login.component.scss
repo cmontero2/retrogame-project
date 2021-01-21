@@ -59,7 +59,9 @@ $blue:#09eaf8;
         border: $pink 3px solid !important;
     }    
 }
-
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
 .RegistrateEnlace {
     color: $pink;
     text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;

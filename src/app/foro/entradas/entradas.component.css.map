@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "entradas.component.scss"
+    ],
+    "names": [],
+    "file": "entradas.component.css"
+}

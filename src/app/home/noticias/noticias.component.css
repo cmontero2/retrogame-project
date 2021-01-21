@@ -1,0 +1,22 @@
+.noticiasDiv {
+  margin-top: 60px;
+  color: #09eaf8;
+}
+
+.noticiasDiv h4 {
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa;
+  font-weight: bold;
+}
+
+.noticias {
+  color: #09eaf8;
+}
+
+.noticias h5 {
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa;
+}
+
+.noticias p {
+  text-align: justify;
+}
+/*# sourceMappingURL=noticias.component.css.map */

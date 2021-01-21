@@ -137,5 +137,8 @@
       }
     }
   },
-  "defaultProject": "retrogame-project"
+  "defaultProject": "retrogame-project",
+  "cli": {
+    "analytics": false
+  }
 }

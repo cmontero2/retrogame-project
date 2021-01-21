@@ -9,7 +9,6 @@ import { EntradasComponent } from './foro/entradas/entradas.component';
 import { CategoriasComponent } from './home/categorias/categorias.component';
 import { CategoriasService } from './home/categorias/categorias.service';
 import { FooterComponent } from './home/footer/footer.component';
-import { JuegoContainerComponent } from './juegoDetalle/juego-container/juego-container.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +17,7 @@ import { JuegoContainerComponent } from './juegoDetalle/juego-container/juego-co
     SeccionesComponent,
     EntradasComponent,
     CategoriasComponent,
-    FooterComponent,
-    JuegoContainerComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,

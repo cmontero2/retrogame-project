@@ -1,0 +1,21 @@
+$pink:#e607fa;
+$blue:#09eaf8;
+
+.noticiasDiv {
+    margin-top: 60px;
+    color: $blue;
+    h4 {
+        text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
+        font-weight: bold;
+    }
+}
+
+.noticias {    
+    color: $blue;
+    h5 {
+        text-shadow: 0 0 10px $pink, 0 0 20px $pink;
+    }
+    p {
+        text-align: justify;
+    }
+}

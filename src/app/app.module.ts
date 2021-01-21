@@ -9,7 +9,10 @@ import { EntradasComponent } from './foro/entradas/entradas.component';
 import { CategoriasComponent } from './home/categorias/categorias.component';
 import { CategoriasService } from './home/categorias/categorias.service';
 import { FooterComponent } from './home/footer/footer.component';
+<<<<<<< HEAD
 import { CategoriaDetalleComponent } from './juegos/categoria-detalle/categoria-detalle.component';
+=======
+>>>>>>> a40f48eaff6313a8e4585cb376fdb98bac0b9ca1
 
 @NgModule({
   declarations: [
@@ -18,7 +21,11 @@ import { CategoriaDetalleComponent } from './juegos/categoria-detalle/categoria-
     SeccionesComponent,
     EntradasComponent,
     CategoriasComponent,
+<<<<<<< HEAD
     FooterComponent,
+=======
+    FooterComponent
+>>>>>>> a40f48eaff6313a8e4585cb376fdb98bac0b9ca1
   ],
   imports: [
     BrowserModule,

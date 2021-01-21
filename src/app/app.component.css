@@ -1,1 +1,4 @@
-/* No CSS *//*# sourceMappingURL=app.component.css.map */
+.wrap {
+  min-height: calc(100vh - 186px);
+}
+/*# sourceMappingURL=app.component.css.map */

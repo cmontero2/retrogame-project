@@ -18,7 +18,8 @@ const routes: Routes = [
   { path: 'foro/entradas', component: EntradasComponent },
   { path: 'login', component: LoginComponent },
   { path: 'juegos', component: CategoriaDetalleComponent },
-  { path: 'registroUser', component: RegistroUserComponent }
+  // { path: 'juegos/:id', component: }
+  { path: 'registro-user', component: RegistroUserComponent }
 ];
 
 @NgModule({

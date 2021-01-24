@@ -11,6 +11,7 @@ import { CategoriasService } from './home/categorias/categorias.service';
 import { FooterComponent } from './home/footer/footer.component';
 import { ForoContainerComponent } from './foro/foro-container/foro-container.component';
 import { EntradaDetalleComponent } from './foro/entrada-detalle/entrada-detalle.component';
+import { JuegoContainerComponent } from './juegos/juego-container/juego-container.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { EntradaDetalleComponent } from './foro/entrada-detalle/entrada-detalle.
     CategoriasComponent,
     FooterComponent,
     ForoContainerComponent,
-    EntradaDetalleComponent
+    EntradaDetalleComponent,
+    JuegoContainerComponent
   ],
   imports: [
     BrowserModule,

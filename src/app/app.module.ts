@@ -9,6 +9,8 @@ import { EntradasComponent } from './foro/entradas/entradas.component';
 import { CategoriasComponent } from './home/categorias/categorias.component';
 import { CategoriasService } from './home/categorias/categorias.service';
 import { FooterComponent } from './home/footer/footer.component';
+import { ForoContainerComponent } from './foro/foro-container/foro-container.component';
+import { EntradaDetalleComponent } from './foro/entrada-detalle/entrada-detalle.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { FooterComponent } from './home/footer/footer.component';
     SeccionesComponent,
     EntradasComponent,
     CategoriasComponent,
-    FooterComponent
+    FooterComponent,
+    ForoContainerComponent,
+    EntradaDetalleComponent
   ],
   imports: [
     BrowserModule,

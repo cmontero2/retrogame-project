@@ -1,7 +1,7 @@
 $pink:#e607fa;
 $blue:#09eaf8;
 
-.loginDiv {
+.registerDiv {
     background-color: black;
     color: $blue;
     height: 500px;
@@ -11,6 +11,7 @@ $blue:#09eaf8;
     position: relative;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 60px;
     h1 {
         margin: 30px;
         text-align: center;
@@ -18,9 +19,7 @@ $blue:#09eaf8;
         font-weight: bold;
     }
     input {
-        border-radius: 0;
-        border:0;
-        border-bottom: 1px $blue solid;
+        border-radius: 5px;
         background-color:black;
         color: $blue; 
     }
@@ -44,7 +43,7 @@ $blue:#09eaf8;
     margin-left: auto;
     margin-right: auto;
 }
-.loginButton {
+.registerButton {
     background-color: black;
     color: $pink;
     border-radius: 5px;
@@ -64,7 +63,7 @@ $blue:#09eaf8;
 .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
     box-shadow: none;
 }
-.RegistrateEnlace {
+.RegistrateEmpresa {
     color: $pink;
     text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
     float: left;

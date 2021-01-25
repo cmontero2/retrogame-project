@@ -8,17 +8,19 @@ import { NoticiasComponent } from './noticias/noticias.component';
 import { NoticiasService } from './noticias/noticias.service';
 import { RegistroUserComponent } from './registroUser/registro-user.component';
 import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.component';
+import { HomeRoutingModule } from './home-routing.module';
 
 @NgModule({
-  declarations: [HomeContainerComponent, ScrollBarComponent, LoginComponent, NoticiasComponent, RegistroUserComponent],
+  declarations: [HomeContainerComponent, ScrollBarComponent, LoginComponent, NoticiasComponent, RegistroUserComponent, RegistroEmpresaComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild([
+    HomeRoutingModule
+    /* RouterModule.forChild([
       {path: 'registro-user', component: RegistroUserComponent},
       {path: 'registroEmpresa', component: RegistroEmpresaComponent}
-    ])
+    ]) */
   ],
-  exports: [HomeContainerComponent],
+  exports: [HomeContainerComponent,HomeRoutingModule],
   providers: [NoticiasService]
 })
 export class HomeModule { }

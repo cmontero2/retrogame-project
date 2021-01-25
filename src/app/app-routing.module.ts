@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'juegos', component: JuegoContainerComponent },
   // { path: 'juegos/:id', component: }
-  { path: 'registro-user', component: RegistroUserComponent }
+  { path: 'registro-user', component: RegistroUserComponent },
 ];
 
 @NgModule({

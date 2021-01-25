@@ -1,1 +1,5 @@
-<p>lista-juegos works!</p>
+<ul *ngFor="let juego of juegos">
+    <!--<li><a [routerLink]="['/juegos']">{{juego.nombre}}</a></li>-->
+    <li>{{juego.nombre}}</li>
+    <li>{{juego.descripcion}}</li>
+</ul>

@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeModule } from './home/home.module';
+import { JuegosModule } from './juegos/juegos.module';
 import { SeccionesComponent } from './foro/secciones/secciones.component';
 import { EntradasComponent } from './foro/entradas/entradas.component';
 import { CategoriasComponent } from './home/categorias/categorias.component';
@@ -27,7 +28,8 @@ import { EntradaDetalleComponent } from './foro/entrada-detalle/entrada-detalle.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    JuegosModule
   ],
   exports: [HomeModule],
   providers: [CategoriasService],

@@ -1,1 +1,20 @@
-/* No CSS *//*# sourceMappingURL=lista-juegos.component.css.map */
+p {
+  color: #09eaf8;
+}
+
+h4 {
+  color: #e607fa;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa;
+}
+
+.dividingLine {
+  height: 10px !important;
+  color: #09eaf8 !important;
+  border-color: #09eaf8;
+}
+
+.resizeLogos {
+  height: 150px;
+  width: 150px;
+}
+/*# sourceMappingURL=lista-juegos.component.css.map */

@@ -1,7 +1,7 @@
 .registerDiv {
   background-color: black;
   color: #09eaf8;
-  min-height: 500px;
+  height: 500px;
   border-radius: 10px;
   border: 3px #e607fa solid;
   -webkit-box-shadow: 0px 1px 25px #e607fa;
@@ -9,6 +9,7 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 60px;
 }
 
 .registerDiv h1 {
@@ -19,15 +20,9 @@
 }
 
 .registerDiv input {
-  border-radius: 0;
-  border: 0;
-  border-bottom: 1px #09eaf8 solid;
+  border-radius: 5px;
   background-color: black;
   color: #09eaf8;
-}
-
-.registerDiv input:focus {
-  outline: none !important;
 }
 
 .formulario {
@@ -41,10 +36,6 @@
 .label {
   margin-top: 15px;
   text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa;
-}
-
-.empresaDiv {
-  display: block;
 }
 
 /*BOTONES*/

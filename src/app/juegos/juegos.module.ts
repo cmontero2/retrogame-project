@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { JuegoContainerComponent } from './juego-container/juego-container.component';
 import { ListaJuegosComponent } from './lista-juegos/lista-juegos.component';
 import { ListaJuegosService } from './lista-juegos/lista-juegos.service';

@@ -1,4 +1,4 @@
-.loginDiv {
+.registerDiv {
   background-color: black;
   color: #09eaf8;
   height: 500px;
@@ -9,19 +9,18 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 60px;
 }
 
-.loginDiv h1 {
+.registerDiv h1 {
   margin: 30px;
   text-align: center;
   text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa;
   font-weight: bold;
 }
 
-.loginDiv input {
-  border-radius: 0;
-  border: 0;
-  border-bottom: 1px #09eaf8 solid;
+.registerDiv input {
+  border-radius: 5px;
   background-color: black;
   color: #09eaf8;
 }
@@ -47,7 +46,7 @@
   margin-right: auto;
 }
 
-.loginButton {
+.registerButton {
   background-color: black;
   color: #e607fa;
   border-radius: 5px;
@@ -57,11 +56,11 @@
   text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa;
 }
 
-.loginButton:hover {
+.registerButton:hover {
   background-color: #1C131D;
 }
 
-.loginButton:active {
+.registerButton:active {
   background-color: #140116 !important;
   color: #e607fa !important;
   text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa !important;
@@ -73,9 +72,9 @@
           box-shadow: none;
 }
 
-.RegistrateEnlace {
+.RegistrateEmpresa {
   color: #e607fa;
   text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa;
   float: left;
 }
-/*# sourceMappingURL=login.component.css.map */
+/*# sourceMappingURL=registro-user.component.css.map */

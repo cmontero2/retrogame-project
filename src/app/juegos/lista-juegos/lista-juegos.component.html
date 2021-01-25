@@ -1,5 +1,7 @@
 <ul *ngFor="let juego of juegos">
     <!--<li><a [routerLink]="['/juegos']">{{juego.nombre}}</a></li>-->
-    <li>{{juego.nombre}}</li>
-    <li>{{juego.descripcion}}</li>
+    <li><img src="../../../assets/img/logoGames/{{juego.imagen}}" class="resizeLogos"></li>
+    <li><h4>{{juego.nombre}}</h4></li>
+    <li><p>{{juego.descripcion}}</p></li>
+    <hr class="dividingLine">
 </ul>

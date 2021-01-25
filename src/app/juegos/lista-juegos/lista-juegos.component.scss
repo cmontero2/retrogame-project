@@ -1,0 +1,22 @@
+$pink:#e607fa;
+$blue:#09eaf8;
+
+p {
+    color: $blue;
+}
+
+h4 {
+    color: $pink;
+    text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
+}
+
+.dividingLine {
+    height: 10px !important; 
+    color: $blue !important;
+    border-color: $blue;
+}
+
+.resizeLogos {
+    height: 150px;
+    width: 150px;
+}

@@ -1,1 +1,6 @@
-/* No CSS *//*# sourceMappingURL=categoria-detalle.component.css.map */
+.categoriaDetalle {
+  background-image: url("../../../assets/img/banners/header-multiplayer.jpg");
+  width: 1000px;
+  height: 150px;
+}
+/*# sourceMappingURL=categoria-detalle.component.css.map */

@@ -1,0 +1,20 @@
+$pink:#e607fa;
+$blue:#09eaf8;
+
+h3 {
+    color: $pink;
+    text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
+}
+
+p {
+    color: $blue;
+}
+
+.lineaDivisora {
+    border-color: $blue;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}

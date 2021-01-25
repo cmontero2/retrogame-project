@@ -12,6 +12,7 @@ import { CategoriasService } from './home/categorias/categorias.service';
 import { FooterComponent } from './home/footer/footer.component';
 import { ForoContainerComponent } from './foro/foro-container/foro-container.component';
 import { EntradaDetalleComponent } from './foro/entrada-detalle/entrada-detalle.component';
+import { ScrollBarModule } from './scroll-bar/scroll-bar.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { EntradaDetalleComponent } from './foro/entrada-detalle/entrada-detalle.
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    JuegosModule
+    JuegosModule,
+    ScrollBarModule
   ],
   exports: [HomeModule],
   providers: [CategoriasService],

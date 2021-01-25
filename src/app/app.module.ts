@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeModule } from './home/home.module';
+import { JuegosModule } from './juegos/juegos.module';
 import { SeccionesComponent } from './foro/secciones/secciones.component';
 import { EntradasComponent } from './foro/entradas/entradas.component';
 import { CategoriasComponent } from './home/categorias/categorias.component';
@@ -11,7 +12,6 @@ import { CategoriasService } from './home/categorias/categorias.service';
 import { FooterComponent } from './home/footer/footer.component';
 import { ForoContainerComponent } from './foro/foro-container/foro-container.component';
 import { EntradaDetalleComponent } from './foro/entrada-detalle/entrada-detalle.component';
-import { JuegoContainerComponent } from './juegos/juego-container/juego-container.component';
 
 
 @NgModule({
@@ -23,13 +23,13 @@ import { JuegoContainerComponent } from './juegos/juego-container/juego-containe
     CategoriasComponent,
     FooterComponent,
     ForoContainerComponent,
-    EntradaDetalleComponent,
-    JuegoContainerComponent
+    EntradaDetalleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    JuegosModule
   ],
   exports: [HomeModule],
   providers: [CategoriasService],

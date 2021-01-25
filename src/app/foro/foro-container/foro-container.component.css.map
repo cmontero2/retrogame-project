@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "foro-container.component.scss"
+    ],
+    "names": [],
+    "file": "foro-container.component.css"
+}

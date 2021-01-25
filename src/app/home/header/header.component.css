@@ -20,15 +20,15 @@ span i {
 }
 
 .busqueda {
-  -webkit-box-shadow: 0px 1px 25px #09eaf8;
-          box-shadow: 0px 1px 25px #09eaf8;
-  border-radius: 5px;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px #09eaf8 solid;
   background-color: black;
   color: #09eaf8;
 }
 
-.busqueda ::-webkit-input-placeholder {
-  color: #09eaf8;
+.busqueda:focus {
+  outline: none !important;
 }
 
 .loginButton {

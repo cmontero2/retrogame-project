@@ -1,4 +1,5 @@
 .wrap {
   min-height: calc(100vh - 186px);
+  padding: 1rem;
 }
 /*# sourceMappingURL=app.component.css.map */

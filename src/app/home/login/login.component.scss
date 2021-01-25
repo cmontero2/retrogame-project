@@ -4,7 +4,7 @@ $blue:#09eaf8;
 .loginDiv {
     background-color: black;
     color: $blue;
-    height: 500px;
+    min-height: 500px;
     border-radius: 10px;
     border: 3px $pink solid;
     box-shadow: 0px 1px 25px $pink;
@@ -23,6 +23,9 @@ $blue:#09eaf8;
         border-bottom: 1px $blue solid;
         background-color:black;
         color: $blue; 
+        &:focus {
+            outline: none !important;
+        } 
     }
 }
 .formulario {

@@ -7,14 +7,15 @@ import { LoginComponent } from './login/login.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { NoticiasService } from './noticias/noticias.service';
 import { RegistroUserComponent } from './registroUser/registro-user.component';
-
+import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.component';
 
 @NgModule({
   declarations: [HomeContainerComponent, ScrollBarComponent, LoginComponent, NoticiasComponent, RegistroUserComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: 'registro-user', component: RegistroUserComponent}
+      {path: 'registro-user', component: RegistroUserComponent},
+      {path: 'registroEmpresa', component: RegistroEmpresaComponent}
     ])
   ],
   exports: [HomeContainerComponent],

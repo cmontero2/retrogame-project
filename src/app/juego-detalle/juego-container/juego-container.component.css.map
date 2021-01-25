@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "juego-container.component.scss"
+    ],
+    "names": [],
+    "file": "juego-container.component.css"
+}

@@ -7,4 +7,9 @@
 body {
   background-color: #141414;
 }
+
+::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
+}
 /*# sourceMappingURL=styles.css.map */

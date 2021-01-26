@@ -14,7 +14,7 @@ export class JuegoContainerComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((parametros: Params) => {
       this.id = parametros.id;
-      console.log(this.id);
+      //console.log(this.id);
     })
   }
 

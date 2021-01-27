@@ -1,15 +1,32 @@
-<div class="col-md-5 loginDiv">
-    <h1>LOGIN</h1>
-    <div class="formularioDiv"> 
-        <form class="formulario">
-            <div class="label"><label>USUARIO</label></div>
-            <div><input type="text" placeholder="Introduce tu usuario"/></div>
-            <div class="label"><label>CONTRASEÑA</label></div>
-            <div><input type="password" placeholder="Introduce tu contraseña"/></div>
-            <div class="col-md-10 botones">
-                <a class="nav-link RegistrateEnlace" routerLink="/registro-user"> REGISTRATE </a> 
-                <button type="button" class="btn btn-primary loginButton" routerLink="">ENTRAR</button>
-            </div>
-        </form>
-    </div>
+<div class="modal-header">
+  <h4 class="modal-title">Login</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
+<form>
+  <div class="modal-body">
+    <div class="label"><label>USUARIO</label></div>
+    <div><input type="text" placeholder="Introduce tu usuario" /></div>
+    <div class="label"><label>CONTRASEÑA</label></div>
+    <div><input type="password" placeholder="Introduce tu contraseña" /></div>
+  </div>
+  <div class="modal-footer">
+    <a class="nav-link RegistrateEnlace" routerLink="/registro-user">
+      REGISTRATE
+    </a>
+    <button
+      type="button"
+      (click)="login()"
+      class="btn btn-primary loginButton"
+      routerLink=""
+    >
+      ENTRAR
+    </button>
+  </div>
+</form>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Juego } from './juego';
 import { ListaJuegosService } from './lista-juegos.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-lista-juegos',
@@ -10,10 +11,17 @@ import { ListaJuegosService } from './lista-juegos.service';
 export class ListaJuegosComponent implements OnInit {
 
   juegos?: Juego[];
-  constructor(private listaJuegosService: ListaJuegosService) { }
+  categoria?: string;
+  constructor(
+    private listaJuegosService: ListaJuegosService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.juegos = this.listaJuegosService.getJuegos();
+    this.route.params.subscribe(parameters => {
+      this.juegos = this.listaJuegosService.getJuegosPorCategoriaId(parameters.id);
+    })
+
   }
 
 }

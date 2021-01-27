@@ -1,60 +1,70 @@
 [
     {
         "id": 1,
+        "categoriasId": [3, 1, 5],
         "nombre": "Mario",
         "imagen": "mario.png",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
     },
     {
         "id": 2,
+        "categoriasId": [1],
         "nombre": "Pokemon Red",
         "imagen": "pokemonred.png",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
     },
     {
         "id": 3,
+        "categoriasId": [1],
         "nombre": "WoW",
         "imagen": "wow.jpg",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
     },
     {
         "id": 4,
+        "categoriasId": [2],
         "nombre": "LoL",
         "imagen": "lol.png",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
     },
     {
         "id": 5,
+        "categoriasId": [4],
         "nombre": "Megaman",
         "imagen": "megaman.jpg",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
     },
     {
         "id": 6,
+        "categoriasId": [3],
         "nombre": "Kid Icarus",
         "imagen": "kidicarus.png",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
     },
     {
         "id": 7,
+        "categoriasId": [4],
         "nombre": "Zelda",
         "imagen": "zelda.jpg",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
     },
     {
         "id": 8,
+        "categoriasId": [3],
         "nombre": "Donkey Kong",
         "imagen": "donkeykong.png",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
     },
     {
         "id": 9,
+        "categoriasId": [4],
         "nombre": "Kirby",
         "imagen": "kirby.png",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
     },
     {
         "id": 10,
+        "categoriasId": [5],
         "nombre": "Sonic",
         "imagen": "sonic.jpg",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."

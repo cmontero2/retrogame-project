@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthGuardService } from '../../services/auth-guard.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { RegistroUserComponent } from '../registroUser/registro-user.component';
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +15,7 @@ export class LoginComponent implements OnInit {
   private userName?: String;
   private userPassword?: String;
 
-  constructor(private auth:AuthGuardService, public activeModal: NgbActiveModal) { }
+  constructor(private auth:AuthGuardService, public activeModal: NgbActiveModal, private modalService: NgbModal) { }
 
   ngOnInit(): void {
    
@@ -25,6 +28,12 @@ export class LoginComponent implements OnInit {
 
   logout(){
     this.auth.login();
+  }
+
+  //modal registro
+  doRegister(){
+    this.activeModal.close();
+    const modalRef = this.modalService.open(RegistroUserComponent);
   }
 
 }

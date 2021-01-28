@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-registro-user',
@@ -7,8 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroUserComponent implements OnInit {
 
-  constructor() { }
 
+  constructor(public activeModal: NgbActiveModal) { }
+  
   ngOnInit(): void {
+  }
+
+  cerrarModal(){
+    this.activeModal.close();
+  }
+
+  cambioSelect(){
+    console.log("entro");
   }
 }

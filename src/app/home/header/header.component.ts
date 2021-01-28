@@ -24,7 +24,7 @@ export class HeaderComponent {
         });
 
   }
-
+  //modal login
   doLogin() {
     const modalRef = this.modalService.open(LoginComponent);
   }

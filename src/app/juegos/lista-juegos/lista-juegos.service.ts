@@ -26,7 +26,7 @@ export class ListaJuegosService {
                 if(juego.categoriasId[i] == categoriaId) {
                     let categoriaNombres: string[] = [];
                     categoriaNombres = this.getCategoriaNombres(juego.categoriasId);
-                    juegos.push(new Juego(juego.id, juego.categoriasId, categoriaNombres, juego.nombre, juego.imagen, juego.descripcion));
+                    juegos.push(new Juego(juego.id, juego.categoriasId, categoriaNombres, juego.nombre, juego.imagen));
                 }
             }
         })

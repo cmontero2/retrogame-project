@@ -26,7 +26,6 @@ export class HeaderComponent {
   }
 
   doLogin() {
-    console.log("entrando");
     const modalRef = this.modalService.open(LoginComponent);
   }
 

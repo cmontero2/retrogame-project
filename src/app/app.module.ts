@@ -13,6 +13,7 @@ import { FooterComponent } from './home/footer/footer.component';
 import { ForoContainerComponent } from './foro/foro-container/foro-container.component';
 import { EntradaDetalleComponent } from './foro/entrada-detalle/entrada-detalle.component';
 import { ScrollBarModule } from './scroll-bar/scroll-bar.module';
+import { ContactoComponent } from './contacto/contacto.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ScrollBarModule } from './scroll-bar/scroll-bar.module';
     CategoriasComponent,
     FooterComponent,
     ForoContainerComponent,
-    EntradaDetalleComponent
+    EntradaDetalleComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

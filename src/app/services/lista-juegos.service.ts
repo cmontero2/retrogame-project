@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Juego } from './juego';
+import { Juego } from '../juegos/lista-juegos/juego';
 
-import data from '../../../assets/json/juegos.json';
-import categorias from '../../../assets/json/categorias.json';
+import data from '../../assets/json/juegos.json';
+import categorias from '../../assets/json/categorias.json';
 
 @Injectable()
 export class ListaJuegosService {

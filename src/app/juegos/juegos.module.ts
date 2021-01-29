@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { JuegoContainerComponent } from './juego-container/juego-container.component';
 import { ListaJuegosComponent } from './lista-juegos/lista-juegos.component';
-import { ListaJuegosService } from './lista-juegos/lista-juegos.service';
+import { ListaJuegosService } from '../services/lista-juegos.service';
 import { CategoriaDetalleComponent } from './categoria-detalle/categoria-detalle.component';
 
 

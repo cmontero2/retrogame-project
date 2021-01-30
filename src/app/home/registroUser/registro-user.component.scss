@@ -4,11 +4,17 @@ $blue:#09eaf8;
     border: none;
     color: $blue;
     text-align: center;
+    justify-content: center;
     h4 {
-        margin: 30px;
         text-align: center;
         text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
         font-weight: bold;
+    }
+    .close {
+        margin: 0;
+        position: absolute;
+        top: 0px;
+        right: 0px;
     }
 }
 .cerrar {
@@ -22,7 +28,7 @@ $blue:#09eaf8;
 .modal-body {
     background-color: black;
     color: $blue;
-    margin-bottom: 4rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     input {
         border-radius: 0;
@@ -34,25 +40,51 @@ $blue:#09eaf8;
             outline: none !important;
         } 
     }
-    
+    .sign-up-nav {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        padding: 5px 0px;
+        .user-type {
+            display:block;
+            margin: 0px auto;
+        }
+        .user-type:hover, .active {
+            cursor: pointer;
+            color: $pink;
+        }
+    }
+    .sign-up-nav::after {
+        content: '';
+        position: absolute;
+        width: calc(50% - 10px);
+        height: 2px;
+        background: $pink;
+        bottom: 0px;
+        left: 10px;
+        transform: translateX(0%);
+        transition: transform 0.3s ease;
+    }
+    .active-company::after {
+        transform: translateX(100%);
+    }
+    .form-container {
+        position: relative;
+        padding: 15px;
+    }
+    .form-control {
+        margin: 0 auto;
+        width: 80%;
+        max-height: 30px;
+    }
+    label {
+        margin-bottom: 0;
+    }
 }
 .modal-footer {
     border: none;
     text-align: center;
-}
-.formulario {
-    text-align: center;
-   
-}
-.formularioDiv {
-    margin-top: 60px;
-}
-.label {
-    margin-top: 15px;
-    text-shadow: 0 0 10px $pink, 0 0 20px $pink;
-}
-.empresaDiv {
-    display: block;
 }
 
 /*BOTONES*/
@@ -63,6 +95,7 @@ $blue:#09eaf8;
     margin-right: auto;
 }
 .registerButton {
+    float: right;
     background-color: black;
     padding: 7px;
     color: $pink;

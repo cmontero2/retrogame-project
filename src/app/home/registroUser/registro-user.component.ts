@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -10,17 +10,40 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class RegistroUserComponent implements OnInit {
 
+  editForm = this.fb.group({
+    username: [null, [Validators.required, Validators.minLength(4)]],
+    password: [null, [Validators.required, Validators.minLength(4)]],
+    email: [null, [Validators.email]],
+    cif: [null]
+  });
 
-  constructor(public activeModal: NgbActiveModal) { }
-  
+  public isCompany:boolean = false;
+
+  constructor(public activeModal: NgbActiveModal, private fb: FormBuilder) { }
+
   ngOnInit(): void {
   }
 
-  cerrarModal(){
-    this.activeModal.close();
+  setCompany(isCompany: boolean) {
+    this.isCompany = isCompany
   }
 
-  cambioSelect(){
-    console.log("entro");
+  save(): void {
+    const usuario = this.createFromForm();
+    // this.subscribeToSaveResponse(this.usuarioService.create(usuario)); // Cuando este creado la clase usuario y la clase UsuarioService
+    console.log("Usuario: " + JSON.stringify(usuario, null, 2));
+    this.cerrarModal();
+  }
+
+  private createFromForm(): any { // Cambiar tipo de any a Usuario
+    return {
+      // ...new Usuario(), Crear clase usuario
+      username: this.editForm.get(['username'])!.value,
+      // resto de campos
+    };
+  }
+
+  cerrarModal() {
+    this.activeModal.close();
   }
 }

@@ -6,7 +6,7 @@ import { EntradaDetalleComponent } from './foro/entrada-detalle/entrada-detalle.
 import { SeccionesComponent } from './foro/secciones/secciones.component';
 import { EntradasComponent } from './foro/entradas/entradas.component';
 import { LoginComponent } from './home/login/login.component';
-import { RegistroUserComponent } from './home/registroUser/registro-user.component';
+import { RegistroComponent } from './home/registro/registro.component';
 import { CategoriaDetalleComponent } from './juegos/categoria-detalle/categoria-detalle.component';
 import { JuegoContainerComponent } from './juegos/juego-container/juego-container.component';
 import { ContactoComponent } from './contacto/contacto.component';
@@ -19,9 +19,8 @@ const routes: Routes = [
   { path: 'foro/secciones', component: SeccionesComponent },
   { path: 'foro/entradas', component: EntradasComponent },
   { path: 'login', component: LoginComponent },
-  //{ path: 'juegos', component: JuegoContainerComponent },
   { path: 'juegos/:id', component: JuegoContainerComponent},
-  { path: 'registro-user', component: RegistroUserComponent },
+  { path: 'registro', component: RegistroComponent },
   { path: 'contacto', component: ContactoComponent},
 ];
 

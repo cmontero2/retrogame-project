@@ -4,13 +4,12 @@ import { HomeContainerComponent } from './home-container/home-container.componen
 import { LoginComponent } from './login/login.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { NoticiasService } from './noticias/noticias.service';
-import { RegistroUserComponent } from './registroUser/registro-user.component';
-import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.component';
+import { RegistroComponent } from './registro/registro.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [HomeContainerComponent, LoginComponent, NoticiasComponent, RegistroUserComponent, RegistroEmpresaComponent],
+  declarations: [HomeContainerComponent, LoginComponent, NoticiasComponent, RegistroComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

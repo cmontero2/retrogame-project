@@ -49,6 +49,7 @@ $blue:#09eaf8;
         .user-type {
             display:block;
             margin: 0px auto;
+            text-shadow: 0 0 10px $pink, 0 0 20px $pink;
         }
         .user-type:hover, .active {
             cursor: pointer;
@@ -80,6 +81,8 @@ $blue:#09eaf8;
     }
     label {
         margin-bottom: 0;
+        margin-top: 10px;
+        text-shadow: 0 0 10px $pink, 0 0 20px $pink;
     }
 }
 .modal-footer {

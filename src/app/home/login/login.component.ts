@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthGuardService } from '../../services/auth-guard.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { RegistroUserComponent } from '../registroUser/registro-user.component';
+import { RegistroComponent } from '../registro/registro.component';
 
 
 @Component({
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   //modal registro
   doRegister(){
     this.activeModal.close();
-    const modalRef = this.modalService.open(RegistroUserComponent);
+    const modalRef = this.modalService.open(RegistroComponent);
   }
 
 }

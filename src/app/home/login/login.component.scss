@@ -4,11 +4,18 @@ $blue:#09eaf8;
     border: none;
     color: $blue;
     text-align: center;
+    justify-content: center;
     h4 {
-        margin: 30px;
         text-align: center;
         text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
         font-weight: bold;
+    }
+    .close {
+        margin: 0;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        outline: none;
     }
 }
 .modal-title {
@@ -26,7 +33,7 @@ $blue:#09eaf8;
     background-color: black;
     color: $blue;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 1.5rem;
     input {
         border-radius: 0;
         border:0;
@@ -39,21 +46,14 @@ $blue:#09eaf8;
     }
 
 }
-.modal-footer {
-    border: none;
-    text-align: center;
-}
-.formulario {
-    text-align: center;
-   
-}
-.formularioDiv {
-    margin-top: 60px;
-}
 label {
     text-align: center;
     margin-top: 15px;
     text-shadow: 0 0 10px $pink, 0 0 20px $pink;
+}
+.modal-footer {
+    border: none;
+    text-align: center;
 }
 
 /*BOTONES*/
@@ -87,4 +87,5 @@ label {
     color: $pink;
     text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
     float: left;
+    cursor: pointer;
 }

@@ -15,13 +15,20 @@ $blue:#09eaf8;
 }
 .links {
     text-align: center;
-    a {
+    a, i {
         margin: 20px;
         text-decoration: none;
         color: $blue;
 
         &:hover {
             color: #23847e;
+            cursor: pointer;
         }
+    }
+}
+i {
+    &:hover {
+        color: #23847e;
+        cursor: pointer;
     }
 }

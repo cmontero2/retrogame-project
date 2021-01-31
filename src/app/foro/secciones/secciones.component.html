@@ -1,2 +1,7 @@
 <p>secciones works!</p>
 <a routerLink="/foro/entradas">Entradas</a>
+
+<div class="seccionesDiv"><h4>Secciones</h4></div>
+<div class="secciones" *ngFor="let seccion of secciones">
+    <h5>{{seccion.nombre}}</h5>
+</div>

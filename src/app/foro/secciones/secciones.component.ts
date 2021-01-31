@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Seccion } from './seccion';
+import { SeccionesService } from './secciones.service';
 
 @Component({
   selector: 'app-secciones',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeccionesComponent implements OnInit {
 
-  constructor() { }
+  secciones?: Seccion[];
+  constructor(private seccionesService: SeccionesService) { }
 
   ngOnInit(): void {
+    this.secciones = this.seccionesService.getSecciones();
   }
 
 }

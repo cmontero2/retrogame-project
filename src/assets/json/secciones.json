@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "nombre": "Mantenimiento"
+    },
+    {
+        "id": 2,
+        "nombre": "Novedades"
+    },
+    {
+        "id": 3,
+        "nombre": "Pagos"
+    },
+    {
+        "id": 4,
+        "nombre": "Off-topic"
+    },
+    {
+        "id": 5,
+        "nombre": "Report/Bugs"
+    },
+    {
+        "id": 6,
+        "nombre": "Noticias"
+    },
+    {
+        "id": 7,
+        "nombre": "Juego 1"
+    },
+    {
+        "id": 8,
+        "nombre": "Juego 2"
+    }
+]

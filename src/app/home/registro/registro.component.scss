@@ -78,6 +78,9 @@ $blue:#09eaf8;
         margin: 0 auto;
         width: 80%;
         max-height: 30px;
+        &:focus {
+            box-shadow: none;
+        }
     }
     label {
         margin-bottom: 0;
@@ -118,6 +121,12 @@ $blue:#09eaf8;
 }
 .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
     box-shadow: none;
+}
+input:-internal-autofill-selected {
+    background-color: black !important;
+}
+input[type="date"]::-webkit-calendar-picker-indicator::after {
+    background-color: $blue !important;
 }
 /*SELECT*/
 .content-input input,

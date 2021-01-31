@@ -1,8 +1,9 @@
 $blue:#09eaf8;
+$pink:#e607fa;
 .footer {
     height: 120px;
     width: 100%;
-    background-color: darkgrey;
+    background-color:black;
     color: $blue;
 }
 .rrss{
@@ -21,14 +22,14 @@ $blue:#09eaf8;
         color: $blue;
 
         &:hover {
-            color: #23847e;
+            color: $pink;
             cursor: pointer;
         }
     }
 }
 i {
     &:hover {
-        color: #23847e;
+        color: $pink;
         cursor: pointer;
     }
 }

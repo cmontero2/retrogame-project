@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './home/header/header.component';
@@ -27,7 +28,8 @@ import { ContactoComponent } from './contacto/contacto.component';
     HomeModule,
     JuegosModule,
     ForoModule,
-    ScrollBarModule
+    ScrollBarModule, 
+    HttpClientModule
   ],
   exports: [HomeModule],
   providers: [CategoriasService],

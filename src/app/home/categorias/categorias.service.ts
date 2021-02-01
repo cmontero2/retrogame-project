@@ -15,7 +15,11 @@ export class CategoriasService {
     }
 
     async getCategorias() :Promise<any> {
-        const response = await fetch(this.baseUrl);
+        const response = await fetch(this.baseUrl, {
+	        'mode': 'cors',
+	        'headers': {
+            	'Access-Control-Allow-Origin': '*',
+        	});
         console.log(response, null, 2);
         return response;
     }

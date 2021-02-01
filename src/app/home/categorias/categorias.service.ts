@@ -10,12 +10,14 @@ export class CategoriasService {
     public baseUrl = 'http://localhost/retrogame-projectAPI/web/categorias';
     constructor(private http: HttpClient) { }
 
-    // getCategorias(): Observable<any> {
-    //     return this.http.get(baseUrl);
-    // }
-
     findAll(): Observable<HttpResponse<ICategoria[]>> {
         return this.http.get<any>(this.baseUrl);
+    }
+
+    async getCategorias() :Promise<any> {
+        const response = await fetch(this.baseUrl);
+        console.log(response, null, 2);
+        return response;
     }
 
     /*

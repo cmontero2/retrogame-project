@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { ICategoria } from './categoria';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { URL_API } from "../../services/app.constants";
 
 import data from '../../../assets/json/categorias.json';
 
 @Injectable({ providedIn: 'root' })
 export class CategoriasService {
-    public baseUrl = 'http://localhost/retrogame-projectAPI/web/categorias';
+    public baseUrl = URL_API + "categorias";
     constructor(private http: HttpClient) { }
 
     findAll(): Observable<HttpResponse<ICategoria[]>> {
@@ -18,7 +19,7 @@ export class CategoriasService {
         const response = await fetch(this.baseUrl, {
 	        'mode': 'cors',
 	        'headers': {
-            	'Access-Control-Allow-Origin': '*',
+            	'Access-Control-Allow-Origin': '*'}
         	});
         console.log(response, null, 2);
         return response;

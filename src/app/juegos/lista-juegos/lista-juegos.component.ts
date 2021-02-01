@@ -8,6 +8,9 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './lista-juegos.component.html',
   styleUrls: ['./lista-juegos.component.scss']
 })
+//
+//ANGULAR A JSON
+//
 export class ListaJuegosComponent implements OnInit {
 
   juegos?: Juego[];
@@ -25,3 +28,29 @@ export class ListaJuegosComponent implements OnInit {
   }
 
 }
+//
+//ANGULAR A API YII
+//
+/*export class ListaJuegosComponent implements OnInit {
+
+  public juegos: Juego = {};
+  juegos:any [] = [];
+
+  constructor(
+    private listaJuegosService: ListaJuegosService
+    private route: ActivatedRoute
+  ) { }
+
+  ngOnInit(): void {
+    this.listaJuegosService.getJuegos()
+    .subscribe(
+      juegos => {
+        this.juegos = data
+      },
+      error => {
+        console.log(error)
+      }
+      );
+    console.log(this.juegos);
+  }
+}*/

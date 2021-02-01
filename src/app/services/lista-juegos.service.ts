@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Juego } from '../juegos/lista-juegos/juego';
+//import { HttpClient } from '@angular/common/http';
+//import { UrlAPI } from "../services/api.service";
 
 import data from '../../assets/json/juegos.json';
 import categorias from '../../assets/json/categorias.json';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class ListaJuegosService {
@@ -45,3 +48,14 @@ export class ListaJuegosService {
         return categoriaNombres;
     }
 }
+
+/*export class ListaJuegosService {
+
+    constructor(private http: HttpClient) { }
+
+    // Observable<Juegos>
+    public getJuegos(): Observable<any> { 
+
+        return this.http.get(UrlAPI.baseUrl + "juegos");
+    }
+}*/

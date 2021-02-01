@@ -5,21 +5,19 @@ import { Observable } from 'rxjs';
 
 import data from '../../../assets/json/categorias.json';
 
-const baseUrl = 'http://localhost/retrogame-projectAPI/web/categorias';
-
-@Injectable({providedIn: 'root'})
-//@Injectable()
+@Injectable({ providedIn: 'root' })
 export class CategoriasService {
-    //constructor() { }
-    constructor(private http: HttpClient){}
-/*
-    getCategorias(): Observable<any> {
-        return this.http.get(baseUrl);
+    public baseUrl = 'http://localhost/retrogame-projectAPI/web/categorias';
+    constructor(private http: HttpClient) { }
+
+    // getCategorias(): Observable<any> {
+    //     return this.http.get(baseUrl);
+    // }
+
+    findAll(): Observable<HttpResponse<ICategoria[]>> {
+        return this.http.get<any>(this.baseUrl);
     }
-    findAll() : Observable<HttpResponse<ICategoria[]>> {
-        return this.http.get<ICategoria[]>(this.baseUrl);
-    }
-    */
+
     /*
     getCategorias() :Categoria[] {
         let categorias: Categoria[] = [];

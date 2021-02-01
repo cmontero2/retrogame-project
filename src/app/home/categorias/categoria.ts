@@ -3,9 +3,13 @@ export interface ICategoria {
     nombre?: String;
     descripcion?: String
 }
-    
+
 export class Categoria implements ICategoria {
-constructor (public id?: number, public nombre?: String, public descripcion?: String) {}
+    constructor(
+        public id?: number,
+        public nombre?: String,
+        public descripcion?: String
+    ) { }
 }
 
 

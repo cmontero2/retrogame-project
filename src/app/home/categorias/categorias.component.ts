@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpResponse } from '@angular/common/http';
 import { ICategoria } from './categoria';
 import { CategoriasService } from './categorias.service';
 
@@ -10,13 +9,20 @@ import { CategoriasService } from './categorias.service';
 })
 export class CategoriasComponent implements OnInit {
 
-  categorias?: ICategoria[];
+  categorias:ICategoria[] = [];
 
   constructor(private categoriasService: CategoriasService) { }
 
   ngOnInit(): void {
-    // this.categoriasService.findAll().subscribe((res: HttpResponse<ICategoria[]>) => (this.categorias = res.body || []));
-    this.categoriasService.getCategorias();
+    this.categoriasService.findAll()
+    .subscribe(
+      data =>{
+        this.categorias = data;
+        console.log('categ', this.categorias)
+      },
+      error =>{
+        console.log(error);
+      })
   }
 
 }

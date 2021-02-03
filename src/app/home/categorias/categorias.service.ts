@@ -8,11 +8,11 @@ import data from '../../../assets/json/categorias.json';
 
 @Injectable({ providedIn: 'root' })
 export class CategoriasService {
-    public baseUrl = URL_API + "categorias";
+    public baseUrl = URL_API.SERVER_URL_API + "categorias";
     constructor(private http: HttpClient) { }
 
-    findAll(): Observable<HttpResponse<ICategoria[]>> {
-        return this.http.get<any>(this.baseUrl);
+    findAll(): Observable<any> {
+        return this.http.get(this.baseUrl);
     }
     
     async getCategorias() :Promise<any> {

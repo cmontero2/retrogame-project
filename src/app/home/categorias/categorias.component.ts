@@ -15,8 +15,8 @@ export class CategoriasComponent implements OnInit {
   constructor(private categoriasService: CategoriasService) { }
 
   ngOnInit(): void {
-    // this.categoriasService.findAll().subscribe((res: HttpResponse<ICategoria[]>) => (this.categorias = res.body || []));
-    this.categoriasService.getCategorias();
+     this.categoriasService.findAll().subscribe((res: HttpResponse<ICategoria[]>) => (this.categorias = res.body || []));
+    //this.categoriasService.getCategorias();
   }
 
 }

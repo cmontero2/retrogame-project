@@ -14,7 +14,7 @@ export class CategoriasService {
     findAll(): Observable<HttpResponse<ICategoria[]>> {
         return this.http.get<any>(this.baseUrl);
     }
-
+    
     async getCategorias() :Promise<any> {
         const response = await fetch(this.baseUrl, {
 	        'mode': 'cors',

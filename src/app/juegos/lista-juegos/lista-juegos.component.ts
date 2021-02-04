@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Juego } from './juego';
+//import { IJuego } from './juego';
 import { ListaJuegosService } from '../../services/lista-juegos.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,9 +9,12 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './lista-juegos.component.html',
   styleUrls: ['./lista-juegos.component.scss']
 })
+
+
 //
 //ANGULAR A JSON
 //
+
 export class ListaJuegosComponent implements OnInit {
 
   juegos?: Juego[];
@@ -28,24 +32,29 @@ export class ListaJuegosComponent implements OnInit {
   }
 
 }
+
+
+
+
 //
 //ANGULAR A API YII
 //
+
 /*export class ListaJuegosComponent implements OnInit {
 
-  public juegos: Juego = {};
-  juegos:any [] = [];
+  juegos: IJuego[] = [];
 
   constructor(
-    private listaJuegosService: ListaJuegosService
+    private listaJuegosService: ListaJuegosService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.listaJuegosService.getJuegos()
+    this.listaJuegosService.findAll()
     .subscribe(
-      juegos => {
+      data => {
         this.juegos = data
+        console.log('juego', this.juegos)
       },
       error => {
         console.log(error)

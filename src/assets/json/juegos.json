@@ -22,14 +22,14 @@
     },
     {
         "id": 4,
-        "categoriasId": [2],
+        "categoriasId": [1],
         "nombre": "LoL",
         "imagen": "lol.png",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
     },
     {
         "id": 5,
-        "categoriasId": [4],
+        "categoriasId": [1],
         "nombre": "Megaman",
         "imagen": "megaman.jpg",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."

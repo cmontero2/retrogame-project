@@ -9,12 +9,9 @@
 
 <div class="container">
     <div class="row">
-        <div *ngFor="let juego of juegos; let i = index">
-            <div class="clearfix" ng-if="$i % 3 == 0"></div>
-            <div class="col-lg-4">
-                <img src="../../../assets/img/logoGames/{{juego.imagen}}" class="logo">
-                <h3>{{juego.nombre}}</h3>
-            </div>
+        <div class="col-md-4 divJuegos" *ngFor="let juego of juegos">
+            <img src="../../../assets/img/logoGames/{{juego.imagen}}" class="logo">
+            <h3>{{juego.nombre}}</h3>
         </div>
     </div>
 </div>

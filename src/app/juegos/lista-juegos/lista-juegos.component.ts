@@ -39,8 +39,8 @@ export class ListaJuegosComponent implements OnInit {
 //
 //ANGULAR A API YII
 //
-
-/*export class ListaJuegosComponent implements OnInit {
+/*
+export class ListaJuegosComponent implements OnInit {
 
   juegos: IJuego[] = [];
 
@@ -62,4 +62,5 @@ export class ListaJuegosComponent implements OnInit {
       );
     console.log(this.juegos);
   }
-}*/
+}
+*/

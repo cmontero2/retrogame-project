@@ -15,3 +15,17 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="card-columns">
+        <div class="card" style="width: 300px;" *ngFor="let juego of juegos">
+            <img class="card-img-top" src="../../../assets/img/logoGames/{{juego.imagen}}" class="logo" alt="foto">
+            <div class="card-header">
+                <!--<a [routerLink]="['/juego', juego.id]"><h2 class="text-primary"></h2>{{juego.nombre}}</h2></a>-->
+            </div>
+            <div class="card-body">
+                <p>Lorem Ipsum</p>
+            </div>
+        </div>
+    </div>
+</div>

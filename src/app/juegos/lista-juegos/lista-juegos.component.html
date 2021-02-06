@@ -1,6 +1,31 @@
+<!--
 <ul *ngFor="let juego of juegos">
-    <!--<li><a [routerLink]="['/juegos', categoria.id]">{{categoria.nombre}}</a></li>-->
+    <li><a [routerLink]="['/juegos', categoria.id]">{{categoria.nombre}}</a></li>
     <li><img src="../../../assets/img/logoGames/{{juego.imagen}}" class="logo"></li>
     <li><h3>{{juego.nombre}}</h3></li>
     <hr class="lineaDivisora">
 </ul>
+-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 divJuegos" *ngFor="let juego of juegos">
+            <img src="../../../assets/img/logoGames/{{juego.imagen}}" class="logo">
+            <h3>{{juego.nombre}}</h3>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card-columns">
+        <div class="card" style="width: 300px;" *ngFor="let juego of juegos">
+            <img class="card-img-top" src="../../../assets/img/logoGames/{{juego.imagen}}" class="logo" alt="foto">
+            <div class="card-header">
+                <!--<a [routerLink]="['/juego', juego.id]"><h2 class="text-primary"></h2>{{juego.nombre}}</h2></a>-->
+            </div>
+            <div class="card-body">
+                <p>Lorem Ipsum</p>
+            </div>
+        </div>
+    </div>
+</div>

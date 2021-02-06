@@ -1,3 +1,17 @@
+export interface INoticia {
+    id?: number;
+    titulo?: String;
+    texto?: String
+}
+export class Noticia  implements INoticia{
+
+    constructor(
+        public id?: number,
+        public titulo?: String,
+        public texto?: String
+    ) { }
+}
+/*
 export class Noticia {
     id?: number;
     titulo?: string;
@@ -9,3 +23,4 @@ export class Noticia {
         this.texto = texto;
     }
 }
+*/

@@ -14,12 +14,13 @@ export class CategoriasService {
         return this.http.get<any>(this.baseUrl);
     }
 
-    async getCategorias() :Promise<any> {
+    async getCategorias(): Promise<any> {
         const response = await fetch(this.baseUrl, {
-	        'mode': 'cors',
-	        'headers': {
-            	'Access-Control-Allow-Origin': '*',
-        	});
+            'mode': 'cors',
+            'headers': {
+                'Access-Control-Allow-Origin': '*',
+            }
+        });
         console.log(response, null, 2);
         return response;
     }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegistroComponent } from './registro/registro.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { AuthGuard } from '../helpers/auth.guard';
+import { AuthGuard } from '../services/auth-guard';
 
 
 const routesHome: Routes = [

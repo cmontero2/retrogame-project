@@ -14,8 +14,8 @@
     </div>
     <div class="col-md-2">
         <a class="nav-link foroEnlace glow" routerLink="/foro/foro-container"> FORO </a> 
-        <button type="button" *ngIf="!login" class="btn btn-primary loginButton" (click)="doLogin()">LOGIN</button>
-        <button type="button" *ngIf="login" class="btn btn-primary loginButton" (click)="logout()" routerLink="">LOGOUT</button>
+        <button type="button" *ngIf="!login" class="btn btn-primary loginButton" (click)="login()">LOGIN</button>
+        <button type="button" *ngIf="login" class="btn btn-primary loginButton"  routerLink="">LOGOUT</button>
     </div>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <app-categorias></app-categorias>

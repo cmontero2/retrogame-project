@@ -9,22 +9,23 @@
     <span class="cerrar" aria-hidden="true">&times;</span>
   </button>
 </div>
-<form>
+<form method="post">
   <div class="modal-body">
     <div class="label"><label>Usuario</label></div>
-    <div><input type="text" placeholder="Introduce tu usuario" /></div>
+    <div><input [(ngModel)]="usuario.user" type="text" placeholder="Introduce tu usuario" /></div>
     <div class="label"><label>Contraseña</label></div>
-    <div><input type="password" placeholder="Introduce tu contraseña" /></div>
+    <div><input [(ngModel)]="usuario.password" type="password" placeholder="Introduce tu contraseña" /></div>
   </div>
   <div class="modal-footer">
     <a class="nav-link RegistrateEnlace" (click)="doRegister()">
       REGISTRATE
     </a>
     <button
-      type="button"
+      type="submit"
       (click)="login()"
       class="btn btn-primary loginButton"
       routerLink=""
+      value="Login"
     >
       ENTRAR
     </button>

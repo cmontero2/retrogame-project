@@ -8,7 +8,7 @@ import data from '../../../assets/json/noticias.json';
 
 @Injectable({ providedIn: 'root' })
 export class NoticiasService {
-    public baseUrl = URL_API.SERVER_URL_API + "entradas?seccion='6'";
+    public baseUrl = URL_API.SERVER_URL_API + "entradas?seccion=6";
     constructor(private http: HttpClient) { }
 
     findAll(): Observable<any> {

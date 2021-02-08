@@ -12,7 +12,9 @@ import { CategoriasService } from './home/categorias/categorias.service';
 import { FooterComponent } from './home/footer/footer.component';
 import { ScrollBarModule } from './scroll-bar/scroll-bar.module';
 import { ContactoComponent } from './contacto/contacto.component';
-
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import {HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { ContactoComponent } from './contacto/contacto.component';
     HeaderComponent,
     CategoriasComponent,
     FooterComponent,
-    ContactoComponent
+    ContactoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ import { ContactoComponent } from './contacto/contacto.component';
     HttpClientModule
   ],
   exports: [HomeModule],
-  providers: [CategoriasService],
+  providers: [CategoriasService, {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

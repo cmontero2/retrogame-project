@@ -1,1 +1,18 @@
-/* No CSS *//*# sourceMappingURL=lista-juegos.component.css.map */
+h3 {
+  color: #e607fa;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa;
+}
+
+p {
+  color: #09eaf8;
+}
+
+.lineaDivisora {
+  border-color: #09eaf8;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+}
+/*# sourceMappingURL=lista-juegos.component.css.map */

@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'foro/secciones', component: SeccionesComponent },
   { path: 'foro/entradas', component: EntradasComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'juegos', component: JuegoContainerComponent },
   { path: 'juegos/:id', component: JuegoContainerComponent},
   { path: 'registro', component: RegistroComponent },
   { path: 'contacto', component: ContactoComponent},

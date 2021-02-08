@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegistroComponent } from './registro/registro.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { AuthGuard } from '../helpers/auth.guard';
 
 
 const routesHome: Routes = [
-    {path: 'registro', component: RegistroComponent}
+    {path: 'registro', component: RegistroComponent},
+    {path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard] }
   
 ];
 

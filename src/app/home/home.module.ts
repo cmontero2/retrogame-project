@@ -7,9 +7,10 @@ import { NoticiasService } from './noticias/noticias.service';
 import { RegistroComponent } from './registro/registro.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
-  declarations: [HomeContainerComponent, LoginComponent, NoticiasComponent, RegistroComponent],
+  declarations: [HomeContainerComponent, LoginComponent, NoticiasComponent, RegistroComponent, PerfilComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

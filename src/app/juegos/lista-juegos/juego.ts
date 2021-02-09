@@ -1,6 +1,6 @@
 
 //Yii API
-/*export interface IJuego {
+export interface IJuego {
     id?: number;
     nombre?: String;
     descripcion?: String;
@@ -14,10 +14,11 @@ export class Juego implements IJuego {
         public descripcion?: String,
         public nombre_archivo?: String
     ) { }
-}*/
+}
 
 
 //JSON
+/*
 export class Juego {
     id?: number;
     categoriasId?: string;
@@ -36,3 +37,4 @@ export class Juego {
         this.imagen = imagen;
     }
 }
+*/

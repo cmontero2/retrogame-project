@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Juego } from './juego';
+import { IJuego } from './juego';
 //import { IJuego } from './juego';
 import { ListaJuegosService } from '../../services/lista-juegos.service';
 import { ActivatedRoute } from '@angular/router';
@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 //
 //ANGULAR A JSON
 //
-
+/*
 export class ListaJuegosComponent implements OnInit {
 
   juegos?: Juego[];
@@ -32,14 +32,14 @@ export class ListaJuegosComponent implements OnInit {
   }
 
 }
-
+*/
 
 
 
 //
 //ANGULAR A API YII
 //
-/*
+
 export class ListaJuegosComponent implements OnInit {
 
   juegos: IJuego[] = [];
@@ -63,4 +63,4 @@ export class ListaJuegosComponent implements OnInit {
     console.log(this.juegos);
   }
 }
-*/
+

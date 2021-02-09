@@ -1,9 +1,12 @@
-export class Seccion {
+export interface ISeccion {
     id?: number;
     nombre?: string;
+}
 
-    constructor(id: number, nombre: string) {
-        this.id = id;
-        this.nombre = nombre;
-    }
+export class Seccion  implements ISeccion{
+
+    constructor(
+        public id?: number, 
+        public nombre?: string
+    ) { }
 }

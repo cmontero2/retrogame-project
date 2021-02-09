@@ -1,0 +1,44 @@
+$pink:#e607fa;
+$blue:#09eaf8;
+
+.juegoDetalleDescripccionContainer {
+    background-image: url("../../../assets/img/banners/header-multiplayer.jpg");
+    background: cover;
+    width: 1100px;
+    height: 200px;
+}
+
+div.iconoJuegoDetalleDescripcion {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin-left: 200px;
+    margin-top: 30px;
+    border-radius: 50%;
+    border: 4px solid;
+    border-color: rgb(41, 13, 107);
+    background-color: rgb(52, 18, 131);
+}
+
+img.iconoJuegoDetalleDescripcion {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.juegoDetalleDiv {
+    float: left;
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 600px;
+}
+
+h2.tituloJuegoDetalle {
+    color: $pink;
+    text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
+}
+
+p.descripcionJuegoDetalle {
+    color: $blue;
+    text-shadow: 0 0 10px $blue, 0 0 20px $blue, 0 0 30px $blue, 0 0 40px $blue;
+}

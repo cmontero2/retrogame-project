@@ -20,12 +20,36 @@ p {
   overflow: hidden;
   -webkit-box-shadow: 0 0 5px #e607fa, 0 0 5px #e607fa, 0 0 5px #e607fa, 0 0 5px #e607fa;
           box-shadow: 0 0 5px #e607fa, 0 0 5px #e607fa, 0 0 5px #e607fa, 0 0 5px #e607fa;
-  height: 330px;
+  height: 370px;
   float: left;
   border-radius: 5px;
   border-style: groove;
   border-width: 1px;
   border-color: #e607fa;
   margin-top: 20px;
+}
+
+.botonJugar {
+  margin-left: 130px;
+}
+
+.botonLeerMas {
+  position: absolute;
+  top: 94%;
+  left: 36%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.nombre {
+  text-align: center;
+}
+
+.lineaHorizontal {
+  border-top: 1px solid #e607fa;
+}
+
+.descripcion {
+  color: #09eaf8;
 }
 /*# sourceMappingURL=lista-juegos.component.css.map */

@@ -20,6 +20,7 @@ export class ListaJuegosService {
     
     //JSON
     //Devuelve todos los juegos
+    /*
     getJuegos() :Juego[] {
         const juegos: Juego[] = [];
         data.forEach((juego: any) => {
@@ -29,8 +30,10 @@ export class ListaJuegosService {
         });
         return juegos;
     }
+    */
 
     //JSON
+    /*
     getJuegosPorCategoriaId(categoriaId: string) :Juego[] {
         const juegos: Juego[] = [];
         data.forEach((juego: any) => {
@@ -44,8 +47,10 @@ export class ListaJuegosService {
         })
         return juegos;
     }
+    */
 
     //JSON
+    /*
     getCategoriaNombres(categoriaId: number[]) :string[] {
         const categoriaNombres: string[] = [];
         for(let i = 0; i < categoriaId.length; i++) {
@@ -57,4 +62,5 @@ export class ListaJuegosService {
         }
         return categoriaNombres;
     }
+    */
 }

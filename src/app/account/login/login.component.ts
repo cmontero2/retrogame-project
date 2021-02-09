@@ -7,9 +7,11 @@ import { AccountService } from '../../services/account.service';
 
 @Component({ templateUrl: 'login.component.html' })
 export class LoginComponent implements OnInit {
-    form: FormGroup;
+    form!: FormGroup;
     loading = false;
     submitted = false;
+    user!: string;
+    pass!: string;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -36,12 +38,14 @@ export class LoginComponent implements OnInit {
         this.alertService.clear();
 
         // stop here if form is invalid
-        if (this.form.invalid) {
+        /*if (this.form.invalid) {
             return;
-        }
+        }*/
 
+        console.log("user: " + this.user);
+        console.log("pass: " + this.user);
         this.loading = true;
-        this.accountService.login(this.f.username.value, this.f.password.value)
+        this.accountService.login(this.user, this.pass)
             .pipe(first())
             .subscribe({
                 next: () => {

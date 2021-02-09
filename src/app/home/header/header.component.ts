@@ -11,25 +11,13 @@ import { LoginComponent } from '../login/login.component';
 export class HeaderComponent {
   login: boolean = false;
 
-  constructor(private auth: AuthGuardService, private modalService: NgbModal) {
-    this.auth.isLoggedIn()
-      .subscribe(
-        data => {
-          this.login = data;
-          console.log('login', this.login);
-
-        },
-        error => {
-          console.log(error);
-        });
-
-  }
+  constructor(private modalService: NgbModal) { }
   //modal login
   doLogin() {
     const modalRef = this.modalService.open(LoginComponent);
   }
 
   logout() {
-    this.auth.logout();
+
   }
 }

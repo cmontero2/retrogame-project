@@ -14,7 +14,6 @@ import { ScrollBarModule } from './scroll-bar/scroll-bar.module';
 import { ContactoComponent } from './contacto/contacto.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import {HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { LoginComponent } from './login/login.component';
     CategoriasComponent,
     FooterComponent,
     ContactoComponent,
-    LoginComponent
   ],
   imports: [
     BrowserModule,

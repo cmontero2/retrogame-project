@@ -7,18 +7,21 @@
 </ul>
 -->
 
+<script src="../../../assets/js/leermas.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-md-4" *ngFor="let juego of juegos">
-            <div class="divJuegos borde">
+            <div class="divJuegos borde" id="status">
                 <img src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo">
                 <h3>{{juego.nombre}}</h3>
                 <button type="button" class="btn btn-success">Jugar</button>
+                <button onclick="toggle()" id="btnToggle">Leer más</button>
                 <p>{{juego.descripcion}}</p>
             </div>
         </div>
     </div>
 </div>
+
 <!---->
 <!--Bootstrap cards-->
 <!--

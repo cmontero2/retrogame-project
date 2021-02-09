@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeModule } from './home/home.module';
 import { JuegosModule } from './juegos/juegos.module';
+import { JuegoDetalleModule } from './juego-detalle/juego-detalle.module';
 import { ForoModule } from './foro/foro.module';
 import { CategoriasComponent } from './home/categorias/categorias.component';
 import { CategoriasService } from './home/categorias/categorias.service';
@@ -29,7 +30,8 @@ import { ContactoComponent } from './contacto/contacto.component';
     JuegosModule,
     ForoModule,
     ScrollBarModule, 
-    HttpClientModule
+    HttpClientModule,
+    JuegoDetalleModule
   ],
   exports: [HomeModule],
   providers: [CategoriasService],

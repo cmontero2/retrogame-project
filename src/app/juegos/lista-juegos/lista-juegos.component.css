@@ -12,7 +12,20 @@ p {
 }
 
 .logo {
-  width: 150px;
+  width: 100%;
   height: 150px;
+}
+
+.divJuegos {
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 5px #e607fa, 0 0 5px #e607fa, 0 0 5px #e607fa, 0 0 5px #e607fa;
+          box-shadow: 0 0 5px #e607fa, 0 0 5px #e607fa, 0 0 5px #e607fa, 0 0 5px #e607fa;
+  height: 330px;
+  float: left;
+  border-radius: 5px;
+  border-style: groove;
+  border-width: 1px;
+  border-color: #e607fa;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=lista-juegos.component.css.map */

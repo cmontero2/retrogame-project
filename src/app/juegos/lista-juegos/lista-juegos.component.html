@@ -9,19 +9,26 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4 divJuegos" *ngFor="let juego of juegos">
-            <img src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo">
-            <h3>{{juego.nombre}}</h3>
+        <div class="col-md-4" *ngFor="let juego of juegos">
+            <div class="divJuegos borde">
+                <img src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo">
+                <h3>{{juego.nombre}}</h3>
+                <button type="button" class="btn btn-success">Jugar</button>
+                <p>{{juego.descripcion}}</p>
+            </div>
         </div>
     </div>
 </div>
-
+<!---->
+<!--Bootstrap cards-->
+<!--
 <div class="container">
     <div class="card-columns">
-        <div class="card" style="width: 300px;" *ngFor="let juego of juegos">
+        <div class="card borde" style="width: 300px;" *ngFor="let juego of juegos">
             <img class="card-img-top" src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo" alt="foto">
             <div class="card-header">
-                <!--<a [routerLink]="['/juego', juego.id]"><h2 class="text-primary"></h2>{{juego.nombre}}</h2></a>-->
+                <h3>{{juego.nombre}}</h3>
+                //<a [routerLink]="['/juego', juego.id]"><h2 class="text-primary"></h2>{{juego.nombre}}</h2></a>//
             </div>
             <div class="card-body">
                 <p>Lorem Ipsum</p>
@@ -29,3 +36,4 @@
         </div>
     </div>
 </div>
+-->

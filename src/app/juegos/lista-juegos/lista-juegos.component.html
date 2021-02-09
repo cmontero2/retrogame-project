@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 divJuegos" *ngFor="let juego of juegos">
-            <img src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.png" class="logo">
+            <img src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo">
             <h3>{{juego.nombre}}</h3>
         </div>
     </div>
@@ -19,7 +19,7 @@
 <div class="container">
     <div class="card-columns">
         <div class="card" style="width: 300px;" *ngFor="let juego of juegos">
-            <img class="card-img-top" src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.png" class="logo" alt="foto">
+            <img class="card-img-top" src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo" alt="foto">
             <div class="card-header">
                 <!--<a [routerLink]="['/juego', juego.id]"><h2 class="text-primary"></h2>{{juego.nombre}}</h2></a>-->
             </div>

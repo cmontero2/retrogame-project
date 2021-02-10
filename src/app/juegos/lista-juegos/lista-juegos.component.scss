@@ -23,11 +23,35 @@ p {
 .divJuegos {
     overflow: hidden;
     box-shadow: 0 0 5px $pink, 0 0 5px $pink, 0 0 5px $pink, 0 0 5px $pink;
-    height: 330px;
+    height: 370px;
     float: left;
     border-radius: 5px;
     border-style: groove;
     border-width: 1px;
     border-color: $pink;
     margin-top: 20px;
+}
+
+.botonJugar {
+    margin-left: 130px;
+}
+
+.botonLeerMas {
+    position: absolute;
+    top: 94%;
+    left: 36%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.nombre {
+    text-align: center;
+}
+
+.lineaHorizontal {
+    border-top: 1px solid $pink;
+}
+
+.descripcion {
+    color: $blue;
 }

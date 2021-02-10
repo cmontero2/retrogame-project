@@ -13,10 +13,12 @@
         <div class="col-md-4" *ngFor="let juego of juegos">
             <div class="divJuegos borde" id="status">
                 <img src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo">
-                <h3>{{juego.nombre}}</h3>
-                <button type="button" class="btn btn-success">Jugar</button>
-                <button onclick="toggle()" id="btnToggle">Leer más</button>
+                <h3 class="nombre">{{juego.nombre}}</h3>
+                <button type="button" class="btn btn-success botonJugar">Jugar</button>
+                <hr class="lineaHorizontal">
+                <h5 class="descripcion">Descripcion</h5>
                 <p>{{juego.descripcion}}</p>
+                <button type="button" class="btn btn-primary botonLeerMas">Leer más</button>
             </div>
         </div>
     </div>

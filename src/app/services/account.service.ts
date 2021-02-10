@@ -25,7 +25,6 @@ export class AccountService {
     }
 
     login(username: any, password: any) {
-        console.log("hola buenos dias");
         return this.http.post<User>(URL_API.SERVER_URL_API + "users/authenticate", { username, password })
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -39,7 +38,7 @@ export class AccountService {
         // remove user from local storage and set current user to null
         localStorage.removeItem('user');
         this.userSubject.next(new User());
-        this.router.navigate(['/home/login']);
+        this.router.navigate(['/home']);
     }
 
     register(user: User) {

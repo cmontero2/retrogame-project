@@ -113,6 +113,7 @@ export class LoginComponent implements OnInit {
       this.activeModal.close();
     }
 
+    //para loguear
     onSubmit() {
         this.submitted = true;
 
@@ -144,4 +145,6 @@ export class LoginComponent implements OnInit {
                 }
             });
     }
+
+    
 }

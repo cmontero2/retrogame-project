@@ -4,7 +4,7 @@
             <span class=""><i class="fas fa-bars"></i></span>                
         </button>
     </div>
-    <div class="col-md-6 logo">
+    <div class="col-md-5 logo">
         <a routerLink="/home">
             <img src="../../../assets/img/logo-Retrogame.png" class="imgLogo"/>
         </a>
@@ -12,10 +12,13 @@
             <input type="text" class="busqueda" placeholder="Buscar juegos"/> 
         </form>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-3">
         <a class="nav-link foroEnlace glow" routerLink="/foro/foro-container"> FORO </a> 
-        <button type="button" *ngIf="!user" class="btn btn-primary loginButton" (click)="doLogin()">LOGIN</button>
-        <button type="button" *ngIf="user" class="btn btn-primary loginButton" (click)="doLogout()" routerLink="">LOGOUT</button>
+        <button type="button" *ngIf="!user.id" class="btn btn-primary loginButton" (click)="doLogin()">LOGIN</button>
+        <!--<a class="nav-link PerfilEnlace">
+            PERFIL
+        </a>-->
+        <button type="button" *ngIf="user.id" class="btn btn-primary loginButton" (click)="doLogout()" routerLink="">LOGOUT</button>
     </div>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <app-categorias></app-categorias>

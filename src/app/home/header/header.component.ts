@@ -3,6 +3,7 @@ import { AuthGuardService } from '../../services/auth-guard.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from '../login/login.component';
 import { AccountService } from '../../services/account.service';
+import { User } from '../../account/user';
 
 @Component({
   selector: 'app-header',
@@ -11,21 +12,21 @@ import { AccountService } from '../../services/account.service';
 })
 export class HeaderComponent {
   login: boolean = false;
-  user: any;
-  constructor(private modalService: NgbModal, private AccountService: AccountService) { }
+  user: User;
+  constructor(private modalService: NgbModal, private AccountService: AccountService) {
+    this.user = new User();
+  }
   
   //se necesita suscribir a accountservice para que mantenga actualizado la variable de login
   ngOnInit(): void {
     this.AccountService.user.subscribe(
-      usuario=>
-      this.user= usuario
+      data => { this.user = data ? data : new User();}
     );
-    console.log("asadsasdasd " + this.user);
   }
 
   //modal login
   doLogin() {
-    const modalRef = this.modalService.open(LoginComponent);
+    this.modalService.open(LoginComponent);
   }
 
   //para desloguear

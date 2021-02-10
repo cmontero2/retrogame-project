@@ -9,20 +9,30 @@
     <span class="cerrar" aria-hidden="true">&times;</span>
   </button>
 </div>
-<form>
+<form name="editForm" (ngSubmit)="onSubmit()" [formGroup]="editForm">
   <div class="modal-body">
     <div class="label"><label>Usuario</label></div>
-    <div><input type="text" placeholder="Introduce tu usuario" /></div>
+    <div><input type="text" formControlName="user" placeholder="Introduce tu usuario" /></div>
+    <div *ngIf="editForm.get('user')!.invalid && (editForm.get('user')!.dirty || editForm.get('user')!.touched)">
+      <small class="form-text text-danger"
+             *ngIf="editForm.get('user')?.errors?.required">
+      Campo requerido
+      </small>
+    </div>
     <div class="label"><label>Contraseña</label></div>
-    <div><input type="password" placeholder="Introduce tu contraseña" /></div>
+    <div><input type="password" formControlName="pass" placeholder="Introduce tu contraseña" /></div>
+    <div *ngIf="editForm.get('pass')!.invalid && (editForm.get('pass')!.dirty || editForm.get('pass')!.touched)">
+      <small class="form-text text-danger"
+             *ngIf="editForm.get('pass')?.errors?.required">
+      Campo requerido
+      </small>
+    </div>
   </div>
   <div class="modal-footer">
     <a class="nav-link RegistrateEnlace" (click)="doRegister()">
       REGISTRATE
     </a>
     <button
-      type="button"
-      (click)="login()"
       class="btn btn-primary loginButton"
       routerLink=""
     >

@@ -129,7 +129,7 @@ export class LoginComponent implements OnInit {
 
         const usuario = this.createFromForm();
         //this.subscribeToSaveResponse(this.usuarioService.create(usuario)); // Cuando este creado la clase usuario y la clase UsuarioService
-        console.log("Usuario: " + JSON.stringify(usuario, null, 2));
+        
         this.cerrarModal();
         this.accountService.login(usuario.user, usuario.pass)
             .pipe(first())

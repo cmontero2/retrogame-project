@@ -4,7 +4,7 @@
             <span class=""><i class="fas fa-bars"></i></span>                
         </button>
     </div>
-    <div class="col-md-6 logo">
+    <div class="col-md-4 logo">
         <a routerLink="/home">
             <img src="../../../assets/img/logo-Retrogame.png" class="imgLogo"/>
         </a>
@@ -12,10 +12,16 @@
             <input type="text" class="busqueda" placeholder="Buscar juegos"/> 
         </form>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-4">
         <a class="nav-link foroEnlace glow" routerLink="/foro/foro-container"> FORO </a> 
-        <button type="button" *ngIf="!login" class="btn btn-primary loginButton" (click)="doLogin()">LOGIN</button>
-        <button type="button" *ngIf="login" class="btn btn-primary loginButton" (click)="logout()" routerLink="">LOGOUT</button>
+        <button type="button" *ngIf="!user.id" class="btn btn-primary loginButton" (click)="doLogin()">LOGIN</button>
+        <a *ngIf="user.id" class="nav-link PerfilEnlace" [routerLink]="['/perfil', user.id]">
+            PERFIL
+        </a>
+        <a *ngIf="user.rol_id==1" class="nav-link SubirJuego" routerLink="/empresa">
+            SUBIR JUEGO
+        </a>
+        <button type="button" *ngIf="user.id" class="btn btn-primary loginButton" (click)="doLogout()" routerLink="">LOGOUT</button>
     </div>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <app-categorias></app-categorias>

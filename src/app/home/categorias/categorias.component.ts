@@ -14,6 +14,7 @@ export class CategoriasComponent implements OnInit {
   constructor(private categoriasService: CategoriasService) { }
 
   ngOnInit(): void {
+
     this.categoriasService.findAll()
     .subscribe(
       data =>{

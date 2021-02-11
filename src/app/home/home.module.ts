@@ -8,9 +8,10 @@ import { RegistroComponent } from './registro/registro.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PerfilComponent } from './perfil/perfil.component';
+import { EmpresaComponent } from './empresa/empresa.component';
 
 @NgModule({
-  declarations: [HomeContainerComponent, LoginComponent, NoticiasComponent, RegistroComponent, PerfilComponent],
+  declarations: [HomeContainerComponent, LoginComponent, NoticiasComponent, RegistroComponent, PerfilComponent, EmpresaComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

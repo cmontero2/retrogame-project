@@ -20,6 +20,7 @@ $pink:#e607fa;
         margin: 20px;
         text-decoration: none;
         color: $blue;
+        transition: color 0.3s ease;
 
         &:hover {
             color: $pink;

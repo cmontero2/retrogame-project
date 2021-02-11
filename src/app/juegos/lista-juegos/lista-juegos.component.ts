@@ -57,18 +57,6 @@ export class ListaJuegosComponent implements OnInit {
     this.route.params.subscribe(parameters => {
       this.id = parameters.id;
     })
-
-    this.categoriasService.findById(this.id)
-    .subscribe(
-      data => {
-        this.categoria = data
-      },
-      error => {
-        console.log(error)
-      }
-    )
-
-
   }
 }
 

@@ -1,14 +1,9 @@
-<div class="categoriaDetalleContainer">
+<div class="categoriaDetalleContainer" *ngFor="let categoria of categoria">
     <div class="iconoCategoriaDetalle">
-        <img src="../../../assets/img/logoCategorias/plataforma.png" class="iconoCategoriaDetalle">
+        <img src="../../../assets/img/logoCategorias/{{categoria.nombre}}.png" class="iconoCategoriaDetalle">
     </div>
     <div class="categoriaDetalleDiv">
-        <h2 class="tituloCategoriaDetalle">{{categoria.id}}</h2>
-        <p class="descripcionCategoriaDetalle">
-            Descripción: Los videojuegos de plataformas, o simplemente plataformas, 
-            son un género de videojuegos que se caracterizan por tener que caminar, 
-            orrer, saltar o escalar sobre una serie de plataformas y acantilados, 
-            con enemigos, mientras se recogen objetos para poder completar el juego. 
-        </p>
+        <h2 class="tituloCategoriaDetalle">{{categoria.nombre}}</h2>
+        <p class="descripcionCategoriaDetalle">{{categoria.descripcion}}</p>
     </div>
 </div>

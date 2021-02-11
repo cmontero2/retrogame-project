@@ -16,6 +16,7 @@ export class CategoriasService {
     }
 
     findById(id: number): Observable<any> {
+        console.log("Categoria PATH: " + this.baseUrl + "?categoria=" + id)
         return this.http.get(this.baseUrl + "?categoria=" + id);
     }
 

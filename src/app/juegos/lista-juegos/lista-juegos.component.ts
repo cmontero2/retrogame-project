@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IJuego } from './juego';
-//import { IJuego } from './juego';
+import { ICategoria } from 'src/app/home/categorias/categoria';
+import { CategoriasService } from '../../home/categorias/categorias.service';
 import { ListaJuegosService } from '../../services/lista-juegos.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -43,24 +44,31 @@ export class ListaJuegosComponent implements OnInit {
 export class ListaJuegosComponent implements OnInit {
 
   juegos: IJuego[] = [];
+  id!: number;
+  categoria?: ICategoria;
 
   constructor(
     private listaJuegosService: ListaJuegosService,
+    private categoriasService: CategoriasService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.listaJuegosService.findAll()
+    this.route.params.subscribe(parameters => {
+      this.id = parameters.id;
+    })
+
+    this.categoriasService.findById(this.id)
     .subscribe(
       data => {
-        this.juegos = data
-        console.log('juego', this.juegos)
+        this.categoria = data
       },
       error => {
         console.log(error)
       }
-      );
-    console.log(this.juegos);
+    )
+
+
   }
 }
 

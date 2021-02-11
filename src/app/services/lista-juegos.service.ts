@@ -17,6 +17,10 @@ export class ListaJuegosService {
         console.log(this.http.get(this.baseUrl));
         return this.http.get(this.baseUrl);
     }
+
+    findById(id: number): Observable<any> {
+        return this.http.get(this.baseUrl + "?juego=" + id)
+    }
     
     //JSON
     //Devuelve todos los juegos

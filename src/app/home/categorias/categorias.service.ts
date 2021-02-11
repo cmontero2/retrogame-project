@@ -15,6 +15,10 @@ export class CategoriasService {
         return this.http.get(this.baseUrl);
     }
 
+    findById(id: number): Observable<any> {
+        return this.http.get(this.baseUrl + "?categoria=" + id);
+    }
+
     async getCategorias(): Promise<any> {
         const response = await fetch(this.baseUrl, {
 	        'mode': 'cors',

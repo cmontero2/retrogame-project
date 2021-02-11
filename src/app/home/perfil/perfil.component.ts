@@ -12,8 +12,10 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class PerfilComponent implements OnInit {
   public user: any;
   public id: number = 0;
+  public imgPath?: String;
+
   constructor(private fb: FormBuilder, private accountService: AccountService, private activatedRoute: ActivatedRoute) {
-    const user = accountService.user;
+    // this.user = accountService.user;
    }
   
   editForm = this.fb.group({
@@ -30,12 +32,14 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.accountService.user;
-    console.log("user " + JSON.stringify(this.user, null, 2));
+    // console.log("user " + JSON.stringify(this.user, null, 2));
+    console.log(this.user);
     //recojo los datos de la ruta
     this.activatedRoute.params.subscribe((parametros: Params) => {
       this.id = parametros.user;
       console.log("id " + this.id);
     });
+    this.imgPath = `../../../assets/img/usuarios/user${this.id}.png`;
   }
 
 }

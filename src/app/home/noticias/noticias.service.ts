@@ -14,7 +14,6 @@ export class NoticiasService {
     findAll(): Observable<any> {
         return this.http.get(this.baseUrl);
     }
-
     
     getNoticias() :Noticia[] {
         const noticias: Noticia[] = [];

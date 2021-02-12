@@ -15,8 +15,8 @@ export class NoticiasComponent implements OnInit {
   constructor(private noticiasService: NoticiasService) { }
 
   ngOnInit(): void {
-    this.noticias = this.noticiasService.getNoticias();
-    /*
+    // this.noticias = this.noticiasService.getNoticias();
+    
     this.noticiasService.findAll()
     .subscribe(
       data =>{
@@ -26,7 +26,7 @@ export class NoticiasComponent implements OnInit {
       error =>{
         console.log(error);
       })
-      */
+      
   }
 
 }

@@ -2,4 +2,5 @@
 <div class="noticias" *ngFor="let noticia of noticias">
     <h5>{{noticia.titulo}}</h5>
     <p>{{noticia.texto}}</p>
+    <button [routerLink]="['/noticiaDetalle', noticia.id]" class="btn btn-primary verMasbtn">Ver más</button>
 </div>

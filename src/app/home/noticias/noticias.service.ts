@@ -15,7 +15,7 @@ export class NoticiasService {
         return this.http.get(this.baseUrl);
     }
 
-    /*
+    
     getNoticias() :Noticia[] {
         const noticias: Noticia[] = [];
         data.forEach((not: any) => {
@@ -23,5 +23,5 @@ export class NoticiasService {
         });
         return noticias; 
     }
-    */
+    
 }

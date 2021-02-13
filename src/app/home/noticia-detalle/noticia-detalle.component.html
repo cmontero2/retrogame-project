@@ -1,2 +1,5 @@
-<p>noticia-detalle works!</p>
-<!-- <p>{{noticia.titulo}}</p> -->
+<h2 *ngIf="noticias">{{ noticias[0].titulo }}</h2>
+<label *ngIf="noticias">{{ noticias[0].fecha}}</label> 
+<p *ngIf="noticias">{{ noticias[0].texto }}</p>
+<p *ngIf="!noticias">No existe la noticia</p>
+<img [src]="imgPath" alt="fotoNoticia"/>

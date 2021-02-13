@@ -1,0 +1,17 @@
+$pink:#e607fa;
+$blue:#09eaf8;
+h2 {
+  color: $blue;
+  text-shadow: 0 0 10px $pink, 0 0 20px $pink;
+    
+}
+p, label {
+  color: $blue;
+  text-align: justify;
+}
+
+img{
+  display: block;
+  margin: auto;
+  max-height: 400px;
+}

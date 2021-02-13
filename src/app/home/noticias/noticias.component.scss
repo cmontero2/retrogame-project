@@ -41,8 +41,8 @@ $blue:#09eaf8;
 }
 
 p {
-  white-space: nowrap; 
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis; 
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; 
 }

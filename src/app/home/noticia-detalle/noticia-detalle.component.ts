@@ -3,6 +3,7 @@ import data from '../../../assets/json/noticias.json';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Noticia } from '../noticias/noticia';
 import { NoticiasService } from '../noticias/noticias.service';
+import { NoticiasDetalleService } from './noticia-detalle.service';
 
 @Component({
   selector: 'app-noticia-detalle',
@@ -11,12 +12,12 @@ import { NoticiasService } from '../noticias/noticias.service';
 })
 export class NoticiaDetalleComponent implements OnInit {
   public id: number = 0;
-  private noticias?: Noticia[];
-  public noticia?: Noticia;
-
-  constructor(private activatedRoute: ActivatedRoute, private noticiasService: NoticiasService) {
+  public noticias?: Noticia[];
+  public imgPath?: String;
+  constructor(private activatedRoute: ActivatedRoute, private noticiasService: NoticiasService, private noticiasDetalleService: NoticiasDetalleService) {
 
   }
+  /*
   findById(id: number): Noticia {
     let result = new Noticia();
     if (this.noticias && this.noticias.length > 0) {
@@ -24,9 +25,12 @@ export class NoticiaDetalleComponent implements OnInit {
     }
     return result;
   }
-
+*/
   ngOnInit(): void {
-    this.noticiasService.findAll()
+    this.activatedRoute.params.subscribe((parametros: Params) => {
+      this.id = parametros.id;
+    });
+    this.noticiasDetalleService.findById(this.id)
       .subscribe(
         data => {
           this.noticias = data;
@@ -36,10 +40,7 @@ export class NoticiaDetalleComponent implements OnInit {
           console.log(error);
         });
 
-    this.activatedRoute.params.subscribe((parametros: Params) => {
-      this.id = parametros.id;
-    });
-    this.noticia = this.findById(this.id);
+        this.imgPath = `../../../assets/img/entradas/entrada${this.id}.png`;
   }
 
 

@@ -13,11 +13,17 @@ var registro_component_1 = require("./registro/registro.component");
 var perfil_component_1 = require("./perfil/perfil.component");
 var empresa_component_1 = require("./empresa/empresa.component");
 var noticia_detalle_component_1 = require("./noticia-detalle/noticia-detalle.component");
+var terminos_component_1 = require("./footer/terminos/terminos.component");
+var privacidad_component_1 = require("./footer/privacidad/privacidad.component");
+var cookies_component_1 = require("./footer/cookies/cookies.component");
 var routesHome = [
     { path: 'registro', component: registro_component_1.RegistroComponent },
     { path: 'perfil/:user', component: perfil_component_1.PerfilComponent },
     { path: 'empresa', component: empresa_component_1.EmpresaComponent },
-    { path: 'noticiaDetalle/:id', component: noticia_detalle_component_1.NoticiaDetalleComponent }
+    { path: 'noticiaDetalle/:id', component: noticia_detalle_component_1.NoticiaDetalleComponent },
+    { path: 'terminos', component: terminos_component_1.TerminosComponent },
+    { path: 'privacidad', component: privacidad_component_1.PrivacidadComponent },
+    { path: 'cookies', component: cookies_component_1.CookiesComponent },
 ];
 var HomeRoutingModule = /** @class */ (function () {
     function HomeRoutingModule() {

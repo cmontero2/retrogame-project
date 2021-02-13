@@ -8,7 +8,7 @@ import { EntradasComponent } from './foro/entradas/entradas.component';
 import { LoginComponent } from './home/login/login.component';
 import { RegistroComponent } from './home/registro/registro.component';
 import { JuegoContainerComponent } from './juegos/juego-container/juego-container.component';
-import { ContactoComponent } from './contacto/contacto.component';
+import { ContactoComponent } from './home/footer/contacto/contacto.component';
 import { JuegoDetalleContainerComponent } from './juego-detalle/juego-detalle-container/juego-detalle-container.component';
 
 const routes: Routes = [

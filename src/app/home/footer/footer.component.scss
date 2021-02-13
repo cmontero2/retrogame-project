@@ -9,6 +9,17 @@ $pink:#e607fa;
 .rrss{
     position: relative;
     text-align: center;
+    a, i {
+        margin: 20px;
+        text-decoration: none;
+        color: $blue;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $pink;
+            cursor: pointer;
+        }
+    }
 }
 .fab {
     margin: 20px;

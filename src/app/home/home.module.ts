@@ -10,9 +10,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PerfilComponent } from './perfil/perfil.component';
 import { EmpresaComponent } from './empresa/empresa.component';
 import { NoticiaDetalleComponent } from './noticia-detalle/noticia-detalle.component';
+import { TerminosComponent } from './footer/terminos/terminos.component';
+import { PrivacidadComponent } from './footer/privacidad/privacidad.component';
+import { CookiesComponent } from './footer/cookies/cookies.component';
 
 @NgModule({
-  declarations: [HomeContainerComponent, LoginComponent, NoticiasComponent, RegistroComponent, PerfilComponent, EmpresaComponent, NoticiaDetalleComponent],
+  declarations: [HomeContainerComponent, LoginComponent, NoticiasComponent, RegistroComponent, PerfilComponent, EmpresaComponent, NoticiaDetalleComponent, TerminosComponent, PrivacidadComponent, CookiesComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

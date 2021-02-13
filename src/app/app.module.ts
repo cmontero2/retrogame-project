@@ -12,7 +12,7 @@ import { CategoriasComponent } from './home/categorias/categorias.component';
 import { CategoriasService } from './home/categorias/categorias.service';
 import { FooterComponent } from './home/footer/footer.component';
 import { ScrollBarModule } from './scroll-bar/scroll-bar.module';
-import { ContactoComponent } from './contacto/contacto.component';
+import { ContactoComponent } from './home/footer/contacto/contacto.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import {HTTP_INTERCEPTORS } from '@angular/common/http';
 

@@ -9,15 +9,12 @@
   position: relative;
   text-align: center;
 }
-
 .rrss a, .rrss i {
   margin: 20px;
   text-decoration: none;
   color: #09eaf8;
-  -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
-
 .rrss a:hover, .rrss i:hover {
   color: #e607fa;
   cursor: pointer;
@@ -31,15 +28,12 @@
 .links {
   text-align: center;
 }
-
 .links a, .links i {
   margin: 20px;
   text-decoration: none;
   color: #09eaf8;
-  -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
-
 .links a:hover, .links i:hover {
   color: #e607fa;
   cursor: pointer;
@@ -49,4 +43,3 @@ i:hover {
   color: #e607fa;
   cursor: pointer;
 }
-/*# sourceMappingURL=footer.component.css.map */

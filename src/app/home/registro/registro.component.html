@@ -73,7 +73,7 @@
                 <input class="form-control-label" type="hidden" name="rol_id" id="rol_id" formControlName="rol_id" ng-value="3"/>
                 
               </div>
-              <button class="registerButton">REGISTRATE</button>
+              <button class="registerButton" [disabled]="userForm.invalid">REGISTRATE</button>
        </div>
     </form>
     <form name="companyForm" (ngSubmit)="register()" [formGroup]="companyForm" >
@@ -191,12 +191,12 @@
                     Campo requerido
                     </small>
                     <small class="form-text text-danger"
-                           *ngIf="companyForm.get('tlf')?.errors?.minlength">
+                           *ngIf="companyForm.get('telf')?.errors?.minlength">
                     Mínimo 9 letras
                     </small>
                     <small class="form-text text-danger"
-                           *ngIf="companyForm.get('tlf')?.errors?.maxlength">
-                    Mínimo 9 letras
+                           *ngIf="companyForm.get('telf')?.errors?.maxlength">
+                    Máximo 9 letras
                     </small>
                 </div>
     
@@ -211,7 +211,7 @@
                 </div>
                 <input type="hidden" name="rol_id" id="rol_id" formControlName="rol_id" value="1"/>
               </div>
-              <button class="registerButton">REGISTRATE</button>
+              <button class="registerButton" [disabled]="companyForm.invalid">REGISTRATE</button>
        </div>
           
     </form>    

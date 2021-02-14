@@ -122,11 +122,11 @@
                 Campo requerido
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('tlf')?.errors?.minlength">
+                       *ngIf="editForm.get('telf')?.errors?.minlength">
                 Mínimo 9 letras
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('tlf')?.errors?.maxlength">
+                       *ngIf="editForm.get('telf')?.errors?.maxlength">
                 Mínimo 9 letras
                 </small>
             </div>
@@ -140,7 +140,7 @@
                 Campo requerido
                 </small>
             </div>
-            <button class="btn botonGuardar" >Guardar</button>
+            <button class="btn botonGuardar" [disabled]="editForm.invalid" >Guardar</button>
         </form>
         
     </div>

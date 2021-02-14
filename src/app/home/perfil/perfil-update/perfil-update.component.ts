@@ -69,8 +69,11 @@ export class PerfilUpdateComponent implements OnInit {
   }
 
   update (){
-    const usuario = this.createFromForm();
-    this.accountService.update(this.id, usuario);
+    if (!this.editForm.invalid) {
+      const usuario = this.createFromForm();
+      this.accountService.update(this.id, usuario);
+    }
+    
   }
 
 }

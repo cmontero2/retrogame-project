@@ -11,7 +11,7 @@
 </div>
 <form>
   <div class="modal-body">
-    <form name="editForm" (ngSubmit)="register()" [formGroup]="editForm" >
+    <form name="userForm" (ngSubmit)="register()" [formGroup]="userForm">
       <div class="sign-up-nav" [class.active-company]="isCompany">
         <span
           class="user-type"
@@ -31,47 +31,47 @@
           <!-- Formulario jugador -->
           <div class="form-group">
             <label class="form-control-label" for="username">Usuario</label>
-            <input type="text" class="form-control" name="username" id="username"
+            <input type="text" class="form-control" name="username" id="username" (change)="prueba()"
                    formControlName="username" placeholder="Introduce tu usuario"/>
-            <div *ngIf="editForm.get('username')!.invalid && (editForm.get('username')!.dirty || editForm.get('username')!.touched)">
+            <div *ngIf="userForm.get('username')!.invalid && (userForm.get('username')!.dirty || userForm.get('username')!.touched)">
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('username')?.errors?.required">
+                       *ngIf="userForm.get('username')?.errors?.required">
                 Campo requerido
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('username')?.errors?.minlength">
+                       *ngIf="userForm.get('username')?.errors?.minlength">
                 Mínimo 4 letras
                 </small>
             </div>
 
             <label class="form-control-label" for="password">Contraseña</label>
-            <input type="password" class="form-control" name="password" id="password"
+            <input type="password" class="form-control" name="password" id="password" (change)="prueba()"
                    formControlName="password" placeholder="Introduce tu contraseña"/>
-            <div *ngIf="editForm.get('password')!.invalid && (editForm.get('password')!.dirty || editForm.get('password')!.touched)">
+            <div *ngIf="userForm.get('password')!.invalid && (userForm.get('password')!.dirty || userForm.get('password')!.touched)">
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('password')?.errors?.required">
+                       *ngIf="userForm.get('password')?.errors?.required">
                 Campo requerido
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('password')?.errors?.minlength">
+                       *ngIf="userForm.get('password')?.errors?.minlength">
                 Mínimo 4 letras
                 </small>
             </div>
 
             <label class="form-control-label" for="email">Email</label>
-            <input type="text" class="form-control" name="email" id="email"
+            <input type="text" class="form-control" name="email" id="email" (change)="prueba()"
                    formControlName="email" placeholder="Introduce tu correo"/>
-            <div *ngIf="editForm.get('email')!.invalid && (editForm.get('email')!.dirty || editForm.get('email')!.touched)">
+            <div *ngIf="userForm.get('email')!.invalid && (userForm.get('email')!.dirty || userForm.get('email')!.touched)">
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('email')?.errors?.required">
+                       *ngIf="userForm.get('email')?.errors?.required">
                 Campo requerido
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('email')?.errors?.email">
+                       *ngIf="userForm.get('email')?.errors?.email">
                 Email incorrecto
                 </small>
             </div>
-            <input class="form-control-label" type="hidden" name="rol_id" id="rol_id" formControlName="rol_id" ng-value="3"/>
+            <!-- <input class="form-control" type="hidden" name="rol_id" id="rol_id" formControlName="rol_id"/> -->
             
         </div>
 
@@ -82,13 +82,13 @@
             <label class="form-control-label" for="username">Usuario</label>
             <input type="text" class="form-control" name="username" id="username"
                    formControlName="username" placeholder="Introduce tu usuario"/>
-            <div *ngIf="editForm.get('username')!.invalid && (editForm.get('username')!.dirty || editForm.get('username')!.touched)">
+            <div *ngIf="userForm.get('username')!.invalid && (userForm.get('username')!.dirty || userForm.get('username')!.touched)">
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('username')?.errors?.required">
+                       *ngIf="userForm.get('username')?.errors?.required">
                 Campo requerido
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('username')?.errors?.minlength">
+                       *ngIf="userForm.get('username')?.errors?.minlength">
                 Mínimo 4 letras
                 </small>
             </div>
@@ -96,13 +96,13 @@
             <label class="form-control-label" for="password">Contraseña</label>
             <input type="password" class="form-control" name="password" id="password"
                    formControlName="password" placeholder="Introduce tu contraseña"/>
-            <div *ngIf="editForm.get('password')!.invalid && (editForm.get('password')!.dirty || editForm.get('password')!.touched)">
+            <div *ngIf="userForm.get('password')!.invalid && (userForm.get('password')!.dirty || userForm.get('password')!.touched)">
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('password')?.errors?.required">
+                       *ngIf="userForm.get('password')?.errors?.required">
                 Campo requerido
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('password')?.errors?.minlength">
+                       *ngIf="userForm.get('password')?.errors?.minlength">
                 Mínimo 4 letras
                 </small>
             </div>
@@ -110,13 +110,13 @@
             <label class="form-control-label" for="email">Email</label>
             <input type="text" class="form-control" name="email" id="email"
                    formControlName="email" placeholder="Introduce tu correo"/>
-            <div *ngIf="editForm.get('email')!.invalid && (editForm.get('email')!.dirty || editForm.get('email')!.touched)">
+            <div *ngIf="userForm.get('email')!.invalid && (userForm.get('email')!.dirty || userForm.get('email')!.touched)">
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('email')?.errors?.required">
+                       *ngIf="userForm.get('email')?.errors?.required">
                 Campo requerido
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('email')?.errors?.email">
+                       *ngIf="userForm.get('email')?.errors?.email">
                 Mínimo 4 letras
                 </small>
             </div>
@@ -124,13 +124,13 @@
             <label class="form-control-label" for="nombre">Nombre</label>
             <input type="text" class="form-control" name="nombre" id="nombre"
                    formControlName="nombre" placeholder="Introduce tu nombre"/>
-            <div *ngIf="editForm.get('nombre')!.invalid && (editForm.get('nombre')!.dirty || editForm.get('nombre')!.touched)">
+            <div *ngIf="userForm.get('nombre')!.invalid && (userForm.get('nombre')!.dirty || userForm.get('nombre')!.touched)">
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('nombre')?.errors?.required">
+                       *ngIf="userForm.get('nombre')?.errors?.required">
                 Campo requerido
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('nombre')?.errors?.minlength">
+                       *ngIf="userForm.get('nombre')?.errors?.minlength">
                 Mínimo 4 letras
                 </small>
             </div>
@@ -138,17 +138,17 @@
             <label class="form-control-label" for="cif">CIF</label>
             <input type="text" class="form-control" name="cif" id="cif"
                    formControlName="cif" placeholder="Introduce tu CIF"/>
-            <div *ngIf="editForm.get('cif')!.invalid && (editForm.get('cif')!.dirty || editForm.get('cif')!.touched)">
+            <div *ngIf="userForm.get('cif')!.invalid && (userForm.get('cif')!.dirty || userForm.get('cif')!.touched)">
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('cif')?.errors?.required">
+                       *ngIf="userForm.get('cif')?.errors?.required">
                 Campo requerido
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('cif')?.errors?.minlength">
+                       *ngIf="userForm.get('cif')?.errors?.minlength">
                 Mínimo 9 letras
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('cif')?.errors?.maxlength">
+                       *ngIf="userForm.get('cif')?.errors?.maxlength">
                 Máximo 9 letras
                 </small>
             </div>
@@ -156,13 +156,13 @@
             <label class="form-control-label" for="direccion">Dirección</label>
             <input type="text" class="form-control" name="direccion" id="direccion"
                    formControlName="direccion" placeholder="Introduce tu dirección"/>
-            <div *ngIf="editForm.get('direccion')!.invalid && (editForm.get('direccion')!.dirty || editForm.get('direccion')!.touched)">
+            <div *ngIf="userForm.get('direccion')!.invalid && (userForm.get('direccion')!.dirty || userForm.get('direccion')!.touched)">
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('direccion')?.errors?.required">
+                       *ngIf="userForm.get('direccion')?.errors?.required">
                 Campo requerido
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('direccion')?.errors?.minlength">
+                       *ngIf="userForm.get('direccion')?.errors?.minlength">
                 Mínimo 5 letras
                 </small>
             </div> 
@@ -170,13 +170,13 @@
             <label class="form-control-label" for="poblacion">Población</label>
             <input type="text" class="form-control" name="poblacion" id="poblacion"
                    formControlName="poblacion" placeholder="Introduce tu población"/>
-            <div *ngIf="editForm.get('poblacion')!.invalid && (editForm.get('poblacion')!.dirty || editForm.get('poblacion')!.touched)">
+            <div *ngIf="userForm.get('poblacion')!.invalid && (userForm.get('poblacion')!.dirty || userForm.get('poblacion')!.touched)">
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('poblacion')?.errors?.required">
+                       *ngIf="userForm.get('poblacion')?.errors?.required">
                 Campo requerido
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('poblacion')?.errors?.minlength">
+                       *ngIf="userForm.get('poblacion')?.errors?.minlength">
                 Mínimo 4 letras
                 </small>
             </div> 
@@ -184,17 +184,17 @@
             <label class="form-control-label" for="telf">Teléfono</label>
             <input type="number" class="form-control" name="telf" id="telf"
                    formControlName="telf" placeholder="Introduce tu teléfono"/>
-            <div *ngIf="editForm.get('telf')!.invalid && (editForm.get('telf')!.dirty || editForm.get('telf')!.touched)">
+            <div *ngIf="userForm.get('telf')!.invalid && (userForm.get('telf')!.dirty || userForm.get('telf')!.touched)">
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('telf')?.errors?.required">
+                       *ngIf="userForm.get('telf')?.errors?.required">
                 Campo requerido
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('tlf')?.errors?.minlength">
+                       *ngIf="userForm.get('tlf')?.errors?.minlength">
                 Mínimo 9 letras
                 </small>
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('tlf')?.errors?.maxlength">
+                       *ngIf="userForm.get('tlf')?.errors?.maxlength">
                 Mínimo 9 letras
                 </small>
             </div>
@@ -202,9 +202,9 @@
             <label class="form-control-label" for="nacimiento">Fecha de nacimiento</label>
             <input type="date" class="form-control" name="nacimiento" id="nacimiento"
                    formControlName="nacimiento" placeholder="Introduce tu fecha de nacimiento"/>
-            <div *ngIf="editForm.get('nacimiento')!.invalid && (editForm.get('nacimiento')!.dirty || editForm.get('nacimiento')!.touched)">
+            <div *ngIf="userForm.get('nacimiento')!.invalid && (userForm.get('nacimiento')!.dirty || userForm.get('nacimiento')!.touched)">
                 <small class="form-text text-danger"
-                       *ngIf="editForm.get('nacimiento')?.errors?.required">
+                       *ngIf="userForm.get('nacimiento')?.errors?.required">
                 Campo requerido
                 </small>
             </div>
@@ -213,7 +213,7 @@
         </div>
       </div>
       
-      <button class="registerButton">REGISTRATE</button>
+      <button [disabled]="userForm.invalid" class="registerButton">REGISTRATE</button>
     </form>
   </div>
   <div class="modal-footer">

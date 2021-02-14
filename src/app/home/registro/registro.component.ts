@@ -11,7 +11,14 @@ import { AccountService } from '../../services/account.service';
 })
 export class RegistroComponent implements OnInit {
 
-  editForm = this.fb.group({
+  userForm = this.fb.group({
+    username: [null, [Validators.required, Validators.minLength(4)]],
+    password: [null, [Validators.required, Validators.minLength(4)]],
+    email: [null, [Validators.email, Validators.required]],
+    rol_id: ["3", []],
+  });
+
+  companyForm = this.fb.group({
     username: [null, [Validators.required, Validators.minLength(4)]],
     password: [null, [Validators.required, Validators.minLength(4)]],
     email: [null, [Validators.email, Validators.required]],
@@ -21,7 +28,7 @@ export class RegistroComponent implements OnInit {
     poblacion: [null, [Validators.required, Validators.minLength(4)]],
     telf: [null, [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
     nacimiento: [null, [Validators.required]],
-    rol_id: [null, [Validators.required]],
+    rol_id: [null, []],
   });
 
   public isCompany:boolean = false;
@@ -49,24 +56,30 @@ export class RegistroComponent implements OnInit {
   private createFromForm(): any { // Cambiar tipo de any a Usuario
     return {
       // ...new Usuario(), Crear clase usuario
-      username: this.editForm.get(['username'])!.value,
-      password: this.editForm.get(['password'])!.value,
-      email: this.editForm.get(['email'])!.value,
-      nombre: this.editForm.get(['nombre'])!.value,
-      cif: this.editForm.get(['cif'])!.value,
-      direccion: this.editForm.get(['direccion'])!.value,
-      poblacion: this.editForm.get(['poblacion'])!.value,
-      telf: this.editForm.get(['telf'])!.value,
-      nacimiento: this.editForm.get(['nacimiento'])!.value,
-      rol_id: this.editForm.get(['rol_id'])!.value,
+      username: this.userForm.get(['username'])!.value,
+      password: this.userForm.get(['password'])!.value,
+      email: this.userForm.get(['email'])!.value,
+      nombre: this.userForm.get(['nombre'])!.value,
+      cif: this.userForm.get(['cif'])!.value,
+      direccion: this.userForm.get(['direccion'])!.value,
+      poblacion: this.userForm.get(['poblacion'])!.value,
+      telf: this.userForm.get(['telf'])!.value,
+      nacimiento: this.userForm.get(['nacimiento'])!.value,
+      rol_id: this.userForm.get(['rol_id'])!.value,
     };
   }
 
   register(){
-    const usuario = this.createFromForm();
-    console.log("asd");
-    this.accountService.register(usuario);
-    this.cerrarModal();
+    if (!this.userForm.invalid) {
+      const usuario = this.createFromForm();
+      console.log("asd");
+      this.accountService.register(usuario);
+      this.cerrarModal();
+    }
+  }
+
+  prueba() {
+    console.log("Form invalid: " + this.userForm.get('rol_id')?.value);
   }
 
   cerrarModal() {

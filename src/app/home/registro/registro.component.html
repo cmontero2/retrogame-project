@@ -52,6 +52,10 @@
                        *ngIf="editForm.get('password')?.errors?.required">
                 Campo requerido
                 </small>
+                <small class="form-text text-danger"
+                       *ngIf="editForm.get('password')?.errors?.minlength">
+                Mínimo 4 letras
+                </small>
             </div>
 
             <label class="form-control-label" for="email">Email</label>
@@ -61,6 +65,10 @@
                 <small class="form-text text-danger"
                        *ngIf="editForm.get('email')?.errors?.required">
                 Campo requerido
+                </small>
+                <small class="form-text text-danger"
+                       *ngIf="editForm.get('email')?.errors?.email">
+                Email incorrecto
                 </small>
             </div>
             <input class="form-control-label" type="hidden" name="rol_id" id="rol_id" formControlName="rol_id" ng-value="3"/>
@@ -79,6 +87,10 @@
                        *ngIf="editForm.get('username')?.errors?.required">
                 Campo requerido
                 </small>
+                <small class="form-text text-danger"
+                       *ngIf="editForm.get('username')?.errors?.minlength">
+                Mínimo 4 letras
+                </small>
             </div>
 
             <label class="form-control-label" for="password">Contraseña</label>
@@ -88,6 +100,10 @@
                 <small class="form-text text-danger"
                        *ngIf="editForm.get('password')?.errors?.required">
                 Campo requerido
+                </small>
+                <small class="form-text text-danger"
+                       *ngIf="editForm.get('password')?.errors?.minlength">
+                Mínimo 4 letras
                 </small>
             </div>
 
@@ -99,6 +115,10 @@
                        *ngIf="editForm.get('email')?.errors?.required">
                 Campo requerido
                 </small>
+                <small class="form-text text-danger"
+                       *ngIf="editForm.get('email')?.errors?.email">
+                Mínimo 4 letras
+                </small>
             </div>
 
             <label class="form-control-label" for="nombre">Nombre</label>
@@ -108,6 +128,10 @@
                 <small class="form-text text-danger"
                        *ngIf="editForm.get('nombre')?.errors?.required">
                 Campo requerido
+                </small>
+                <small class="form-text text-danger"
+                       *ngIf="editForm.get('nombre')?.errors?.minlength">
+                Mínimo 4 letras
                 </small>
             </div>
             
@@ -119,6 +143,14 @@
                        *ngIf="editForm.get('cif')?.errors?.required">
                 Campo requerido
                 </small>
+                <small class="form-text text-danger"
+                       *ngIf="editForm.get('cif')?.errors?.minlength">
+                Mínimo 9 letras
+                </small>
+                <small class="form-text text-danger"
+                       *ngIf="editForm.get('cif')?.errors?.maxlength">
+                Máximo 9 letras
+                </small>
             </div>
 
             <label class="form-control-label" for="direccion">Dirección</label>
@@ -128,6 +160,10 @@
                 <small class="form-text text-danger"
                        *ngIf="editForm.get('direccion')?.errors?.required">
                 Campo requerido
+                </small>
+                <small class="form-text text-danger"
+                       *ngIf="editForm.get('direccion')?.errors?.minlength">
+                Mínimo 5 letras
                 </small>
             </div> 
 
@@ -139,6 +175,10 @@
                        *ngIf="editForm.get('poblacion')?.errors?.required">
                 Campo requerido
                 </small>
+                <small class="form-text text-danger"
+                       *ngIf="editForm.get('poblacion')?.errors?.minlength">
+                Mínimo 4 letras
+                </small>
             </div> 
 
             <label class="form-control-label" for="telf">Teléfono</label>
@@ -148,6 +188,14 @@
                 <small class="form-text text-danger"
                        *ngIf="editForm.get('telf')?.errors?.required">
                 Campo requerido
+                </small>
+                <small class="form-text text-danger"
+                       *ngIf="editForm.get('tlf')?.errors?.minlength">
+                Mínimo 9 letras
+                </small>
+                <small class="form-text text-danger"
+                       *ngIf="editForm.get('tlf')?.errors?.maxlength">
+                Mínimo 9 letras
                 </small>
             </div>
 

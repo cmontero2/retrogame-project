@@ -10,7 +10,7 @@
       </form>      
     </div>
     <div class="col-md-8 divInfo">
-        <form name="editForm" [formGroup]="editForm">
+        <form name="editForm" [formGroup]="editForm" (ngSubmit)="update()">
             <label class="form-control-label" for="username">Usuario</label>
             <input type="text" class="form-control" name="username" id="username"
                 formControlName="username" placeholder="Introduce tu usuario"/>

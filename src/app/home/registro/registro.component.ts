@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, MinLengthValidator, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { AccountService } from '../../services/account.service';
 
 
 @Component({
@@ -13,18 +14,23 @@ export class RegistroComponent implements OnInit {
   editForm = this.fb.group({
     username: [null, [Validators.required, Validators.minLength(4)]],
     password: [null, [Validators.required, Validators.minLength(4)]],
-    email: [null, [Validators.email, Validators.required]],
+    email: [null, [Validators.email, Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
     nombre: [null, [Validators.required, Validators.minLength(4)]],
     cif: [null, [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
     direccion: [null, [Validators.required, Validators.minLength(5)]],
     poblacion: [null, [Validators.required, Validators.minLength(4)]],
     telf: [null, [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
     nacimiento: [null, [Validators.required]],
+    rol_id: [null, [Validators.required]],
   });
 
   public isCompany:boolean = false;
 
-  constructor(public activeModal: NgbActiveModal, private fb: FormBuilder) { }
+  constructor(
+    public activeModal: NgbActiveModal, 
+    private fb: FormBuilder,
+    private accountService: AccountService,
+    ) { }
 
   ngOnInit(): void {
   }
@@ -52,7 +58,15 @@ export class RegistroComponent implements OnInit {
       poblacion: this.editForm.get(['poblacion'])!.value,
       telf: this.editForm.get(['telf'])!.value,
       nacimiento: this.editForm.get(['nacimiento'])!.value,
+      rol_id: this.editForm.get(['rol_id'])!.value,
     };
+  }
+
+  register(){
+    const usuario = this.createFromForm();
+    console.log("asd");
+    this.accountService.register(usuario);
+    this.cerrarModal();
   }
 
   cerrarModal() {

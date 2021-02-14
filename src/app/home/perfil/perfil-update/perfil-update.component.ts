@@ -15,9 +15,13 @@ export class PerfilUpdateComponent implements OnInit {
   public id: number = 0;
   public imgPath?: String;
 
-  constructor(private fb: FormBuilder, private accountService: AccountService, private activatedRoute: ActivatedRoute) {
-     this.user = new User();
+  constructor(
+    private fb: FormBuilder, 
+    private accountService: AccountService, 
+    private activatedRoute: ActivatedRoute) {
+      this.user = new User();
    }
+
    editForm = this.fb.group({
     username: [null, [Validators.required, Validators.minLength(4)]],
     password: [null, [Validators.required, Validators.minLength(4)]],
@@ -40,14 +44,33 @@ export class PerfilUpdateComponent implements OnInit {
         this.user = data ? data : new User();  
       }
     );
-    
-    console.log(this.user);
-    //recojo los datos de la ruta
+  
+    //recojo los datos(id) de la ruta
     this.activatedRoute.params.subscribe((parametros: Params) => {
       this.id = parametros.id;
       console.log("id " + this.id);
     });
     this.imgPath = `../../../assets/img/usuarios/user${this.id}.png`;
+  }
+
+  private createFromForm(): any { // Cambiar tipo de any a Usuario
+    return {
+      // ...new Usuario(), Crear clase usuario
+      username: this.editForm.get(['username'])!.value,
+      password: this.editForm.get(['password'])!.value,
+      email: this.editForm.get(['email'])!.value,
+      nombre: this.editForm.get(['nombre'])!.value,
+      cif: this.editForm.get(['cif'])!.value,
+      direccion: this.editForm.get(['direccion'])!.value,
+      poblacion: this.editForm.get(['poblacion'])!.value,
+      telf: this.editForm.get(['telf'])!.value,
+      nacimiento: this.editForm.get(['nacimiento'])!.value,
+    };
+  }
+
+  update (){
+    const usuario = this.createFromForm();
+    this.accountService.update(this.id, usuario);
   }
 
 }

@@ -1,20 +1,11 @@
-<!--
-<ul *ngFor="let juego of juegos">
-    <li><a [routerLink]="['/juegos', categoria.id]">{{categoria.nombre}}</a></li>
-    <li><img src="../../../assets/img/logoGames/{{juego.imagen}}" class="logo"></li>
-    <li><h3>{{juego.nombre}}</h3></li>
-    <hr class="lineaDivisora">
-</ul>
--->
-
-<script src="../../../assets/js/leermas.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-md-4" *ngFor="let juego of juegos">
             <div class="divJuegos borde" id="status">
                 <img src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo">
                 <h3 class="nombre">{{juego.nombre}}</h3>
-                <button type="button" class="btn btn-success botonJugar">Jugar</button>
+                <a [routerLink]="['/juego', juego.id]" type="button" class="btn btn-success leerMas">Jugar</a>
+                <a href="#">Ver más</a>
                 <hr class="lineaHorizontal">
                 <h5 class="descripcion">Descripcion</h5>
                 <p>{{juego.descripcion}}</p>

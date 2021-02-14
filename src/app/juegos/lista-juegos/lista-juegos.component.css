@@ -29,8 +29,28 @@ p {
   margin-top: 20px;
 }
 
-.botonJugar {
+.leerMas {
   margin-left: 130px;
+  background-color: black;
+  color: #e607fa;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 25px #e607fa;
+          box-shadow: 0px 1px 25px #e607fa;
+  border-color: #e607fa;
+  text-shadow: #e607fa 1px 0 15px;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa;
+  margin-bottom: 20px;
+}
+
+.leerMas:hover {
+  background-color: #1C131D;
+}
+
+.leerMas:active {
+  background-color: #140116 !important;
+  color: #e607fa !important;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa !important;
+  border: #e607fa 3px solid !important;
 }
 
 .botonLeerMas {

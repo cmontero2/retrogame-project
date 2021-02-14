@@ -22,7 +22,7 @@ import {HTTP_INTERCEPTORS } from '@angular/common/http';
     HeaderComponent,
     CategoriasComponent,
     FooterComponent,
-    ContactoComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

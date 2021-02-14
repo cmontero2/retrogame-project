@@ -1,18 +1,12 @@
 <div class="juegoDetalleDescripccionContainer">
     <div class="iconoJuegoDetalleDescripcion">
-        <img src="../../../assets/img/logoGames/supermariobros.jpg" class="iconoJuegoDetalleDescripcion">
+        <img src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.jpg" class="iconoJuegoDetalleDescripcion">
     </div>
     <div class="juegoDetalleDiv">
-        <h2 class="tituloJuegoDetalle">Super Mario Bros</h2>
+        <h2 class="tituloJuegoDetalle">{{juego.nombre}}</h2>
+        <p class="descripcionJuegoDetalle">{{juego.descripcion}}</p>
         <p class="descripcionJuegoDetalle">
-            El juego describe las aventuras de dos fontaneros (plomeros), 
-            Mario, quien ya había aparecido en otros videojuegos previos, 
-            tales como Donkey Kong y Mario Bros y Luigi; ambos deben rescatar 
-            a la Princesa Peach, del Reino Champiñón, que fue secuestrada por 
-            el rey de los koopas, Bowser.
-        </p>
-        <p class="descripcionJuegoDetalle">
-            Empresa: Nintendo
+            Empresa: {{juego.empresa_id}}
         </p>
     </div>
 </div>

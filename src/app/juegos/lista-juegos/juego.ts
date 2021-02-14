@@ -2,17 +2,23 @@
 //Yii API
 export interface IJuego {
     id?: number;
-    nombre?: String;
+    nombre?: string;
     descripcion?: String;
+    visitas?: number;
+    empresa_id?: number;
     nombre_archivo?: String;
+    estado?: CharacterData;
 }
 
 export class Juego implements IJuego {
     constructor(
         public id?: number,
-        public nombre?: String,
+        public nombre?: string,
         public descripcion?: String,
-        public nombre_archivo?: String
+        public visitas?: number,
+        public empresa_id?: number,
+        public nombre_archivo?: String,
+        public estado?: CharacterData
     ) { }
 }
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { JuegoDetalleService } from '../services/juego-detalle.service';
+import { ListaJuegosService } from '../services/lista-juegos.service';
 import { JuegoDetalleContainerComponent } from './juego-detalle-container/juego-detalle-container.component';
 import { JuegoDetalleDescripcionComponent } from './juego-detalle-descripcion/juego-detalle-descripcion.component';
 import { JuegoComponent } from './juego/juego.component';
@@ -12,6 +12,6 @@ import { JuegoComponent } from './juego/juego.component';
     CommonModule
   ],
   exports: [JuegoDetalleContainerComponent],
-  providers: [JuegoDetalleService]
+  providers: [ListaJuegosService]
 })
 export class JuegoDetalleModule { }

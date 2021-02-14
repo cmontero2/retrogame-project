@@ -14,12 +14,15 @@ export class ListaJuegosService {
 
     //Yii API
     findAll(): Observable<any> {
-        console.log(this.http.get(this.baseUrl));
         return this.http.get(this.baseUrl);
     }
 
     findById(id: number): Observable<any> {
         return this.http.get(this.baseUrl + "?juego=" + id)
+    }
+
+    findGamesIdByCategoryId(id: number): Observable<any> {
+        return this.http.get(URL_API.SERVER_URL_API + "juegos-categoria?categoria=" + id);
     }
     
     //JSON

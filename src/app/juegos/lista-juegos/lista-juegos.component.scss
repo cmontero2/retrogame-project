@@ -32,8 +32,25 @@ p {
     margin-top: 20px;
 }
 
-.botonJugar {
+.leerMas {
     margin-left: 130px;
+    background-color: black;
+    color: $pink;
+    border-radius: 5px;
+    box-shadow: 0px 1px 25px $pink;
+    border-color: $pink;
+    text-shadow: $pink 1px 0 15px;
+    text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
+    margin-bottom: 20px;
+    &:hover{
+        background-color: #1C131D;
+    }
+    &:active{
+        background-color: #140116 !important; 
+        color:$pink !important;
+        text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink !important;        
+        border: $pink 3px solid !important;
+    } 
 }
 
 .botonLeerMas {

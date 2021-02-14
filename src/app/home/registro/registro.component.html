@@ -9,214 +9,215 @@
     <span class="cerrar" aria-hidden="true">&times;</span>
   </button>
 </div>
-<form>
-  <div class="modal-body">
-    <form name="userForm" (ngSubmit)="register()" [formGroup]="userForm">
-      <div class="sign-up-nav" [class.active-company]="isCompany">
-        <span
-          class="user-type"
-          [class.active]="!isCompany"
-          (click)="setCompany(false)"
-          >JUGADOR</span
-        >
-        <span
-          class="user-type"
-          [class.active]="isCompany"
-          (click)="setCompany(true)"
-          >EMPRESA</span
-        >
-      </div>
-      <div class="form-container">
-        <div *ngIf="!isCompany">
-          <!-- Formulario jugador -->
-          <div class="form-group">
-            <label class="form-control-label" for="username">Usuario</label>
-            <input type="text" class="form-control" name="username" id="username" (change)="prueba()"
-                   formControlName="username" placeholder="Introduce tu usuario"/>
-            <div *ngIf="userForm.get('username')!.invalid && (userForm.get('username')!.dirty || userForm.get('username')!.touched)">
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('username')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('username')?.errors?.minlength">
-                Mínimo 4 letras
-                </small>
-            </div>
 
-            <label class="form-control-label" for="password">Contraseña</label>
-            <input type="password" class="form-control" name="password" id="password" (change)="prueba()"
-                   formControlName="password" placeholder="Introduce tu contraseña"/>
-            <div *ngIf="userForm.get('password')!.invalid && (userForm.get('password')!.dirty || userForm.get('password')!.touched)">
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('password')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('password')?.errors?.minlength">
-                Mínimo 4 letras
-                </small>
-            </div>
-
-            <label class="form-control-label" for="email">Email</label>
-            <input type="text" class="form-control" name="email" id="email" (change)="prueba()"
-                   formControlName="email" placeholder="Introduce tu correo"/>
-            <div *ngIf="userForm.get('email')!.invalid && (userForm.get('email')!.dirty || userForm.get('email')!.touched)">
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('email')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('email')?.errors?.email">
-                Email incorrecto
-                </small>
-            </div>
-            <!-- <input class="form-control" type="hidden" name="rol_id" id="rol_id" formControlName="rol_id"/> -->
-            
-        </div>
-
-        </div>
-        <div *ngIf="isCompany">
-          <!-- Formulario Empresa -->
-          <div class="form-group">
-            <label class="form-control-label" for="username">Usuario</label>
-            <input type="text" class="form-control" name="username" id="username"
-                   formControlName="username" placeholder="Introduce tu usuario"/>
-            <div *ngIf="userForm.get('username')!.invalid && (userForm.get('username')!.dirty || userForm.get('username')!.touched)">
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('username')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('username')?.errors?.minlength">
-                Mínimo 4 letras
-                </small>
-            </div>
-
-            <label class="form-control-label" for="password">Contraseña</label>
-            <input type="password" class="form-control" name="password" id="password"
-                   formControlName="password" placeholder="Introduce tu contraseña"/>
-            <div *ngIf="userForm.get('password')!.invalid && (userForm.get('password')!.dirty || userForm.get('password')!.touched)">
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('password')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('password')?.errors?.minlength">
-                Mínimo 4 letras
-                </small>
-            </div>
-
-            <label class="form-control-label" for="email">Email</label>
-            <input type="text" class="form-control" name="email" id="email"
-                   formControlName="email" placeholder="Introduce tu correo"/>
-            <div *ngIf="userForm.get('email')!.invalid && (userForm.get('email')!.dirty || userForm.get('email')!.touched)">
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('email')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('email')?.errors?.email">
-                Mínimo 4 letras
-                </small>
-            </div>
-
-            <label class="form-control-label" for="nombre">Nombre</label>
-            <input type="text" class="form-control" name="nombre" id="nombre"
-                   formControlName="nombre" placeholder="Introduce tu nombre"/>
-            <div *ngIf="userForm.get('nombre')!.invalid && (userForm.get('nombre')!.dirty || userForm.get('nombre')!.touched)">
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('nombre')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('nombre')?.errors?.minlength">
-                Mínimo 4 letras
-                </small>
-            </div>
-            
-            <label class="form-control-label" for="cif">CIF</label>
-            <input type="text" class="form-control" name="cif" id="cif"
-                   formControlName="cif" placeholder="Introduce tu CIF"/>
-            <div *ngIf="userForm.get('cif')!.invalid && (userForm.get('cif')!.dirty || userForm.get('cif')!.touched)">
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('cif')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('cif')?.errors?.minlength">
-                Mínimo 9 letras
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('cif')?.errors?.maxlength">
-                Máximo 9 letras
-                </small>
-            </div>
-
-            <label class="form-control-label" for="direccion">Dirección</label>
-            <input type="text" class="form-control" name="direccion" id="direccion"
-                   formControlName="direccion" placeholder="Introduce tu dirección"/>
-            <div *ngIf="userForm.get('direccion')!.invalid && (userForm.get('direccion')!.dirty || userForm.get('direccion')!.touched)">
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('direccion')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('direccion')?.errors?.minlength">
-                Mínimo 5 letras
-                </small>
-            </div> 
-
-            <label class="form-control-label" for="poblacion">Población</label>
-            <input type="text" class="form-control" name="poblacion" id="poblacion"
-                   formControlName="poblacion" placeholder="Introduce tu población"/>
-            <div *ngIf="userForm.get('poblacion')!.invalid && (userForm.get('poblacion')!.dirty || userForm.get('poblacion')!.touched)">
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('poblacion')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('poblacion')?.errors?.minlength">
-                Mínimo 4 letras
-                </small>
-            </div> 
-
-            <label class="form-control-label" for="telf">Teléfono</label>
-            <input type="number" class="form-control" name="telf" id="telf"
-                   formControlName="telf" placeholder="Introduce tu teléfono"/>
-            <div *ngIf="userForm.get('telf')!.invalid && (userForm.get('telf')!.dirty || userForm.get('telf')!.touched)">
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('telf')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('tlf')?.errors?.minlength">
-                Mínimo 9 letras
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('tlf')?.errors?.maxlength">
-                Mínimo 9 letras
-                </small>
-            </div>
-
-            <label class="form-control-label" for="nacimiento">Fecha de nacimiento</label>
-            <input type="date" class="form-control" name="nacimiento" id="nacimiento"
-                   formControlName="nacimiento" placeholder="Introduce tu fecha de nacimiento"/>
-            <div *ngIf="userForm.get('nacimiento')!.invalid && (userForm.get('nacimiento')!.dirty || userForm.get('nacimiento')!.touched)">
-                <small class="form-text text-danger"
-                       *ngIf="userForm.get('nacimiento')?.errors?.required">
-                Campo requerido
-                </small>
-            </div>
-            <input type="hidden" name="rol_id" id="rol_id" formControlName="rol_id" value="1"/>
-        </div>
-        </div>
-      </div>
-      
-      <button [disabled]="userForm.invalid" class="registerButton">REGISTRATE</button>
+<div class="modal-body">
+       <div class="sign-up-nav" [class.active-company]="isCompany">
+              <span
+                     class="user-type"
+                     [class.active]="!isCompany"
+                     (click)="setCompany(false)"
+                     >JUGADOR</span
+              >
+              <span
+                     class="user-type"
+                     [class.active]="isCompany"
+                     (click)="setCompany(true)"
+                     >EMPRESA</span
+              >
+       </div>
+    <form name="userForm" (ngSubmit)="register()" [formGroup]="userForm" >
+       <div *ngIf="!isCompany">
+              <!-- Formulario jugador -->
+              <div class="form-group">
+                <label class="form-control-label" for="username">Usuario</label>
+                <input type="text" class="form-control" name="username" id="username"
+                       formControlName="username" placeholder="Introduce tu usuario"/>
+                <div *ngIf="userForm.get('username')!.invalid && (userForm.get('username')!.dirty || userForm.get('username')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="userForm.get('username')?.errors?.required">
+                    Campo requerido
+                    </small>
+                    <small class="form-text text-danger"
+                           *ngIf="userForm.get('username')?.errors?.minlength">
+                    Mínimo 4 letras
+                    </small>
+                </div>
+    
+                <label class="form-control-label" for="password">Contraseña</label>
+                <input type="password" class="form-control" name="password" id="password"
+                       formControlName="password" placeholder="Introduce tu contraseña"/>
+                <div *ngIf="userForm.get('password')!.invalid && (userForm.get('password')!.dirty || userForm.get('password')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="userForm.get('password')?.errors?.required">
+                    Campo requerido
+                    </small>
+                    <small class="form-text text-danger"
+                           *ngIf="userForm.get('password')?.errors?.minlength">
+                    Mínimo 4 letras
+                    </small>
+                </div>
+    
+                <label class="form-control-label" for="email">Email</label>
+                <input type="text" class="form-control" name="email" id="email"
+                       formControlName="email" placeholder="Introduce tu correo"/>
+                <div *ngIf="userForm.get('email')!.invalid && (userForm.get('email')!.dirty || userForm.get('email')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="userForm.get('email')?.errors?.required">
+                    Campo requerido
+                    </small>
+                    <small class="form-text text-danger"
+                           *ngIf="userForm.get('email')?.errors?.email">
+                    Email incorrecto
+                    </small>
+                </div>
+                <input class="form-control-label" type="hidden" name="rol_id" id="rol_id" formControlName="rol_id" ng-value="3"/>
+                
+              </div>
+              <button class="registerButton">REGISTRATE</button>
+       </div>
     </form>
-  </div>
-  <div class="modal-footer">
+    <form name="companyForm" (ngSubmit)="register()" [formGroup]="companyForm" >
+       <div *ngIf="isCompany">
+              <!-- Formulario Empresa -->
+              <div class="form-group">
+                <label class="form-control-label" for="username">Usuario</label>
+                <input type="text" class="form-control" name="username" id="username"
+                       formControlName="username" placeholder="Introduce tu usuario"/>
+                <div *ngIf="companyForm.get('username')!.invalid && (companyForm.get('username')!.dirty || companyForm.get('username')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('username')?.errors?.required">
+                    Campo requerido
+                    </small>
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('username')?.errors?.minlength">
+                    Mínimo 4 letras
+                    </small>
+                </div>
+    
+                <label class="form-control-label" for="password">Contraseña</label>
+                <input type="password" class="form-control" name="password" id="password"
+                       formControlName="password" placeholder="Introduce tu contraseña"/>
+                <div *ngIf="companyForm.get('password')!.invalid && (companyForm.get('password')!.dirty || companyForm.get('password')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('password')?.errors?.required">
+                    Campo requerido
+                    </small>
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('password')?.errors?.minlength">
+                    Mínimo 4 letras
+                    </small>
+                </div>
+    
+                <label class="form-control-label" for="email">Email</label>
+                <input type="text" class="form-control" name="email" id="email"
+                       formControlName="email" placeholder="Introduce tu correo"/>
+                <div *ngIf="companyForm.get('email')!.invalid && (companyForm.get('email')!.dirty || companyForm.get('email')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('email')?.errors?.required">
+                    Campo requerido
+                    </small>
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('email')?.errors?.email">
+                    Mínimo 4 letras
+                    </small>
+                </div>
+    
+                <label class="form-control-label" for="nombre">Nombre</label>
+                <input type="text" class="form-control" name="nombre" id="nombre"
+                       formControlName="nombre" placeholder="Introduce tu nombre"/>
+                <div *ngIf="companyForm.get('nombre')!.invalid && (companyForm.get('nombre')!.dirty || companyForm.get('nombre')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('nombre')?.errors?.required">
+                    Campo requerido
+                    </small>
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('nombre')?.errors?.minlength">
+                    Mínimo 4 letras
+                    </small>
+                </div>
+                
+                <label class="form-control-label" for="cif">CIF</label>
+                <input type="text" class="form-control" name="cif" id="cif"
+                       formControlName="cif" placeholder="Introduce tu CIF"/>
+                <div *ngIf="companyForm.get('cif')!.invalid && (companyForm.get('cif')!.dirty || companyForm.get('cif')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('cif')?.errors?.required">
+                    Campo requerido
+                    </small>
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('cif')?.errors?.minlength">
+                    Mínimo 9 letras
+                    </small>
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('cif')?.errors?.maxlength">
+                    Máximo 9 letras
+                    </small>
+                </div>
+    
+                <label class="form-control-label" for="direccion">Dirección</label>
+                <input type="text" class="form-control" name="direccion" id="direccion"
+                       formControlName="direccion" placeholder="Introduce tu dirección"/>
+                <div *ngIf="companyForm.get('direccion')!.invalid && (companyForm.get('direccion')!.dirty || companyForm.get('direccion')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('direccion')?.errors?.required">
+                    Campo requerido
+                    </small>
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('direccion')?.errors?.minlength">
+                    Mínimo 5 letras
+                    </small>
+                </div> 
+    
+                <label class="form-control-label" for="poblacion">Población</label>
+                <input type="text" class="form-control" name="poblacion" id="poblacion"
+                       formControlName="poblacion" placeholder="Introduce tu población"/>
+                <div *ngIf="companyForm.get('poblacion')!.invalid && (companyForm.get('poblacion')!.dirty || companyForm.get('poblacion')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('poblacion')?.errors?.required">
+                    Campo requerido
+                    </small>
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('poblacion')?.errors?.minlength">
+                    Mínimo 4 letras
+                    </small>
+                </div> 
+    
+                <label class="form-control-label" for="telf">Teléfono</label>
+                <input type="number" class="form-control" name="telf" id="telf"
+                       formControlName="telf" placeholder="Introduce tu teléfono"/>
+                <div *ngIf="companyForm.get('telf')!.invalid && (companyForm.get('telf')!.dirty || companyForm.get('telf')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('telf')?.errors?.required">
+                    Campo requerido
+                    </small>
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('tlf')?.errors?.minlength">
+                    Mínimo 9 letras
+                    </small>
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('tlf')?.errors?.maxlength">
+                    Mínimo 9 letras
+                    </small>
+                </div>
+    
+                <label class="form-control-label" for="nacimiento">Fecha de nacimiento</label>
+                <input type="date" class="form-control" name="nacimiento" id="nacimiento"
+                       formControlName="nacimiento" placeholder="Introduce tu fecha de nacimiento"/>
+                <div *ngIf="companyForm.get('nacimiento')!.invalid && (companyForm.get('nacimiento')!.dirty || companyForm.get('nacimiento')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="companyForm.get('nacimiento')?.errors?.required">
+                    Campo requerido
+                    </small>
+                </div>
+                <input type="hidden" name="rol_id" id="rol_id" formControlName="rol_id" value="1"/>
+              </div>
+              <button class="registerButton">REGISTRATE</button>
+       </div>
+          
+    </form>    
+ 
+</div>
+<div class="modal-footer">
 
-  </div>
-</form>
+</div>
+

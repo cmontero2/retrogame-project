@@ -28,7 +28,7 @@ export class RegistroComponent implements OnInit {
     poblacion: [null, [Validators.required, Validators.minLength(4)]],
     telf: [null, [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
     nacimiento: [null, [Validators.required]],
-    rol_id: [null, []],
+    rol_id: ["1", []],
   });
 
   public isCompany:boolean = false;
@@ -47,39 +47,49 @@ export class RegistroComponent implements OnInit {
   }
 
   save(): void {
-    const usuario = this.createFromForm();
+    //const usuario = this.createFromForm();
     // this.subscribeToSaveResponse(this.usuarioService.create(usuario)); // Cuando este creado la clase usuario y la clase UsuarioService
-    console.log("Usuario: " + JSON.stringify(usuario, null, 2));
+    //console.log("Usuario: " + JSON.stringify(usuario, null, 2));
     this.cerrarModal();
   }
 
-  private createFromForm(): any { // Cambiar tipo de any a Usuario
+  private createFromFormUser(): any { 
     return {
       // ...new Usuario(), Crear clase usuario
       username: this.userForm.get(['username'])!.value,
       password: this.userForm.get(['password'])!.value,
       email: this.userForm.get(['email'])!.value,
-      nombre: this.userForm.get(['nombre'])!.value,
-      cif: this.userForm.get(['cif'])!.value,
-      direccion: this.userForm.get(['direccion'])!.value,
-      poblacion: this.userForm.get(['poblacion'])!.value,
-      telf: this.userForm.get(['telf'])!.value,
-      nacimiento: this.userForm.get(['nacimiento'])!.value,
       rol_id: this.userForm.get(['rol_id'])!.value,
+    };
+  }
+
+  private createFromFormCompany(): any { 
+    return {
+      // ...new Usuario(), Crear clase usuario
+      username: this.companyForm.get(['username'])!.value,
+      password: this.companyForm.get(['password'])!.value,
+      email: this.companyForm.get(['email'])!.value,
+      nombre: this.companyForm.get(['nombre'])!.value,
+      cif: this.companyForm.get(['cif'])!.value,
+      direccion: this.companyForm.get(['direccion'])!.value,
+      poblacion: this.companyForm.get(['poblacion'])!.value,
+      telf: this.companyForm.get(['telf'])!.value,
+      nacimiento: this.companyForm.get(['nacimiento'])!.value,
+      rol_id: this.companyForm.get(['rol_id'])!.value,
     };
   }
 
   register(){
     if (!this.userForm.invalid) {
-      const usuario = this.createFromForm();
-      console.log("asd");
+      const usuario = this.createFromFormUser();
+      this.accountService.register(usuario);
+      this.cerrarModal();
+    } else if(!this.companyForm.invalid){
+      const usuario = this.createFromFormCompany();
       this.accountService.register(usuario);
       this.cerrarModal();
     }
-  }
-
-  prueba() {
-    console.log("Form invalid: " + this.userForm.get('rol_id')?.value);
+    
   }
 
   cerrarModal() {

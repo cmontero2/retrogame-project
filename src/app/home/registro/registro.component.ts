@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, MinLengthValidator, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AccountService } from '../../services/account.service';
-
+import {Md5} from 'ts-md5/dist/md5';
 
 @Component({
   selector: 'app-registro',
@@ -16,6 +16,9 @@ export class RegistroComponent implements OnInit {
     password: [null, [Validators.required, Validators.minLength(4)]],
     email: [null, [Validators.email, Validators.required]],
     rol_id: ["3", []],
+    nivel_foro_id:["1",[]],
+    estado: ["P",[]],
+    token: [this.generaNss(), []],
   });
 
   companyForm = this.fb.group({
@@ -29,45 +32,44 @@ export class RegistroComponent implements OnInit {
     telf: [null, [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
     nacimiento: [null, [Validators.required]],
     rol_id: ["1", []],
+    nivel_foro_id:["1",[]],
+    estado: ["P",[]],
+    token: [this.generaNss(), []]
   });
 
   public isCompany:boolean = false;
-
+  public md5 = new Md5();
   constructor(
     public activeModal: NgbActiveModal, 
     private fb: FormBuilder,
     private accountService: AccountService,
+    
     ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {     
+    
   }
 
   setCompany(isCompany: boolean) {
     this.isCompany = isCompany
   }
 
-  save(): void {
-    //const usuario = this.createFromForm();
-    // this.subscribeToSaveResponse(this.usuarioService.create(usuario)); // Cuando este creado la clase usuario y la clase UsuarioService
-    //console.log("Usuario: " + JSON.stringify(usuario, null, 2));
-    this.cerrarModal();
-  }
-
   private createFromFormUser(): any { 
     return {
-      // ...new Usuario(), Crear clase usuario
-      username: this.userForm.get(['username'])!.value,
-      password: this.userForm.get(['password'])!.value,
+      user: this.userForm.get(['username'])!.value,
+      password: this.md5.appendStr(this.userForm.get(['password'])!.value).end(),
       email: this.userForm.get(['email'])!.value,
       rol_id: this.userForm.get(['rol_id'])!.value,
+      nivel_foro_id: this.userForm.get(['nivel_foro_id'])!.value,
+      estado: this.userForm.get(['estado'])!.value,
+      token: this.userForm.get(['token'])!.value
     };
   }
 
   private createFromFormCompany(): any { 
     return {
-      // ...new Usuario(), Crear clase usuario
-      username: this.companyForm.get(['username'])!.value,
-      password: this.companyForm.get(['password'])!.value,
+      user: this.companyForm.get(['username'])!.value,
+      password: this.md5.appendStr(this.companyForm.get(['password'])!.value).end(),
       email: this.companyForm.get(['email'])!.value,
       nombre: this.companyForm.get(['nombre'])!.value,
       cif: this.companyForm.get(['cif'])!.value,
@@ -76,17 +78,26 @@ export class RegistroComponent implements OnInit {
       telf: this.companyForm.get(['telf'])!.value,
       nacimiento: this.companyForm.get(['nacimiento'])!.value,
       rol_id: this.companyForm.get(['rol_id'])!.value,
+      nivel_foro_id: this.userForm.get(['nivel_foro_id'])!.value,
+      estado: this.userForm.get(['estado'])!.value,
+      token: this.userForm.get(['token'])!.value
     };
   }
 
   register(){
     if (!this.userForm.invalid) {
       const usuario = this.createFromFormUser();
-      this.accountService.register(usuario);
+      this.accountService.register(usuario).subscribe(
+        data=>console.log("data " + data),
+        error=> console.log(error)
+      );
       this.cerrarModal();
     } else if(!this.companyForm.invalid){
       const usuario = this.createFromFormCompany();
-      this.accountService.register(usuario);
+      this.accountService.register(usuario).subscribe(
+        data=>console.log("data " + data),
+        error=> console.log(error)
+      );
       this.cerrarModal();
     }
     
@@ -95,4 +106,18 @@ export class RegistroComponent implements OnInit {
   cerrarModal() {
     this.activeModal.close();
   }
+  
+  //genera el token
+  generaNss() {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = 10;
+    for (let i = 0; i < charactersLength; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return result;
+  }
+
+
 }

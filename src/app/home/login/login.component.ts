@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
 
     doRegister(){
       this.activeModal.close();
-      const modalRef = this.modalService.open(RegistroComponent);
+      this.modalService.open(RegistroComponent);
     }
 
     login(){

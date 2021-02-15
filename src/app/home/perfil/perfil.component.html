@@ -4,15 +4,14 @@
     </div>
     <div class="col-md-8">
         <div class="col-md-7 divInfo">
-            <div>Usuario:</div>
-            <div>Contraseña:</div>
-            <div>Email:</div>
-            <div>Nombre:</div>
-            <div>CIF:</div>
-            <div>Dirección:</div>
-            <div>Población:</div>
-            <div>Teléfono:</div>
-            <div>Fecha de nacimiento:</div>
+            <div>Usuario: <span class="datos"> {{user.user}}</span></div>
+            <div>Email: <span class="datos"> {{user.email}}</span></div>
+            <div>Nombre: <span class="datos"> {{user.nombre}}</span></div>
+            <div>CIF: <span class="datos"> {{user.cif}}</span></div>
+            <div>Dirección: <span class="datos"> {{user.direccion}}</span></div>
+            <div>Población: <span class="datos"> {{user.poblacion}}</span></div>
+            <div>Teléfono: <span class="datos"> {{user.telf}}</span></div>
+            <div>Fecha de nacimiento: <span class="datos"> {{user.nacimiento}}</span></div>
         </div>        
     </div>
     <button class="btn botonEdit" [routerLink]="['/perfilUpdate', id]">Editar</button>    

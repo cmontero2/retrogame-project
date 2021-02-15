@@ -43,7 +43,6 @@ export class AccountService {
     }
 
     register(user: User) {
-        console.log("hola " + JSON.stringify(user));
         return this.http.post(URL_API.SERVER_URL_API + "users", user);
     }
 

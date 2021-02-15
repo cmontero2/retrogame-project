@@ -44,6 +44,7 @@ export class PerfilUpdateComponent implements OnInit {
         this.user = data ? data : new User();  
       }
     );
+
   
     //recojo los datos(id) de la ruta
     this.activatedRoute.params.subscribe((parametros: Params) => {
@@ -56,7 +57,7 @@ export class PerfilUpdateComponent implements OnInit {
   private createFromForm(): any { // Cambiar tipo de any a Usuario
     return {
       // ...new Usuario(), Crear clase usuario
-      username: this.editForm.get(['username'])!.value,
+      user: this.editForm.get(['username'])!.value,
       password: this.editForm.get(['password'])!.value,
       email: this.editForm.get(['email'])!.value,
       nombre: this.editForm.get(['nombre'])!.value,
@@ -71,7 +72,11 @@ export class PerfilUpdateComponent implements OnInit {
   update (){
     if (!this.editForm.invalid) {
       const usuario = this.createFromForm();
-      this.accountService.update(this.id, usuario);
+      console.log("asd "+JSON.stringify(usuario));
+      this.accountService.update(this.id, usuario).subscribe(
+        data=>console.log("data" + data),
+        error=> console.log(error)
+      );
     }
     
   }

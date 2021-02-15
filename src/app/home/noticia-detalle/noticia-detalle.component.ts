@@ -14,7 +14,11 @@ export class NoticiaDetalleComponent implements OnInit {
   public id: number = 0;
   public noticias?: Noticia[];
   public imgPath?: String;
-  constructor(private activatedRoute: ActivatedRoute, private noticiasService: NoticiasService, private noticiasDetalleService: NoticiasDetalleService) {
+  constructor(
+    private activatedRoute: ActivatedRoute, 
+    private noticiasService: NoticiasService, 
+    private noticiasDetalleService: NoticiasDetalleService
+  ) {
 
   }
   /*

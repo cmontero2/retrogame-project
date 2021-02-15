@@ -3,6 +3,7 @@ import { FormBuilder, MinLengthValidator, Validators } from '@angular/forms';
 import { User } from 'src/app/account/user';
 import { AccountService } from '../../services/account.service';
 import { ActivatedRoute, Params } from '@angular/router';
+import { PerfilService } from './perfil.service';
 
 @Component({
   selector: 'app-perfil',
@@ -14,8 +15,11 @@ export class PerfilComponent implements OnInit {
   public id: number = 0;
   public imgPath?: String;
 
-  constructor(private activatedRoute: ActivatedRoute) {
-    // this.user = accountService.user;
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private perfilService: PerfilService
+    ) {
+    
    }
 
   ngOnInit(): void {
@@ -24,6 +28,16 @@ export class PerfilComponent implements OnInit {
       console.log("id " + this.id);
     });
     this.imgPath = `../../../assets/img/usuarios/user${this.id}.png`;
+
+    this.perfilService.findById(this.id)
+      .subscribe(
+        data => {
+          this.user = data;
+          console.log('usuario ', this.user)
+        },
+        error => {
+          console.log(error);
+        });
   }
 
 }

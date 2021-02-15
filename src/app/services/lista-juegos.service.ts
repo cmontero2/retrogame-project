@@ -4,9 +4,6 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { URL_API } from "../services/app.constants";
 
-import data from '../../assets/json/juegos.json';
-import categorias from '../../assets/json/categorias.json';
-
 @Injectable({ providedIn: 'root'})
 export class ListaJuegosService {
     public baseUrl = URL_API.SERVER_URL_API + "juegos";
@@ -19,6 +16,10 @@ export class ListaJuegosService {
 
     findById(id: number): Observable<any> {
         return this.http.get(this.baseUrl + "?juego=" + id)
+    }
+
+    findByCompanyId(id: number): Observable<any> {
+        return this.http.get(this.baseUrl + "?empresa=" + id);
     }
 
     findGamesIdByCategoryId(id: number): Observable<any> {

@@ -10,6 +10,7 @@ import { RegistroComponent } from './home/registro/registro.component';
 import { JuegoContainerComponent } from './juegos/juego-container/juego-container.component';
 import { ContactoComponent } from './home/footer/contacto/contacto.component';
 import { JuegoDetalleContainerComponent } from './juego-detalle/juego-detalle-container/juego-detalle-container.component';
+import { UploadComponent } from './upload/upload.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'juegos/:id', component: JuegoContainerComponent},
   { path: 'registro', component: RegistroComponent },
   { path: 'contacto', component: ContactoComponent},
-  { path: 'juego/:id', component: JuegoDetalleContainerComponent}
+  { path: 'juego/:id', component: JuegoDetalleContainerComponent},
+  { path: 'upload', component: UploadComponent}
 ];
 
 @NgModule({

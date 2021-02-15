@@ -22,12 +22,15 @@ export class JuegoDetalleDescripcionComponent implements OnInit {
     this.route.params.subscribe(parameters => {
       this.id = parameters.id
 
+      this.juego
       this.listaJuegosService.findById(this.id)
       .subscribe(
         data => {
-          console.log(data);
           this.juego = data;
           console.log(this.juego);
+        },
+        error => {
+          console.log(error);
         }
       )
     })

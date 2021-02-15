@@ -10,8 +10,10 @@ import { ISeccion } from './seccion';
 })
 export class SeccionesComponent implements OnInit {
 
-  secciones:ISeccion[] = [];
-  constructor(private seccionesService: SeccionesService) { }
+  secciones:any;
+  constructor(private seccionesService: SeccionesService) {
+    
+   }
 
   ngOnInit(): void {
     //this.secciones = this.seccionesService.getSecciones();

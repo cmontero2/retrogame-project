@@ -1,21 +1,49 @@
 $pink:#e607fa;
 $blue:#09eaf8;
 
-.seccionesDiv {
-    margin-top: 60px;
+h4 {
+    text-align: center;
     color: $blue;
-    h4 {
-        text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
-        font-weight: bold;
-    }
+    padding: 2%;
 }
 
-.secciones {    
+.col-md-6{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    border: 2px solid #e607fa;
+    border-radius: 40px 40px 40px 40px;
+    text-align: center;
+}
+
+h1 {
     color: $blue;
-    h5 {
-        text-shadow: 0 0 10px $pink, 0 0 20px $pink;
-    }
-    p {
-        text-align: justify;
+    text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+h2 {
+    margin-bottom: 5%;
+    color: $blue;
+    text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
+    font-weight: bold;
+    text-align: center;
+}
+
+#sombra{
+    text-shadow: 0 0 10px $pink, 0 0 20px $pink;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: $blue;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $pink;
+        cursor: pointer;
     }
 }

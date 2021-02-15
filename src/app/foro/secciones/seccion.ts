@@ -3,7 +3,7 @@ export interface ISeccion {
     nombre?: string;
 }
 
-export class Seccion  implements ISeccion{
+export class Seccion implements ISeccion{
 
     constructor(
         public id?: number, 

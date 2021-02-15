@@ -1,7 +1,25 @@
-<p>secciones works!</p>
-<a routerLink="/foro/entradas">Entradas</a>
+<h1>¡Bienvenid@ al foro de Retrogame!</h1>
+<div class="col-md-12">
 
-<div class="seccionesDiv"><h4>Secciones</h4></div>
-<div class="secciones" *ngFor="let seccion of secciones">
-    <h5>{{seccion.nombre}}</h5>
+  <div class="col-md-6"><h4 id="sombra">Novedades / Actualizaciones :</h4>
+    <div *ngFor="let seccion of secciones">
+      <h4 *ngIf="seccion.id<5;"><a href="#">{{seccion.nombre}}</a></h4>
+    </div>
+  </div>
+
+  <div *ngFor="let seccion of secciones">
+    <div class="col-md-6" *ngIf="seccion.id<7 && seccion.id>4;">
+      <h4 id="sombra"><a href="#">{{seccion.nombre}}</a></h4>
+    </div>
+  </div>
+
+  <div class="col-md-6"><h4 id="sombra"><a href="#">Juegos :</a></h4>
+
+    <div *ngFor="let seccion of secciones">
+      <h4 *ngIf="seccion.id>6 && seccion.id<9;"><a href="#">{{seccion.nombre}}</a></h4>
+    </div>
+
+    <h4>.  .  .</h4>
+    
+  </div>
 </div>

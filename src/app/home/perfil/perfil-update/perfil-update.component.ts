@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, MinLengthValidator, Validators } from '@angular/forms';
 import { User } from 'src/app/account/user';
 import { AccountService } from '../../../services/account.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { PerfilService } from '../perfil.service';
 
 
 @Component({
@@ -14,11 +15,15 @@ export class PerfilUpdateComponent implements OnInit {
   public user: any;
   public id: number = 0;
   public imgPath?: String;
+  public userData?: any;
 
   constructor(
     private fb: FormBuilder, 
     private accountService: AccountService, 
-    private activatedRoute: ActivatedRoute) {
+    private activatedRoute: ActivatedRoute,
+    private perfilService: PerfilService,
+    private router: Router
+    ) {
       this.user = new User();
    }
 
@@ -26,12 +31,12 @@ export class PerfilUpdateComponent implements OnInit {
     username: [null, [Validators.required, Validators.minLength(4)]],
     password: [null, [Validators.required, Validators.minLength(4)]],
     email: [null, [Validators.email, Validators.required]],
-    nombre: [null, [Validators.required, Validators.minLength(4)]],
-    cif: [null, [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
-    direccion: [null, [Validators.required, Validators.minLength(5)]],
-    poblacion: [null, [Validators.required, Validators.minLength(4)]],
-    telf: [null, [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
-    nacimiento: [null, [Validators.required]],
+    nombre: [null, []],
+    cif: [null, []],
+    direccion: [null, []],
+    poblacion: [null, []],
+    telf: [null, []],
+    nacimiento: [null, []],
   });
 
   ngOnInit(): void {
@@ -45,12 +50,30 @@ export class PerfilUpdateComponent implements OnInit {
       }
     );
 
-  
     //recojo los datos(id) de la ruta
     this.activatedRoute.params.subscribe((parametros: Params) => {
       this.id = parametros.id;
-      console.log("id " + this.id);
     });
+
+    this.perfilService.findById(this.id)
+      .subscribe(
+        data => {
+          this.userData = data;
+          this.editForm.get('username')?.setValue(this.userData.user);
+          this.editForm.get('password')?.setValue(this.userData.password);
+          this.editForm.get('email')?.setValue(this.userData.email);
+          this.editForm.get('nombre')?.setValue(this.userData.nombre);
+          this.editForm.get('cif')?.setValue(this.userData.cif);
+          this.editForm.get('direccion')?.setValue(this.userData.direccion);
+          this.editForm.get('poblacion')?.setValue(this.userData.poblacion);
+          this.editForm.get('telf')?.setValue(this.userData.telf);
+          this.editForm.get('nacimiento')?.setValue(this.userData.nacimiento);
+        },
+        error => {
+          console.log(error);
+    });
+  
+    
     this.imgPath = `../../../assets/img/usuarios/user${this.id}.png`;
   }
 
@@ -61,10 +84,10 @@ export class PerfilUpdateComponent implements OnInit {
       password: this.editForm.get(['password'])!.value,
       email: this.editForm.get(['email'])!.value,
       nombre: this.editForm.get(['nombre'])!.value,
-      cif: this.editForm.get(['cif'])!.value,
+      CIF: this.editForm.get(['cif'])!.value,
       direccion: this.editForm.get(['direccion'])!.value,
       poblacion: this.editForm.get(['poblacion'])!.value,
-      telf: this.editForm.get(['telf'])!.value,
+      telefono: this.editForm.get(['telf'])!.value,
       nacimiento: this.editForm.get(['nacimiento'])!.value,
     };
   }
@@ -74,7 +97,9 @@ export class PerfilUpdateComponent implements OnInit {
       const usuario = this.createFromForm();
       console.log("asd "+JSON.stringify(usuario));
       this.accountService.update(this.id, usuario).subscribe(
-        data=>console.log("data" + data),
+        data=>{
+          this.router.navigate([`perfil/${this.id}`])
+        },
         error=> console.log(error)
       );
     }

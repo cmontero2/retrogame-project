@@ -13,7 +13,7 @@ export class PerfilService {
     }
 
     findById(id: number): Observable<any> {
-        console.log("perfil PATH: " + this.baseUrl + id)
+        //console.log("perfil PATH: " + this.baseUrl + id)
         return this.http.get(this.baseUrl + id);
     }
 

@@ -56,90 +56,30 @@
             <label class="form-control-label" for="nombre">Nombre</label>
             <input type="text" class="form-control" name="nombre" id="nombre"
                 formControlName="nombre" placeholder="Introduce tu nombre"/>
-            <div *ngIf=" user.rol_id==1 && editForm.get('nombre')!.invalid && (editForm.get('nombre')!.dirty || editForm.get('nombre')!.touched)">
-                <small class="form-text text-danger"
-                    *ngIf="editForm.get('nombre')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="editForm.get('nombre')?.errors?.minlength">
-                Mínimo 4 letras
-                </small>
-            </div>
+            
             
             <label class="form-control-label" for="cif">CIF</label>
             <input type="text" class="form-control" name="cif" id="cif"
                 formControlName="cif" placeholder="Introduce tu CIF"/>
-            <div *ngIf="user.rol_id==1 && editForm.get('cif')!.invalid && (editForm.get('cif')!.dirty || editForm.get('cif')!.touched)">
-                <small class="form-text text-danger"
-                    *ngIf="editForm.get('cif')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="editForm.get('cif')?.errors?.minlength">
-                Mínimo 9 letras
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="editForm.get('cif')?.errors?.maxlength">
-                Máximo 9 letras
-                </small>
-            </div>
 
             <label class="form-control-label" for="direccion">Dirección</label>
             <input type="text" class="form-control" name="direccion" id="direccion"
                 formControlName="direccion" placeholder="Introduce tu dirección"/>
-            <div *ngIf="user.rol_id==1 && editForm.get('direccion')!.invalid && (editForm.get('direccion')!.dirty || editForm.get('direccion')!.touched)">
-                <small class="form-text text-danger"
-                    *ngIf="editForm.get('direccion')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="editForm.get('direccion')?.errors?.minlength">
-                Mínimo 5 letras
-                </small>
-            </div> 
+            
 
             <label class="form-control-label" for="poblacion">Población</label>
             <input type="text" class="form-control" name="poblacion" id="poblacion"
                 formControlName="poblacion" placeholder="Introduce tu población"/>
-            <div *ngIf="user.rol_id==1 && editForm.get('poblacion')!.invalid && (editForm.get('poblacion')!.dirty || editForm.get('poblacion')!.touched)">
-                <small class="form-text text-danger"
-                    *ngIf="editForm.get('poblacion')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="editForm.get('poblacion')?.errors?.minlength">
-                Mínimo 4 letras
-                </small>
-            </div> 
+            
 
             <label class="form-control-label" for="telf">Teléfono</label>
             <input type="number" class="form-control" name="telf" id="telf"
                 formControlName="telf" placeholder="Introduce tu teléfono"/>
-            <div *ngIf="user.rol_id==1 && editForm.get('telf')!.invalid && (editForm.get('telf')!.dirty || editForm.get('telf')!.touched)">
-                <small class="form-text text-danger"
-                    *ngIf="editForm.get('telf')?.errors?.required">
-                Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="editForm.get('telf')?.errors?.minlength">
-                Mínimo 9 letras
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="editForm.get('telf')?.errors?.maxlength">
-                Mínimo 9 letras
-                </small>
-            </div>
 
             <label class="form-control-label" for="nacimiento">Fecha de nacimiento</label>
             <input type="date" class="form-control" name="nacimiento" id="nacimiento"
                 formControlName="nacimiento" placeholder="Introduce tu fecha de nacimiento"/>
-            <div *ngIf=" user.rol_id==1 && editForm.get('nacimiento')!.invalid && (editForm.get('nacimiento')!.dirty || editForm.get('nacimiento')!.touched)">
-                <small class="form-text text-danger"
-                    *ngIf="editForm.get('nacimiento')?.errors?.required">
-                Campo requerido
-                </small>
-            </div>
+            
             <button class="btn botonGuardar" [disabled]="editForm.invalid" >Guardar</button>
         </form>
         

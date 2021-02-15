@@ -3,7 +3,7 @@
         <img [src]="imgPath" alt="fotoPerfil"/>
     </div>
     <div class="col-md-8">
-        <div class="col-md-7 divInfo">
+        <div *ngIf="user" class="col-md-7 divInfo">
             <div>Usuario: <span class="datos"> {{user.user}}</span></div>
             <div>Email: <span class="datos"> {{user.email}}</span></div>
             <div>Nombre: <span class="datos"> {{user.nombre}}</span></div>

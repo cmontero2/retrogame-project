@@ -80,17 +80,12 @@ export class LoginComponent implements OnInit {
         // reset alerts on submit
         this.alertService.clear();
 
-        // stop here if form is invalid
-        /*if (this.form.invalid) {
-            return;
-        }*/
-
         this.loading = true;
 
         const usuario = this.createFromForm();
         //this.subscribeToSaveResponse(this.usuarioService.create(usuario)); // Cuando este creado la clase usuario y la clase UsuarioService
         
-        this.cerrarModal();
+        
         this.accountService.login(usuario.user, usuario.pass)
             .pipe(first())
             .subscribe({
@@ -98,12 +93,15 @@ export class LoginComponent implements OnInit {
                     // get return url from query parameters or default to home page
                     const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
                     this.router.navigateByUrl(returnUrl);
+                    this.cerrarModal();
+
                 },
                 error: error => {
                     this.alertService.error(error);
                     this.loading = false;
                 }
             });
+        
     }
 
     

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ListaJuegosService } from '../../services/lista-juegos.service';
 import { IJuego } from '../../juegos/lista-juegos/juego';
 import { ActivatedRoute } from '@angular/router';
+import { User } from 'src/app/account/user';
+import { AccountService } from 'src/app/services/account.service';
 
 @Component({
   selector: 'app-juego-detalle-descripcion',
@@ -11,10 +13,14 @@ import { ActivatedRoute } from '@angular/router';
 export class JuegoDetalleDescripcionComponent implements OnInit {
 
   juego!: IJuego;
+  user!: User;
+  empresaNombre!: String;
   id!: number;
+  idString!: String;
 
   constructor(
     private listaJuegosService: ListaJuegosService,
+    private accountService: AccountService,
     private route: ActivatedRoute
   ) { }
 
@@ -22,12 +28,17 @@ export class JuegoDetalleDescripcionComponent implements OnInit {
     this.route.params.subscribe(parameters => {
       this.id = parameters.id
 
-      this.juego
       this.listaJuegosService.findById(this.id)
       .subscribe(
         data => {
           this.juego = data;
-          console.log(this.juego);
+          this.accountService.getById(String(data.empresa_id))
+          .subscribe(
+            data => {
+              //this.empresaNombre = data.user;
+              console.log(this.empresaNombre);
+            }
+          )
         },
         error => {
           console.log(error);

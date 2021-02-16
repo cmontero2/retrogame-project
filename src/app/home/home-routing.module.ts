@@ -14,11 +14,11 @@ const routesHome: Routes = [
     {path: 'registro', component: RegistroComponent},
     {path: 'perfil/:id', component: PerfilComponent},
     {path: 'perfilUpdate/:id', component: PerfilUpdateComponent},
-    {path: 'empresa', component: EmpresaComponent},
     {path: 'noticiaDetalle/:id', component: NoticiaDetalleComponent},
     {path: 'terminos', component: TerminosComponent},
     {path: 'privacidad', component: PrivacidadComponent},
     {path: 'cookies', component: CookiesComponent},
+    {path: 'upload', component: EmpresaComponent},
   
 ];
 

@@ -15,7 +15,6 @@ import { ScrollBarModule } from './scroll-bar/scroll-bar.module';
 import { ContactoComponent } from './home/footer/contacto/contacto.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import {HTTP_INTERCEPTORS } from '@angular/common/http';
-import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { UploadComponent } from './upload/upload.component';
     CategoriasComponent,
     FooterComponent,
     ContactoComponent,
-    UploadComponent
   ],
   imports: [
     BrowserModule,

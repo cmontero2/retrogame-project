@@ -25,6 +25,10 @@ export class ListaJuegosService {
     findGamesIdByCategoryId(id: number): Observable<any> {
         return this.http.get(URL_API.SERVER_URL_API + "juegos-categoria?categoria=" + id);
     }
+
+    findCompanyByUserId(id: number): Observable<any> {
+        return this.http.get(URL_API.SERVER_URL_API + "users/" + id);
+    }
     
     //JSON
     //Devuelve todos los juegos

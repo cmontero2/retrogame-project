@@ -17,4 +17,9 @@ export class PerfilService {
         return this.http.get(this.baseUrl + id);
     }
 
+    public baseUrlJuegos = URL_API.SERVER_URL_API + "usuarios-juego?usuario=";
+    findUserJuegoById(id: number): Observable<any> {
+        return this.http.get(this.baseUrlJuegos + id);
+    }
+
 }

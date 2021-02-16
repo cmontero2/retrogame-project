@@ -14,5 +14,14 @@
             <div>Fecha de nacimiento: <span class="datos"> {{user.nacimiento}}</span></div>
         </div>        
     </div>
+
     <button class="btn botonEdit" [routerLink]="['/perfilUpdate', id]">Editar</button>    
+</div>
+<div class="col-md-3 divJuegos">
+    Últimos juegos jugados: 
+    <div>
+        <span class="juegos" *ngFor="let juego of juegosNombre">
+            <a [routerLink]="['/juego', juego.id]">{{juego.nombre}}</a>
+        </span>
+    </div>
 </div>

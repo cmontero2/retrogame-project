@@ -35,7 +35,6 @@ export class JuegosEmpresaComponent implements OnInit {
           this.listaJuegosService.findByCompanyId(this.empresa_id)
           .subscribe(
             data => {
-              console.log(data);
               this.juegos = data;
               this.accountService.getById(String(this.empresa_id))
               .subscribe(

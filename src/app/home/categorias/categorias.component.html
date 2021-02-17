@@ -1,4 +1,8 @@
 <ul>
+  <li>
+    <i class="fas fa-gamepad"></i>
+    <a [routerLink]="['/masjugados']" > más jugados</a>
+  </li>  
   <li *ngFor="let categoria of categorias">
     <i class="fas fa-gamepad"></i>
     <a [routerLink]="['/juegos', categoria.id]">{{ categoria.nombre }}</a>

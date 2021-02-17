@@ -6,6 +6,7 @@ import { IUsuarioJuego } from 'src/app/models/UsuarioJuego';
 import { UploadUserGameService } from '../../services/upload-user-game.service';
 import { User } from 'src/app/account/user';
 import { AccountService } from '../../services/account.service';
+import Moment from 'moment';
 
 @Component({
   selector: 'app-juego',
@@ -31,11 +32,10 @@ export class JuegoComponent implements OnInit {
     this.route.params.subscribe(parameters => {
       this.id = parameters.id;
 
-      if(this.accountService.userValue !== null) {
+      if(this.accountService.userValue.id) {
         this.usuarioJuego.juego_id = parameters.id;
         this.usuarioJuego.usuario_id = Number(this.accountService.userValue.id);
-        this.usuarioJuego.fecha_id = new Date().toISOString().substring(0, 10);
-        console.log(this.usuarioJuego.fecha_id);
+        this.usuarioJuego.fecha_id = Moment().format("YYYY-MM-DD");
         this.uploadUserGameService.uploadUsuarioJuego(this.usuarioJuego)
         .subscribe(
           data => {

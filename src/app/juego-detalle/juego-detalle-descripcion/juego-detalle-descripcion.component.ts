@@ -13,7 +13,7 @@ import { AccountService } from 'src/app/services/account.service';
 export class JuegoDetalleDescripcionComponent implements OnInit {
 
   juego!: IJuego;
-  user!: User;
+  visitasNuevas!: number;
   empresaNombre!: String;
   id!: number;
   idString!: String;
@@ -32,11 +32,11 @@ export class JuegoDetalleDescripcionComponent implements OnInit {
       .subscribe(
         data => {
           this.juego = data;
+          this.visitIncrement();
           this.accountService.getById(String(data.empresa_id))
           .subscribe(
             data => {
-              //this.empresaNombre = data.user;
-              console.log(this.empresaNombre);
+              this.empresaNombre = data.user;
             }
           )
         },
@@ -45,6 +45,18 @@ export class JuegoDetalleDescripcionComponent implements OnInit {
         }
       )
     })
+  }
+
+  visitIncrement() {
+    this.juego.visitas! += 1;
+    this.listaJuegosService.update(this.id, this.juego)
+    .subscribe(
+      data => {
+
+      }, error => {
+        console.log(error);
+      }
+    )
   }
 
 }

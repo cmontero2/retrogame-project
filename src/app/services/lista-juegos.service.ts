@@ -29,6 +29,10 @@ export class ListaJuegosService {
     findCompanyByUserId(id: number): Observable<any> {
         return this.http.get(URL_API.SERVER_URL_API + "users/" + id);
     }
+
+    update(id: any, params: any) {
+        return this.http.put(this.baseUrl + "/" + id, params);
+    }
     
     //JSON
     //Devuelve todos los juegos

@@ -12,4 +12,4 @@ const routesJuegos: Routes = [
     exports: [RouterModule]
 })
 
-export class JuegosRoutingModule { }
+export class JuegoDetalleRoutingModule { }

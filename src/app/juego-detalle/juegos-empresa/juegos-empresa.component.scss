@@ -24,6 +24,14 @@ h2, h3 {
     text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
 }
 
+.center {
+    text-align: center;
+}
+
+.lineaHorizontal {
+    border-top: 2px solid $pink;
+}
+
 .leerMas {
     margin-left: 90px;
     background-color: black;

@@ -1,6 +1,6 @@
 export class User {
     id!: string;
-    username!: string;
+    user!: string;
     password!: string;
     token!: string;
     rol_id!: number;

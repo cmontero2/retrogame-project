@@ -31,8 +31,9 @@ export class JuegoDetalleDescripcionComponent implements OnInit {
       this.listaJuegosService.findById(this.id)
       .subscribe(
         data => {
+          console.log(data.nombre_archivo);
           this.juego = data;
-          this.visitIncrement();
+          console.log(this.juego.nombre_archivo);
           this.accountService.getById(String(data.empresa_id))
           .subscribe(
             data => {
@@ -46,17 +47,4 @@ export class JuegoDetalleDescripcionComponent implements OnInit {
       )
     })
   }
-
-  visitIncrement() {
-    this.juego.visitas! += 1;
-    this.listaJuegosService.update(this.id, this.juego)
-    .subscribe(
-      data => {
-
-      }, error => {
-        console.log(error);
-      }
-    )
-  }
-
 }

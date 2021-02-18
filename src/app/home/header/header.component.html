@@ -18,7 +18,7 @@
         <a *ngIf="user.id" class="nav-link PerfilEnlace" [routerLink]="['/perfil', user.id]">
             PERFIL
         </a>
-        <a *ngIf="user.rol_id==1" class="nav-link SubirJuego" routerLink="/upload">
+        <a *ngIf="user.rol_id==1" class="nav-link SubirJuego" [routerLink]="['/upload']">
             SUBIR JUEGO
         </a>
         <button type="button" *ngIf="user.id" class="btn btn-primary loginButton" (click)="doLogout()" routerLink="">LOGOUT</button>

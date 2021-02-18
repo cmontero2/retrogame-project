@@ -3,17 +3,19 @@ import { CommonModule } from '@angular/common';
 import { ForoContainerComponent } from './foro-container/foro-container.component';
 import { SeccionesComponent } from './secciones/secciones.component';
 import { SeccionesService } from './secciones/secciones.service';
+import { EntradasService } from './entradas/entradas.service';
 import { EntradasComponent } from './entradas/entradas.component';
 import { EntradaDetalleComponent } from './entrada-detalle/entrada-detalle.component';
+import { ForoRoutingModule } from './foro-routing.module';
 
 
 
 @NgModule({
   declarations: [ForoContainerComponent, SeccionesComponent, EntradasComponent, EntradaDetalleComponent],
   imports: [
-    CommonModule
+    CommonModule, ForoRoutingModule
   ],
   exports: [ForoContainerComponent],
-  providers: [SeccionesService]
+  providers: [SeccionesService, EntradasService]
 })
 export class ForoModule { }

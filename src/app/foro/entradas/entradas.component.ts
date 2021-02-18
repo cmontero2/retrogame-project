@@ -1,15 +1,41 @@
 import { Component, OnInit } from '@angular/core';
+import { Entrada } from './entrada';
+import { ActivatedRoute, Params } from '@angular/router';
+import { EntradasService } from './entradas.service';
+import { Seccion } from '../secciones/seccion';
+import { SeccionesService } from '../secciones/secciones.service';
 
 @Component({
   selector: 'app-entradas',
   templateUrl: './entradas.component.html',
   styleUrls: ['./entradas.component.scss']
 })
+
 export class EntradasComponent implements OnInit {
 
-  constructor() { }
+  public id: number = 0;
+  public secciones?: any;
+  public entradas?: any;
+
+  constructor(private activatedRoute?: ActivatedRoute, 
+    private seccionesService?: SeccionesService, 
+    private entradasService?: EntradasService) {
+    
+  }
 
   ngOnInit(): void {
+    this.activatedRoute?.params.subscribe((parametros: Params) => {
+      this.id = parametros.id;
+    });
+    this.entradasService?.findAll()
+    .subscribe(
+      data =>{
+        this.entradas = data;
+        console.log('entradas', this.entradas)
+      },
+      error =>{
+        console.log(error);
+      })
   }
 
 }

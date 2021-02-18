@@ -31,25 +31,23 @@ export class JuegosEmpresaComponent implements OnInit {
       this.listaJuegosService.findById(parameters.id)
       .subscribe(
         data => {
-          this.listaJuegosService.findByCompanyId(data.empresa_id)
+          this.empresa_id = data.empresa_id;
+          this.listaJuegosService.findByCompanyId(this.empresa_id)
           .subscribe(
             data => {
               this.juegos = data;
+              this.accountService.getById(String(this.empresa_id))
+              .subscribe(
+                data => {
+                  this.user = data.user;
+                } 
+              )
             }
           )
         }, error => {
           console.log(error);
         }
       )
-
-      this.accountService.getById(String(parameters.id))
-      .subscribe(
-        data => {
-          this.user = data.user;
-        } 
-      )
-
-      
     })
   }
 

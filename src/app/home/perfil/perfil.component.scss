@@ -7,7 +7,7 @@ img {
     max-height: 150px;
     border: 5px solid $pink;
     border-radius: 7px;
-    box-shadow: 0px 1px 25px #e607fa;
+    margin-bottom: 20px;
 }
 
 .divPerfil {
@@ -36,6 +36,15 @@ img {
     }
 }
 
+.divJuegos {
+    box-shadow: 0px 1px 25px #e607fa;
+    float:right;
+    border: 5px solid $pink;
+    border-radius: 7px;
+    color: $pink;
+    margin: 20px;
+}
+
 .botonEdit {
   background-color: black;
   color: $pink;
@@ -47,8 +56,8 @@ img {
   float: left;
   margin-top: 20px;
   position:absolute;
-  top: 250px;
-  left: 470px;
+  top: 50px;
+  left: 800px;
   &:hover{
       background-color: #1C131D;
   }
@@ -59,3 +68,29 @@ img {
       border: $pink 3px solid !important;
   }   
 }
+
+h4 {
+    text-align: center;
+    text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
+    font-weight: bold;
+    color: $blue;
+    margin: 20px
+}
+
+.linkJuego {
+    text-align: center;
+}
+
+.rowJuegos {
+    justify-content:center
+}
+
+a {
+    color: $pink;
+    text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
+    margin-right: 20px;
+    &:hover {
+        text-decoration: none;
+    }
+}
+

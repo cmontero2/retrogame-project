@@ -1,6 +1,6 @@
 <div class="col-md-12 divPerfil">
     <div class="col-md-2 divImg">
-        <img [src]="imgPath" alt="fotoPerfil"/>
+        <img [src]="imgPath" class="imgPerfil" alt="fotoPerfil"/>
     </div>
     <div class="col-md-8">
         <div *ngIf="user" class="col-md-7 divInfo">
@@ -14,5 +14,21 @@
             <div>Fecha de nacimiento: <span class="datos"> {{user.nacimiento}}</span></div>
         </div>        
     </div>
-    <button class="btn botonEdit" [routerLink]="['/perfilUpdate', id]">Editar</button>    
+
+    <button class="btn botonEdit" [routerLink]="['/perfilUpdate', id]">Editar perfil</button>    
+</div>
+<div class="col-md-11 divJuegos">
+    <h4>Últimos juegos jugados:</h4> 
+    <div>
+        <div class="row rowJuegos">
+            <span class="juegos" *ngFor="let juego of juegosNombre">
+                    <div class="col-md-12 linkJuego"><a [routerLink]="['/juego', juego.id]">{{juego.nombre}} </a></div>
+                    <div class="col-md-4">
+                        <a [routerLink]="['/juego', juego.id]">
+                            <img src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.jpg"/>
+                        </a>
+                    </div>       
+            </span>
+        </div> 
+    </div>
 </div>

@@ -5,12 +5,14 @@ import { JuegoDetalleContainerComponent } from './juego-detalle-container/juego-
 import { JuegoDetalleDescripcionComponent } from './juego-detalle-descripcion/juego-detalle-descripcion.component';
 import { JuegoComponent } from './juego/juego.component';
 import { JuegosEmpresaComponent } from './juegos-empresa/juegos-empresa.component';
+import { JuegoDetalleRoutingModule } from './juego-detalle-routing.module';
 
 
 @NgModule({
   declarations: [JuegoDetalleContainerComponent, JuegoDetalleDescripcionComponent, JuegoComponent, JuegosEmpresaComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    JuegoDetalleRoutingModule
   ],
   exports: [JuegoDetalleContainerComponent],
   providers: [ListaJuegosService]

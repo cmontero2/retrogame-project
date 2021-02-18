@@ -9,17 +9,18 @@ import { TerminosComponent } from './footer/terminos/terminos.component';
 import { PrivacidadComponent } from './footer/privacidad/privacidad.component';
 import { CookiesComponent } from './footer/cookies/cookies.component';
 import { PerfilUpdateComponent } from './perfil/perfil-update/perfil-update.component';
+import { MasjugadosComponent } from './masjugados/masjugados.component'
 
 const routesHome: Routes = [
     {path: 'registro', component: RegistroComponent},
     {path: 'perfil/:id', component: PerfilComponent},
     {path: 'perfilUpdate/:id', component: PerfilUpdateComponent},
-    {path: 'empresa', component: EmpresaComponent},
     {path: 'noticiaDetalle/:id', component: NoticiaDetalleComponent},
     {path: 'terminos', component: TerminosComponent},
     {path: 'privacidad', component: PrivacidadComponent},
     {path: 'cookies', component: CookiesComponent},
-  
+    {path: 'upload', component: EmpresaComponent},
+    {path: 'masjugados', component: MasjugadosComponent},
 ];
 
 @NgModule({

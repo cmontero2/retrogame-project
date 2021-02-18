@@ -1,12 +1,11 @@
-<div class="juegoDetalleDescripccionContainer">
+<div class="juegoDetalleDescripccionContainer" *ngIf="juego">
     <div class="iconoJuegoDetalleDescripcion">
         <img src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.jpg" class="iconoJuegoDetalleDescripcion">
     </div>
     <div class="juegoDetalleDiv">
         <h2 class="tituloJuegoDetalle">{{juego.nombre}}</h2>
         <p class="descripcionJuegoDetalle">{{juego.descripcion}}</p>
-        <p class="descripcionJuegoDetalle">
-            Empresa: {{juego.empresa_id}}
-        </p>
+        <p class="descripcionJuegoDetalle">Visitas: {{juego.visitas}}</p>
+        <p class="descripcionJuegoDetalle">Empresa: {{empresaNombre}}</p>
     </div>
 </div>

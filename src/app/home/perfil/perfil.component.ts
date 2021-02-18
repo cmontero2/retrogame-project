@@ -4,6 +4,7 @@ import { User } from 'src/app/account/user';
 import { AccountService } from '../../services/account.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { PerfilService } from './perfil.service';
+import { ListaJuegosService } from '../../services/lista-juegos.service';
 
 @Component({
   selector: 'app-perfil',
@@ -14,10 +15,13 @@ export class PerfilComponent implements OnInit {
   public user: any;
   public id: number = 0;
   public imgPath?: String;
+  public juegos: any;
+  public juegosNombre: any = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private perfilService: PerfilService
+    private perfilService: PerfilService,
+    private juegosService: ListaJuegosService
     ) {
     
    }
@@ -38,6 +42,35 @@ export class PerfilComponent implements OnInit {
         error => {
           console.log(error);
         });
+
+    this.perfilService.findUserJuegoById(this.id)
+    .subscribe(
+      data => {
+        this.juegos = data;
+        this.cambiarIdPorJuego()
+      },
+      error => {
+        console.log(error);
+      });
+
+      
   }
+
+  cambiarIdPorJuego(){
+    this.juegos.forEach(
+      (element: any)=>
+      //console.log(element.juego_id),
+      //console.log(this.juegosService.findById(element.juego_id)),
+      
+      this.juegosService.findById(element.juego_id).subscribe(
+        data => {
+          this.juegosNombre.push(data);
+        }),
+      
+      console.log("juegos " + JSON.stringify(this.juegosNombre)),
+      
+    );
+  }
+
 
 }

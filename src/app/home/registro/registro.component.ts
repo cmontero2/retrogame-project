@@ -72,7 +72,7 @@ export class RegistroComponent implements OnInit {
       password: this.md5.appendStr(this.companyForm.get(['password'])!.value).end(),
       email: this.companyForm.get(['email'])!.value,
       nombre: this.companyForm.get(['nombre'])!.value,
-      cif: this.companyForm.get(['cif'])!.value,
+      CIF: this.companyForm.get(['cif'])!.value,
       direccion: this.companyForm.get(['direccion'])!.value,
       poblacion: this.companyForm.get(['poblacion'])!.value,
       telefono: this.companyForm.get(['telf'])!.value,

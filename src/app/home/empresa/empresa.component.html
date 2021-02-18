@@ -1,3 +1,26 @@
 <div class="containerHeader">
-    
+    <div class="containerForm">
+        <form name="gameForm" (ngSubmit)="upload()" [formGroup]="gameForm">
+
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" formControlName="nombre">
+            <div *ngIf="gameForm.get('nombre')!.invalid && (gameForm.get('nombre')!.dirty || gameForm.get('nombre')!.touched)">
+                <small class="form-text text-danger"
+                       *ngIf="gameForm.get('nombre')?.errors?.required">
+                Campo requerido
+                </small>
+                <small class="form-text text-danger"
+                       *ngIf="gameForm.get('nombre')?.errors?.minlength">
+                Mínimo 4 letras
+                </small>
+            </div>
+
+            <label for="descripcion">Descripcion:</label>
+            <input type="text" name="descripcion" formControlName="descripcion">
+
+            <button [disabled]="gameForm.invalid">SUBIR JUEGO</button>
+            
+        </form>
+    </div>
 </div>

@@ -3,20 +3,20 @@
 
   <div class="col-md-6"><h4 id="sombra">Novedades / Actualizaciones :</h4>
     <div *ngFor="let seccion of secciones">
-      <h4 *ngIf="seccion.id<5;"><a href="#">{{seccion.nombre}}</a></h4>
+      <h4 *ngIf="seccion.id<5;"><a [routerLink]="['/entradas', seccion.id]">{{seccion.nombre}}</a></h4>
     </div>
   </div>
 
   <div *ngFor="let seccion of secciones">
     <div class="col-md-6" *ngIf="seccion.id<7 && seccion.id>4;">
-      <h4 id="sombra"><a href="#">{{seccion.nombre}}</a></h4>
+      <h4 id="sombra"><a [routerLink]="['/entradas', seccion.id]">{{seccion.nombre}}</a></h4>
     </div>
   </div>
 
   <div class="col-md-6"><h4 id="sombra"><a href="#">Juegos :</a></h4>
 
     <div *ngFor="let seccion of secciones">
-      <h4 *ngIf="seccion.id>6 && seccion.id<9;"><a href="#">{{seccion.nombre}}</a></h4>
+      <h4 *ngIf="seccion.id>6 && seccion.id<9;"><a [routerLink]="['/entradas', seccion.id]">{{seccion.nombre}}</a></h4>
     </div>
 
     <h4>.  .  .</h4>

@@ -75,7 +75,7 @@ export class RegistroComponent implements OnInit {
       cif: this.companyForm.get(['cif'])!.value,
       direccion: this.companyForm.get(['direccion'])!.value,
       poblacion: this.companyForm.get(['poblacion'])!.value,
-      telf: this.companyForm.get(['telf'])!.value,
+      telefono: this.companyForm.get(['telf'])!.value,
       nacimiento: this.companyForm.get(['nacimiento'])!.value,
       rol_id: this.companyForm.get(['rol_id'])!.value,
       nivel_foro_id: this.userForm.get(['nivel_foro_id'])!.value,

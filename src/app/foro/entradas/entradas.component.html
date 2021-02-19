@@ -1,18 +1,31 @@
 <!-- <p>entradas works!</p>
 <a routerLink="/foro/entrada-detalle">Entradas-detalle</a> -->
 
-        <div class="col-md-12" *ngFor="let entrada of entradas">
+<table class="col-md-12">
+        <tr class="row">
+                <th class="col-md-3"><h3>Fecha</h3></th>
+
+                <th class="col-md-7"><h3>Entrada</h3></th>
+
+                <th class="col-md-2"><h3>Usuario</h3></th>
+        </tr>
+
+        <div *ngFor="let entrada of entradas">
             
-                <h4 *ngIf="id==entrada.seccion_id;">{{entrada.titulo}}</h4>
-               
-                
-            
+                <div *ngIf="id==entrada.seccion_id;">
+
+                        <tr class="row">
+                              
+                                <td class="col-md-3"><h5>{{entrada.fecha}}</h5></td>
+                              
+                                <td class="col-md-7"><h5 class="izquierda"><a href="#">{{entrada.titulo}}</a></h5></td>
+                              
+                                <td class="col-md-2"><h5 class="izquierda">{{entrada.usuario_id}}</h5></td>
+                              
+                        </tr>
+                        
+                </div>
+
         </div>
 
-
-<!-- <div class="noticiasDiv"><h4>Noticias</h4></div>
-<div class="noticias" *ngFor="let noticia of noticias">
-    <h5>{{noticia.titulo}}</h5>
-    <p>{{noticia.texto}}</p>
-    <button [routerLink]="['/noticiaDetalle', noticia.id]" class="btn btn-primary verMasbtn">Ver más</button>
-</div> -->
+</table>

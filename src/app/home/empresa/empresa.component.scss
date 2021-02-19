@@ -1,9 +1,63 @@
 $pink:#e607fa;
 $blue:#09eaf8;
 
+h3 {
+    color: $pink;
+}
+
+label {
+    margin-top: 20px;
+    color: $pink;
+    text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
+}
+
 .containerHeader {
     background-image: url("../../../assets/img/banners/header-multiplayer.jpg");
     background: cover;
     width: 1100px;
     height: 200px;
+}
+
+.containerForm {
+    width: 300px;
+    height: 400px;
+    border: 1px solid $pink;
+    box-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 0px $pink, 0 0 0px $pink;;
+    background-color: black;
+    margin-top: 20px;
+    margin-left: 350px;
+    text-align: center;
+}
+
+.subirBoton {
+    background-color: black;
+    margin-top: 50px;
+    margin-left: 80px;
+    color: $pink;
+    border-radius: 5px;
+    box-shadow: 0px 1px 25px $pink;
+    border-color: $pink;
+    text-shadow: $pink 1px 0 15px;
+    text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
+    float: left;
+    &:hover{
+        background-color: #1C131D;
+    }
+    &:active{
+        background-color: #140116 !important; 
+        color:$pink !important;
+        text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink !important;        
+        border: $pink 3px solid !important;
+    }   
+}
+
+.busqueda {
+    border-radius: 0;
+    border:0;
+    border-bottom: 1px $blue solid;
+    background-color:black;
+    color: $blue; 
+    &:focus {
+        outline: none !important;
+    } 
 }

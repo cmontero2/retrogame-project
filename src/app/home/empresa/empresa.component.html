@@ -1,26 +1,63 @@
 <div class="containerHeader">
-    <div class="containerForm">
-        <form name="gameForm" (ngSubmit)="upload()" [formGroup]="gameForm">
 
-
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" formControlName="nombre">
-            <div *ngIf="gameForm.get('nombre')!.invalid && (gameForm.get('nombre')!.dirty || gameForm.get('nombre')!.touched)">
-                <small class="form-text text-danger"
-                       *ngIf="gameForm.get('nombre')?.errors?.required">
+</div>
+<div class="containerForm">
+    <h3>Subir Juego</h3>
+    <form name="gameForm" (ngSubmit)="upload()" [formGroup]="gameForm">
+    
+    
+        <label for="nombre">Nombre</label>
+        <br>
+        <input type="text" name="nombre" formControlName="nombre" class="busqueda">
+        <div *ngIf="gameForm.get('nombre')!.invalid && (gameForm.get('nombre')!.dirty || gameForm.get('nombre')!.touched)">
+            <small class="form-text text-danger" *ngIf="gameForm.get('nombre')?.errors?.required">
                 Campo requerido
-                </small>
-                <small class="form-text text-danger"
-                       *ngIf="gameForm.get('nombre')?.errors?.minlength">
+            </small>
+            <small class="form-text text-danger" *ngIf="gameForm.get('nombre')?.errors?.minlength">
                 Mínimo 4 letras
-                </small>
-            </div>
+            </small>
+        </div>
+        <br>
+    
+        <label for="descripcion">Descripcion</label>
+        <br>
+        <input type="text" name="descripcion" formControlName="descripcion" class="busqueda">
+        <div *ngIf="gameForm.get('descripcion')!.invalid && (gameForm.get('descripcion')!.dirty || gameForm.get('descripcion')!.touched)">
+            <small class="form-text text-danger" *ngIf="gameForm.get('descripcion')?.errors?.required">
+                Campo requerido
+            </small>
+        </div>
+        <br>
 
-            <label for="descripcion">Descripcion:</label>
-            <input type="text" name="descripcion" formControlName="descripcion">
-
-            <button [disabled]="gameForm.invalid">SUBIR JUEGO</button>
-            
-        </form>
-    </div>
+        <label for="categoria_id">Categoría</label>
+        <br>
+        <select name="categoria_id" class="busqueda" formControlName="categoria_id" required>
+            <option value="1">Acción</option>
+            <option value="2">Plataforma</option>
+            <option value="3">Lucha</option>
+            <option value="4">Arcade</option>
+            <option value="5">Carrera</option>
+            <option value="6">Rol</option>
+        </select>
+        <div *ngIf="gameForm.get('categoria_id')!.invalid && (gameForm.get('categoria_id')!.dirty || gameForm.get('categoria_id')!.touched)">
+            <small class="form-text text-danger" *ngIf="gameForm.get('categoria_id')?.errors?.required">
+                Campo requerido
+            </small>
+        </div>
+        <br>
+    
+        <label for="iframe_url">Iframe URL</label>
+        <br>
+        <input type="text" name="iframe_url" formControlName="iframe_url" class="busqueda">
+        <div *ngIf="gameForm.get('iframe_url')!.invalid && (gameForm.get('iframe_url')!.dirty || gameForm.get('iframe_url')!.touched)">
+            <small class="form-text text-danger" *ngIf="gameForm.get('iframe_url')?.errors?.required">
+                Campo requerido
+            </small>
+        </div>
+        <br>
+    
+        <button [disabled]="gameForm.invalid" class="btn btn-primary subirBoton">SUBIR JUEGO</button>
+    
+    </form>
+    
 </div>

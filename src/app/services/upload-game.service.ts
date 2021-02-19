@@ -16,4 +16,8 @@ export class UploadGameService {
     upload(juego: Juego) {
         return this.http.post(URL_API.SERVER_URL_API + "juegos", juego);
     }
+
+    uploadToGameCategory(juegoCategoria: Juego) {
+        return this.http.post(URL_API.SERVER_URL_API + "juegos-categoria", juegoCategoria);
+    }
 }

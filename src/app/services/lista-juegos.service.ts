@@ -22,6 +22,10 @@ export class ListaJuegosService {
         return this.http.get(this.baseUrl + "?nombre=" + name);
     }
 
+    findByOrderByVisits(): Observable<any> {
+        return this.http.get(this.baseUrl + "?visitas=true");
+    }
+
     findByCompanyId(id: number): Observable<any> {
         return this.http.get(this.baseUrl + "?empresa=" + id);
     }

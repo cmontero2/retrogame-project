@@ -12,7 +12,6 @@ export class UploadUserGameService {
     ) { }
 
     uploadUsuarioJuego(usuarioJuego: UsuarioJuego) {
-        console.log("HOLAAAAAAAA", usuarioJuego);
         return this.http.post(URL_API.SERVER_URL_API + "usuarios-juego", usuarioJuego);
     }
 }

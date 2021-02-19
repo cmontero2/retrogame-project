@@ -92,5 +92,9 @@ export class ListaJuegosComponent implements OnInit {
     });
     
   }
+
+  onClick() {
+    
+  }
 }
 

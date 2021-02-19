@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IJuego } from 'src/app/juegos/lista-juegos/juego';
+import { ListaJuegosService } from 'src/app/services/lista-juegos.service';
 
 @Component({
   selector: 'app-masjugados',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MasjugadosComponent implements OnInit {
 
-  constructor() { }
+  juegos: IJuego[] = [];
+
+  constructor(
+    private listaJuegosService: ListaJuegosService,
+  ) { }
 
   ngOnInit(): void {
+    this.listaJuegosService.findByOrderByVisits()
+    .subscribe(
+      data => {
+        this.juegos = data;
+
+      }, error => {
+        console.log(error);
+      }
+    )
   }
 
 }

@@ -1,14 +1,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4" *ngFor="let juego of juegos">
-            <div class="divJuegos borde" id="status">
+            <div class="divJuegos" id="status">
                 <img src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo">
                 <h3 class="nombre">{{juego.nombre}}</h3>
-                <a [routerLink]="['/juego', juego.id]" type="button" class="btn btn-success leerMas">Jugar</a>
-                <a href="#">Ver más</a>
+                <a [routerLink]="['/juego', juego.id]" type="button" class="btn btn-success boton">Jugar</a>
+                <button class="btn-primay readMore" onclick="">Ver más</button>
                 <hr class="lineaHorizontal">
-                <h5 class="descripcion">Descripcion</h5>
-                <p>{{juego.descripcion}}</p>
+                <h5 class="descripcionTitulo">Descripción</h5>
+                <p class="descripcion">{{juego.descripcion}}</p>
             </div>
         </div>
     </div>

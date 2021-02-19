@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SecurityContext } from '@angular/core';
 import { IJuego } from 'src/app/juegos/lista-juegos/juego';
 import { ListaJuegosService } from 'src/app/services/lista-juegos.service';
 import { ActivatedRoute } from '@angular/router';
@@ -6,6 +6,7 @@ import { IUsuarioJuego } from 'src/app/models/UsuarioJuego';
 import { UploadUserGameService } from '../../services/upload-user-game.service';
 import { User } from 'src/app/account/user';
 import { AccountService } from '../../services/account.service';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import Moment from 'moment';
 
 @Component({
@@ -19,11 +20,14 @@ export class JuegoComponent implements OnInit {
   usuarioJuego: IUsuarioJuego = {};
   id!: number;
   user_id!: number;
+  safeResourceUrl: SafeResourceUrl = "";
+  safeIframeUrl: string = "";
 
   constructor(
     private listaJuegosService: ListaJuegosService,
     private uploadUserGameService: UploadUserGameService,
     private accountService: AccountService,
+    private sanitizer: DomSanitizer,
     private route: ActivatedRoute
   ) { }
 
@@ -50,6 +54,7 @@ export class JuegoComponent implements OnInit {
       .subscribe(
         data => {
           this.juego = data;
+          this.safeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.juego.iframe_url!);
           this.visitIncrement();
         }, error => {
           console.log(error)

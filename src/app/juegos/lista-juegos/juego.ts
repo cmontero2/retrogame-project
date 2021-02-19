@@ -8,6 +8,7 @@ export interface IJuego {
     empresa_id?: number;
     nombre_archivo?: String;
     estado?: CharacterData;
+    iframe_url?: string;
 }
 
 export class Juego implements IJuego {
@@ -18,7 +19,8 @@ export class Juego implements IJuego {
         public visitas?: number,
         public empresa_id?: number,
         public nombre_archivo?: String,
-        public estado?: CharacterData
+        public estado?: CharacterData,
+        public iframe_url?: string
     ) { }
 }
 

@@ -1,0 +1,66 @@
+h3 {
+  color: #e607fa;
+}
+
+label {
+  margin-top: 20px;
+  color: #e607fa;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 10px #e607fa, 0 0 0px #e607fa;
+}
+
+.containerHeader {
+  background-image: url("../../../assets/img/banners/header-multiplayer.jpg");
+  background: cover;
+  width: 1100px;
+  height: 200px;
+}
+
+.containerForm {
+  width: 300px;
+  height: 400px;
+  border: 1px solid #e607fa;
+  -webkit-box-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 0px #e607fa, 0 0 0px #e607fa;
+          box-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 0px #e607fa, 0 0 0px #e607fa;
+  background-color: black;
+  margin-top: 20px;
+  margin-left: 350px;
+  text-align: center;
+}
+
+.subirBoton {
+  background-color: black;
+  margin-top: 50px;
+  margin-left: 80px;
+  color: #e607fa;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 25px #e607fa;
+          box-shadow: 0px 1px 25px #e607fa;
+  border-color: #e607fa;
+  text-shadow: #e607fa 1px 0 15px;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa;
+  float: left;
+}
+
+.subirBoton:hover {
+  background-color: #1C131D;
+}
+
+.subirBoton:active {
+  background-color: #140116 !important;
+  color: #e607fa !important;
+  text-shadow: 0 0 10px #e607fa, 0 0 20px #e607fa, 0 0 30px #e607fa, 0 0 40px #e607fa !important;
+  border: #e607fa 3px solid !important;
+}
+
+.busqueda {
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px #09eaf8 solid;
+  background-color: black;
+  color: #09eaf8;
+}
+
+.busqueda:focus {
+  outline: none !important;
+}
+/*# sourceMappingURL=empresa.component.css.map */

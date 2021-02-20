@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { AlertService } from "../../services/alert.service"
 import { AccountService } from '../../services/account.service';
 import { RegistroComponent } from '../registro/registro.component';
 
@@ -30,7 +29,6 @@ export class LoginComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private accountService: AccountService,
-        private alertService: AlertService,
         public activeModal: NgbActiveModal, 
         private modalService: NgbModal
     ) { }
@@ -77,9 +75,6 @@ export class LoginComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
 
-        // reset alerts on submit
-        this.alertService.clear();
-
         this.loading = true;
 
         const usuario = this.createFromForm();
@@ -92,14 +87,12 @@ export class LoginComponent implements OnInit {
                 next: () => {
                     // get return url from query parameters or default to home page
                     const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                    this.router.navigateByUrl(returnUrl);
-                    console.log("asd "+localStorage.getItem("user"));                    
+                    this.router.navigateByUrl(returnUrl);                    
                     
                     this.cerrarModal();
                   
                 },
                 error: error => {
-                    this.alertService.error(error);
                     this.loading = false;
                     console.log("error " + error);
                 }

@@ -4,5 +4,5 @@ export class User {
     password!: string;
     token!: string;
     rol_id!: number;
-    
+    foto!: string;
 }

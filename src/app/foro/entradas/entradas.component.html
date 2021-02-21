@@ -15,7 +15,7 @@
                               
                                 <td class="col-md-2"><h5>{{entrada.fecha}}</h5></td>
                               
-                                <td class="col-md-8"><h5 class="izquierda"><a href="#">{{entrada.titulo}}</a></h5></td>
+                                <td class="col-md-8"><h5 class="izquierda"><a [routerLink]="['/comentarios', entrada.id]">{{entrada.titulo}}</a></h5></td>
                               
                                 <td class="col-md-2"><h5 class="izquierda">{{entrada.usuario_id}}</h5></td>
                               

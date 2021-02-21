@@ -1,6 +1,5 @@
-<div class="containerHeader">
+<div class="containerHeader"></div>
 
-</div>
 <div class="containerForm">
     <h3>Subir Juego</h3>
     <form name="gameForm" (ngSubmit)="upload()" [formGroup]="gameForm">
@@ -20,7 +19,6 @@
         <br>
     
         <label for="descripcion">Descripcion</label>
-        <br>
         <input type="text" name="descripcion" formControlName="descripcion" class="busqueda">
         <div *ngIf="gameForm.get('descripcion')!.invalid && (gameForm.get('descripcion')!.dirty || gameForm.get('descripcion')!.touched)">
             <small class="form-text text-danger" *ngIf="gameForm.get('descripcion')?.errors?.required">

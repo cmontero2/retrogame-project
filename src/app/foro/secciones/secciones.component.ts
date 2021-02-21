@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Seccion } from './seccion';
 import { SeccionesService } from './secciones.service';
-import { ISeccion } from './seccion';
 
 @Component({
   selector: 'app-secciones',
@@ -16,7 +14,6 @@ export class SeccionesComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    //this.secciones = this.seccionesService.getSecciones();
     this.seccionesService.findAll()
     .subscribe(
       data =>{

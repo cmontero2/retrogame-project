@@ -8,3 +8,71 @@ h2 {
 p {
     color: $blue;
 }
+
+label, .labelText {
+    margin-top: 20px;
+    color: $pink;
+    text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 10px $pink, 0 0 0px $pink;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.containerHeader {
+    background-image: url("../../../../assets/img/banners/masJugados.jpg");
+    background: cover;
+    width: 1100px;
+    height: 150px;
+}
+
+.container {
+    margin: auto;
+    margin-top: 20px;
+    width: 450px;
+    min-height: 550px;
+    border: 1px solid $pink;
+    background-color:black;
+    box-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 0px $pink, 0 0 0px $pink;
+}
+
+
+
+.customInput {
+    border-radius: 0;
+    background-color:black;
+    color: $blue; 
+    &:focus {
+        outline: none !important;
+    } 
+}
+
+input.customInput {
+    border:0;
+    border-bottom: 1px $blue solid;
+}
+
+textarea.customInput {
+    border: 1px $blue solid; 
+}
+
+.enviarBoton {
+    background-color: black;
+    margin-top: 30px;
+    margin-left: 170px;
+    color: $pink;
+    border-radius: 5px;
+    box-shadow: 0px 1px 25px $pink;
+    border-color: $pink;
+    text-shadow: 0 0 0px $pink, 0 0 0px $pink, 0 0 0px $pink, 0 0 0px $pink;
+    float: left;
+    &:hover{
+        background-color: #1C131D;
+    }
+    &:active{
+        background-color: #140116 !important; 
+        color:$pink !important;
+        text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink !important;        
+        border: $pink 3px solid !important;
+    }   
+}

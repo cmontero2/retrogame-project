@@ -1,13 +1,10 @@
 <div class="col-md-12 divPerfil">
     <div class="col-md-3 divImg">
-      <form>
         <label for="file-input" value="Editar">
           <img [src]="imgPath" alt="fotoPerfil" title="Click aquí para subir tu foto"/>
         </label>        
-        <input type="file" id="file-input" name="foto">
-        <button class="btn botonImg" >Guardar imagen</button>
-        
-      </form>      
+        <input type="file" id="file-input" name="foto" (change)="seleccionarFoto($event)">
+        <button class="btn botonImg" (click)="subirFoto()" [disabled]="!fotoSeleccionada">Guardar imagen</button>
     </div>
     <div class="col-md-8 divInfo">
         <form name="editForm" [formGroup]="editForm" (ngSubmit)="update()">

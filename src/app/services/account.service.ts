@@ -18,7 +18,7 @@ export class AccountService {
     ) {
         this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user') || '{}'));
         this.user = this.userSubject.asObservable();
-        
+
     }
 
     public get userValue(): User {
@@ -51,7 +51,7 @@ export class AccountService {
     }
 
     getById(id: string) {
-        return this.http.get<User>(`${URL_API.SERVER_URL_API }users/${id}`);
+        return this.http.get<User>(`${URL_API.SERVER_URL_API}users/${id}`);
     }
 
     update(id: any, params: any) {
@@ -79,5 +79,13 @@ export class AccountService {
                 }
                 return x;
             }));
+    }
+
+    upload(archivo: File, id: string) {
+        let formData = new FormData();
+        formData.append("foto", archivo);
+        formData.append("id", id);
+        formData.append('name', archivo.name);
+        return this.http.post(`${URL_API.SERVER_URL_API}users/upload`, formData);
     }
 }

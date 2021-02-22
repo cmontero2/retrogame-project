@@ -17,11 +17,16 @@ export class PerfilComponent implements OnInit {
   public imgPath?: String;
   public juegos: any;
   public juegosNombre: any = [];
+  public foto?: any;
+  public rutaFoto = "http://localhost/Yii/retrogame-projectAPI/web/img/";
+  public usertoken: any;
+  
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private perfilService: PerfilService,
-    private juegosService: ListaJuegosService
+    private juegosService: ListaJuegosService,
+    private AccountService: AccountService
     ) {
     
    }
@@ -31,29 +36,37 @@ export class PerfilComponent implements OnInit {
       this.id = parametros.id;
       console.log("id " + this.id);
     });
-    this.imgPath = `../../../assets/img/usuarios/user${this.id}.png`;
 
-    this.perfilService.findById(this.id)
-      .subscribe(
+
+      this.AccountService.user.subscribe(
         data => {
-          this.user = data;
-          console.log('usuario ', this.user)
-        },
-        error => {
-          console.log(error);
-        });
+          
+          this.usertoken = data ? data : new User();
+          console.log(this.usertoken.id);
+          
+          this.perfilService.findById(this.usertoken.id)
+          .subscribe(
+            data => {
+              this.user = data;
+              this.foto = this.user.foto;
+              this.imgPath = this.foto ? `${this.rutaFoto}${this.foto}` : '../../../assets/img/usuarios/no-usuario.png';
+            },
+            error => {
+              console.log(error);
+            });
 
-    this.perfilService.findUserJuegoById(this.id)
-    .subscribe(
-      data => {
-        this.juegos = data;
-        this.cambiarIdPorJuego()
-      },
-      error => {
-        console.log(error);
-      });
-
-      
+            this.perfilService.findUserJuegoById(this.usertoken.id)
+            .subscribe(
+              data => {
+                this.juegos = data;
+                this.cambiarIdPorJuego()
+              },
+              error => {
+                console.log(error);
+              });
+        }
+    
+      );
   }
 
   cambiarIdPorJuego(){
@@ -67,10 +80,10 @@ export class PerfilComponent implements OnInit {
           this.juegosNombre.push(data);
         }),
       
-      console.log("juegos " + JSON.stringify(this.juegosNombre)),
-      
     );
   }
+
+  
 
 
 }

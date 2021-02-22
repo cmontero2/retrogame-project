@@ -11,7 +11,7 @@ import { User } from '../../account/user';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  @Input() user: any;
+  user: any;
   login: boolean = false;
   
   constructor(private modalService: NgbModal, private AccountService: AccountService) {

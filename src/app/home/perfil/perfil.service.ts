@@ -22,4 +22,9 @@ export class PerfilService {
         return this.http.get(this.baseUrlJuegos + id);
     }
 
+    public baseUrlPhoto = URL_API.SERVER_URL_API + "assets/img/"
+    findPhotoByName(nombre: string){
+        return this.http.get(this.baseUrlPhoto + nombre);
+    }
+
 }

@@ -15,7 +15,15 @@ export class ListaJuegosService {
     }
 
     findById(id: number): Observable<any> {
-        return this.http.get(this.baseUrl + "?juego=" + id)
+        return this.http.get(this.baseUrl + "?juego=" + id);
+    }
+
+    findByName(name: string): Observable<any> {
+        return this.http.get(this.baseUrl + "?nombre=" + name);
+    }
+
+    findByOrderByVisits(): Observable<any> {
+        return this.http.get(this.baseUrl + "?visitas=true");
     }
 
     findByCompanyId(id: number): Observable<any> {

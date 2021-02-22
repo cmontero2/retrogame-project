@@ -5,8 +5,8 @@ import { URL_API } from "../../services/app.constants";
 
 
 @Injectable({ providedIn: 'root' })
-export class EntradasService {
-    public baseUrl = URL_API.SERVER_URL_API + "entradas";
+export class SeccionesJuegosService {
+    public baseUrl = URL_API.SERVER_URL_API + "secciones";
     constructor(private http: HttpClient) { }
 
     findAll(): Observable<any> {
@@ -14,14 +14,6 @@ export class EntradasService {
     }
 
     findById(id: number): Observable<any> {
-        return this.http.get(this.baseUrl + "?seccionId=" + id);
-    }
-
-    findSeccion(id: number): Observable<any> {
-        return this.http.get(URL_API.SERVER_URL_API + "secciones?id=" + id);
-    }
-
-    findUsuario(id: number): Observable<any> {
-        return this.http.get(URL_API.SERVER_URL_API + "users/" + id);
+        return this.http.get(this.baseUrl + "?id=" + id);
     }
 }

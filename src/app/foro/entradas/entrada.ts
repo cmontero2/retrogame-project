@@ -10,6 +10,7 @@ export interface IEntrada {
 
 export class Entrada implements IEntrada {
     constructor(
+        id?: number,
         titulo?: string,
         texto?: String,
         fecha?: Date,

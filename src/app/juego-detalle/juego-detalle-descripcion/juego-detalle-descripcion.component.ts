@@ -31,9 +31,7 @@ export class JuegoDetalleDescripcionComponent implements OnInit {
       this.listaJuegosService.findById(this.id)
       .subscribe(
         data => {
-          console.log(data.nombre_archivo);
           this.juego = data;
-          console.log(this.juego.nombre_archivo);
           this.accountService.getById(String(data.empresa_id))
           .subscribe(
             data => {

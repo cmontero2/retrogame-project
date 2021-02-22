@@ -3,10 +3,9 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { URL_API } from "../../services/app.constants";
 
-
 @Injectable({ providedIn: 'root' })
-export class EntradasService {
-    public baseUrl = URL_API.SERVER_URL_API + "entradas";
+export class EntradaDetalleService {
+    public baseUrl = URL_API.SERVER_URL_API + "comentarios";
     constructor(private http: HttpClient) { }
 
     findAll(): Observable<any> {
@@ -14,11 +13,12 @@ export class EntradasService {
     }
 
     findById(id: number): Observable<any> {
-        return this.http.get(this.baseUrl + "?seccionId=" + id);
+        return this.http.get(this.baseUrl + "?entrada=" + id);
     }
 
-    findSeccion(id: number): Observable<any> {
-        return this.http.get(URL_API.SERVER_URL_API + "secciones?id=" + id);
+    
+    findEntrada(id: number): Observable<any> {
+        return this.http.get(URL_API.SERVER_URL_API + "entradas?id=" + id);
     }
 
     findUsuario(id: number): Observable<any> {

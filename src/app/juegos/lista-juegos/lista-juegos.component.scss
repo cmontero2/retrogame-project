@@ -23,7 +23,7 @@ p {
 .divJuegos {
     overflow: hidden;
     box-shadow: 0 0 5px $pink, 0 0 5px $pink, 0 0 5px $pink, 0 0 5px $pink;
-    height: 370px;
+    height: 365px;
     float: left;
     border-radius: 5px;
     border-style: groove;
@@ -32,7 +32,7 @@ p {
     margin-top: 20px;
 }
 
-.leerMas {
+.boton {
     margin-left: 130px;
     background-color: black;
     color: $pink;
@@ -69,6 +69,10 @@ p {
     border-top: 1px solid $pink;
 }
 
-.descripcion {
+.descripcionTitulo {
     color: $blue;
+}
+
+.descripcion {
+    
 }

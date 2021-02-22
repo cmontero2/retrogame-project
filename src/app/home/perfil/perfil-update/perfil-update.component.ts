@@ -16,18 +16,20 @@ export class PerfilUpdateComponent implements OnInit {
   public id: number = 0;
   public imgPath?: String;
   public userData?: any;
+  public fotoSeleccionada?: File;
+  public rutaFoto = "http://localhost/Yii/retrogame-projectAPI/web/img/";
 
   constructor(
-    private fb: FormBuilder, 
-    private accountService: AccountService, 
+    private fb: FormBuilder,
+    private accountService: AccountService,
     private activatedRoute: ActivatedRoute,
     private perfilService: PerfilService,
     private router: Router
-    ) {
-      this.user = new User();
-   }
+  ) {
+    this.user = new User();
+  }
 
-   editForm = this.fb.group({
+  editForm = this.fb.group({
     username: [null, [Validators.required, Validators.minLength(4)]],
     password: [null, [Validators.required, Validators.minLength(4)]],
     email: [null, [Validators.email, Validators.required]],
@@ -37,6 +39,7 @@ export class PerfilUpdateComponent implements OnInit {
     poblacion: [null, []],
     telf: [null, []],
     nacimiento: [null, []],
+    foto: [null, []]
   });
 
   ngOnInit(): void {
@@ -45,15 +48,12 @@ export class PerfilUpdateComponent implements OnInit {
     * requerido en ciertos campos si es empresa
     */
     this.accountService.user.subscribe(
-      data => {        
-        this.user = data ? data : new User();  
+      data => {
+        this.user = data ? data : new User();
+        this.id = this.user.id;
+        console.log("id: "+this.id)
       }
     );
-
-    //recojo los datos(id) de la ruta
-    this.activatedRoute.params.subscribe((parametros: Params) => {
-      this.id = parametros.id;
-    });
 
     this.perfilService.findById(this.id)
       .subscribe(
@@ -63,18 +63,18 @@ export class PerfilUpdateComponent implements OnInit {
           this.editForm.get('password')?.setValue(this.userData.password);
           this.editForm.get('email')?.setValue(this.userData.email);
           this.editForm.get('nombre')?.setValue(this.userData.nombre);
-          this.editForm.get('cif')?.setValue(this.userData.cif);
+          this.editForm.get('cif')?.setValue(this.userData.CIF);
           this.editForm.get('direccion')?.setValue(this.userData.direccion);
           this.editForm.get('poblacion')?.setValue(this.userData.poblacion);
-          this.editForm.get('telf')?.setValue(this.userData.telf);
+          this.editForm.get('telf')?.setValue(this.userData.telefono);
           this.editForm.get('nacimiento')?.setValue(this.userData.nacimiento);
+          this.editForm.get('foto')?.setValue(this.userData.foto);
+          this.imgPath = this.userData.foto ? `${this.rutaFoto}${this.userData.foto}` : '../../../assets/img/usuarios/no-usuario.png';
         },
         error => {
           console.log(error);
-    });
-  
-    
-    this.imgPath = `../../../assets/img/usuarios/user${this.id}.png`;
+        });
+
   }
 
   private createFromForm(): any { // Cambiar tipo de any a Usuario
@@ -89,21 +89,47 @@ export class PerfilUpdateComponent implements OnInit {
       poblacion: this.editForm.get(['poblacion'])!.value,
       telefono: this.editForm.get(['telf'])!.value,
       nacimiento: this.editForm.get(['nacimiento'])!.value,
+      foto: this.editForm.get('foto')!.value
+
     };
   }
 
-  update (){
+  update() {
     if (!this.editForm.invalid) {
       const usuario = this.createFromForm();
-      console.log("asd "+JSON.stringify(usuario));
+      console.log("asd " + JSON.stringify(usuario));
       this.accountService.update(this.id, usuario).subscribe(
-        data=>{
+        data => {
           this.router.navigate([`perfil/${this.id}`])
         },
-        error=> console.log(error)
+        error => console.log(error)
       );
     }
-    
+
+  }
+
+  seleccionarFoto(event: any) {
+    this.fotoSeleccionada = event.target.files[0];
+    if (this.fotoSeleccionada!.type.indexOf('image') < 0) {
+      console.error('Foto seleccionada no válida');
+      this.fotoSeleccionada = undefined;
+    }
+  }
+
+  subirFoto() {
+    if (!this.fotoSeleccionada) {
+      console.error('Error Upload: ' + 'Debe seleccionar una foto');
+    } else {
+      this.editForm.get('foto')?.setValue(this.fotoSeleccionada.name);
+      this.update();
+      this.accountService.upload(this.fotoSeleccionada, this.id.toString()).subscribe(
+        data => {
+        }
+      );
+      
+      // const file = new File([this.fotoSeleccionada], `../../../assets/img/usuarios/${this.fotoSeleccionada.name}`);
+      // this.update();
+    }
   }
 
 }

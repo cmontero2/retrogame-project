@@ -1,35 +1,35 @@
 $pink:#e607fa;
 $blue:#09eaf8;
 
-h4 {
-    text-align: center;
+h5 {
     color: $blue;
     padding: 2%;
-}
-
-.col-md-6{
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 3%;
-    border: 2px solid #e607fa;
-    border-radius: 40px 40px 40px 40px;
     text-align: center;
+    margin-top: auto;
 }
 
-h1 {
+p {
+    color: $blue;
+    padding: 2%;
+    text-align: center;
+    margin-top: auto;
+}
+
+
+h4 {
     color: $blue;
     text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
     font-weight: bold;
     text-align: center;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    padding: 1%;
 }
+
 h2 {
-    margin-bottom: 5%;
     color: $blue;
     text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
     font-weight: bold;
     text-align: center;
+    padding: 1%;
 }
 
 #sombra{
@@ -46,4 +46,27 @@ a{
         color: $pink;
         cursor: pointer;
     }
+}
+
+table{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+tr{
+    border: 1px solid #e607fa;
+}
+
+th{
+    color: #e607fa;
+    border: 1px solid #e607fa;
+    text-shadow: 0 0 10px $blue, 0 0 20px $blue;
+    font-weight: bold;
+}
+
+td{
+    border: 1px solid #e607fa;
+}
+
+.izquierda{
+    text-align: left;
 }

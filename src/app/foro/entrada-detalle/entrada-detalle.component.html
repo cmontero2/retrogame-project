@@ -15,7 +15,7 @@
 
         <td class="col-md-8"><h5 id="rosa" class="izquierda">{{entrada.texto}}</h5></td>
 
-        <td class="col-md-2"><h5 id="rosa" class="izquierda">{{entrada.usuario_id}}</h5></td>
+        <td class="col-md-2"><p id="rosa" class="izquierda">{{usuario.user}}</p></td>
 </tr>
 
     <div *ngFor="let comentario of comentarios">
@@ -26,9 +26,9 @@
                           
                             <td class="col-md-2"><h5>{{comentario.fecha}}</h5></td>
                           
-                            <td class="col-md-8"><h5 class="izquierda"><a href="#">{{comentario.texto}}</a></h5></td>
+                            <td class="col-md-8"><h5 class="izquierda">{{comentario.texto}}</h5></td>
                           
-                            <td class="col-md-2"><h5 class="izquierda">{{comentario.usuario_id}}</h5></td>
+                            <td class="col-md-2"><p class="izquierda">{{usuario.user}}</p></td>
                           
                     </tr>
                     

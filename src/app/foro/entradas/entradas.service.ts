@@ -20,4 +20,8 @@ export class EntradasService {
     findSeccion(id: number): Observable<any> {
         return this.http.get(URL_API.SERVER_URL_API + "secciones?id=" + id);
     }
+
+    findUsuario(id: number): Observable<any> {
+        return this.http.get(URL_API.SERVER_URL_API + "users/" + id);
+    }
 }

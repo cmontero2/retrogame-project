@@ -11,7 +11,7 @@
 
         <div *ngFor="let entrada of entradas">
             
-                <div *ngIf="id==entrada.seccion_id;">
+                <div *ngIf="id==entrada.seccion_id && entrada.estado=='A';">
 
                         <tr class="row">
                               
@@ -19,7 +19,7 @@
                               
                                 <td class="col-md-8"><h5 class="izquierda"><a [routerLink]="['/comentarios', entrada.id]">{{entrada.titulo}}</a></h5></td>
                               
-                                <td class="col-md-2"><h5 class="izquierda">{{entrada.usuario_id}}</h5></td>
+                                <td class="col-md-2"><p class="izquierda">{{usuario.user}}</p></td>
                               
                         </tr>
                         

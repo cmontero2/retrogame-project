@@ -13,6 +13,7 @@ export class EntradasComponent implements OnInit {
 
   public id: number = 0;
   public seccion: any;
+  public usuario: any;
   public entradas?: any;
 
   constructor(private activatedRoute?: ActivatedRoute, 
@@ -40,6 +41,16 @@ export class EntradasComponent implements OnInit {
       data =>{
         this.seccion = data[0];
         console.log('seccion', this.seccion)
+      },
+      error =>{
+        console.log(error);
+      });
+
+      this.entradasService?.findUsuario(this.id)
+      .subscribe(
+      data =>{
+        this.usuario = data;
+        console.log('usuario', this.usuario)
       },
       error =>{
         console.log(error);

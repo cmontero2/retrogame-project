@@ -1,11 +1,22 @@
+<h3>{{entrada.titulo}}</h3>
+
 <table class="col-md-12">
     <tr class="row">
-            <th class="col-md-2"><h3>Fecha</h3></th>
+        
+            <th class="col-md-2"><h4>Fecha</h4></th>
 
-            <th class="col-md-8"><h3>Comentario</h3></th>
+            <th class="col-md-8"><h4>Comentario</h4></th>
 
-            <th class="col-md-2"><h3>Usuario</h3></th>
+            <th class="col-md-2"><h4>Usuario</h4></th>
     </tr>
+    <tr class="row">
+        
+        <td class="col-md-2"><h5 id="rosa">{{entrada.fecha}}</h5></td>
+
+        <td class="col-md-8"><h5 id="rosa" class="izquierda">{{entrada.texto}}</h5></td>
+
+        <td class="col-md-2"><h5 id="rosa" class="izquierda">{{entrada.usuario_id}}</h5></td>
+</tr>
 
     <div *ngFor="let comentario of comentarios">
         

@@ -12,4 +12,8 @@ export class SeccionesService {
     findAll(): Observable<any> {
         return this.http.get(this.baseUrl);
     }
+
+    findById(id: number): Observable<any> {
+        return this.http.get(this.baseUrl + "?id=" + id);
+    }
 }

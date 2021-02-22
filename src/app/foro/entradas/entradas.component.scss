@@ -9,7 +9,15 @@ h5 {
 }
 
 
-h3 {
+h4 {
+    color: $blue;
+    text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
+    font-weight: bold;
+    text-align: center;
+    padding: 1%;
+}
+
+h2 {
     color: $blue;
     text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
     font-weight: bold;

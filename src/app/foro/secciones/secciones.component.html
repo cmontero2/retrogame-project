@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <div class="col-md-6"><h4 id="sombra"><a href="#">Juegos :</a></h4>
+  <div class="col-md-6"><h4 id="sombra"><a [routerLink]="['/secciones/juegos']">Juegos :</a></h4>
 
     <div *ngFor="let seccion of secciones">
       <h4 *ngIf="seccion.id>6 && seccion.id<9;"><a [routerLink]="['/entradas', seccion.id]">{{seccion.nombre}}</a></h4>

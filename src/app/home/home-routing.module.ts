@@ -13,8 +13,8 @@ import { MasjugadosComponent } from './masjugados/masjugados.component'
 
 const routesHome: Routes = [
     {path: 'registro', component: RegistroComponent},
-    {path: 'perfil/:id', component: PerfilComponent},
-    {path: 'perfilUpdate/:id', component: PerfilUpdateComponent},
+    {path: 'perfil', component: PerfilComponent},
+    {path: 'perfilUpdate', component: PerfilUpdateComponent},
     {path: 'noticiaDetalle/:id', component: NoticiaDetalleComponent},
     {path: 'terminos', component: TerminosComponent},
     {path: 'privacidad', component: PrivacidadComponent},

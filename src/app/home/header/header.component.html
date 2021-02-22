@@ -8,14 +8,11 @@
         <a routerLink="/home">
             <img src="../../../assets/img/logo-Retrogame.png" class="imgLogo"/>
         </a>
-        <form class="formBusqueda">
-            <input type="text" class="busqueda" placeholder="Buscar juegos"/> 
-        </form>
     </div>
     <div class="col-md-4">
         <a class="nav-link foroEnlace glow" routerLink="/foro/foro-container"> FORO </a> 
         <button type="button" *ngIf="!user.id" class="btn btn-primary loginButton" (click)="doLogin()">LOGIN</button>
-        <a *ngIf="user.id" class="nav-link PerfilEnlace" [routerLink]="['/perfil', user.id]">
+        <a *ngIf="user.id" class="nav-link PerfilEnlace" [routerLink]="['/perfil']">
             PERFIL
         </a>
         <a *ngIf="user.rol_id==1" class="nav-link SubirJuego" [routerLink]="['/upload']">

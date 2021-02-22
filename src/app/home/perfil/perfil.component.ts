@@ -19,11 +19,14 @@ export class PerfilComponent implements OnInit {
   public juegosNombre: any = [];
   public foto?: any;
   public rutaFoto = "http://localhost/Yii/retrogame-projectAPI/web/img/";
+  public usertoken: any;
+  
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private perfilService: PerfilService,
-    private juegosService: ListaJuegosService
+    private juegosService: ListaJuegosService,
+    private AccountService: AccountService
     ) {
     
    }
@@ -34,26 +37,36 @@ export class PerfilComponent implements OnInit {
       console.log("id " + this.id);
     });
 
-    this.perfilService.findById(this.id)
-      .subscribe(
-        data => {
-          this.user = data;
-          this.foto = this.user.foto;
-          this.imgPath = this.foto ? `${this.rutaFoto}${this.foto}` : '../../../assets/img/usuarios/no-usuario.png';
-        },
-        error => {
-          console.log(error);
-        });
 
-    this.perfilService.findUserJuegoById(this.id)
-    .subscribe(
-      data => {
-        this.juegos = data;
-        this.cambiarIdPorJuego()
-      },
-      error => {
-        console.log(error);
-      });
+      this.AccountService.user.subscribe(
+        data => {
+          
+          this.usertoken = data ? data : new User();
+          console.log(this.usertoken.id);
+          
+          this.perfilService.findById(this.usertoken.id)
+          .subscribe(
+            data => {
+              this.user = data;
+              this.foto = this.user.foto;
+              this.imgPath = this.foto ? `${this.rutaFoto}${this.foto}` : '../../../assets/img/usuarios/no-usuario.png';
+            },
+            error => {
+              console.log(error);
+            });
+
+            this.perfilService.findUserJuegoById(this.usertoken.id)
+            .subscribe(
+              data => {
+                this.juegos = data;
+                this.cambiarIdPorJuego()
+              },
+              error => {
+                console.log(error);
+              });
+        }
+    
+      );
   }
 
   cambiarIdPorJuego(){
@@ -69,6 +82,8 @@ export class PerfilComponent implements OnInit {
       
     );
   }
+
+  
 
 
 }

@@ -50,14 +50,10 @@ export class PerfilUpdateComponent implements OnInit {
     this.accountService.user.subscribe(
       data => {
         this.user = data ? data : new User();
-        console.log("usuario "+this.user);
+        this.id = this.user.id;
+        console.log("id: "+this.id)
       }
     );
-
-    //recojo los datos(id) de la ruta
-    this.activatedRoute.params.subscribe((parametros: Params) => {
-      this.id = parametros.id;
-    });
 
     this.perfilService.findById(this.id)
       .subscribe(
@@ -114,7 +110,6 @@ export class PerfilUpdateComponent implements OnInit {
 
   seleccionarFoto(event: any) {
     this.fotoSeleccionada = event.target.files[0];
-    // console.log(this.fotoSeleccionada);
     if (this.fotoSeleccionada!.type.indexOf('image') < 0) {
       console.error('Foto seleccionada no válida');
       this.fotoSeleccionada = undefined;

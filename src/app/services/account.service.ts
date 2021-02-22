@@ -11,7 +11,7 @@ import { User } from '../account/user';
 export class AccountService {
     private userSubject: BehaviorSubject<User>;
     public user: Observable<User>;
-
+    public usuario: User = new User();
     constructor(
         private router: Router,
         private http: HttpClient
@@ -38,7 +38,7 @@ export class AccountService {
     logout() {
         // remove user from local storage and set current user to null
         localStorage.removeItem('user');
-        this.userSubject.next(new User());
+        this.userSubject.next(this.usuario);
         this.router.navigate(['/home']);
     }
 

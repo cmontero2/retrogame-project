@@ -16,4 +16,8 @@ export class EntradasService {
     findById(id: number): Observable<any> {
         return this.http.get(this.baseUrl + "?seccionId=" + id);
     }
+
+    findSeccion(id: number): Observable<any> {
+        return this.http.get(URL_API.SERVER_URL_API + "secciones?id=" + id);
+    }
 }

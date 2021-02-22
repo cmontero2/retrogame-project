@@ -12,7 +12,7 @@ import { SeccionesService } from '../secciones/secciones.service';
 export class EntradasComponent implements OnInit {
 
   public id: number = 0;
-  public secciones?: any;
+  public seccion: any;
   public entradas?: any;
 
   constructor(private activatedRoute?: ActivatedRoute, 
@@ -33,7 +33,17 @@ export class EntradasComponent implements OnInit {
       },
       error =>{
         console.log(error);
-      })
+      });
+
+      this.entradasService?.findSeccion(this.id)
+      .subscribe(
+      data =>{
+        this.seccion = data[0];
+        console.log('seccion', this.seccion)
+      },
+      error =>{
+        console.log(error);
+      });
   }
 
 }

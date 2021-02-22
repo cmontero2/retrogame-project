@@ -11,8 +11,8 @@ import { EntradasService } from '../entradas/entradas.service';
 export class EntradaDetalleComponent implements OnInit {
 
   public id: number = 0;
-  public entradas?: any;
-  public comentarios?: any;
+  public entrada: any;
+  public comentarios: any;
 
   constructor(private activatedRoute?: ActivatedRoute, 
     private entradaDetalleService?: EntradaDetalleService, 
@@ -32,7 +32,17 @@ export class EntradaDetalleComponent implements OnInit {
       },
       error =>{
         console.log(error);
-      })
+      });
+    
+        this.entradaDetalleService?.findEntrada(this.id)
+          .subscribe(
+            data => {
+              this.entrada = data[0];
+              console.log('entrada', this.entrada)
+            },
+            error => {
+              console.log(error);
+            });
   }
 
 }

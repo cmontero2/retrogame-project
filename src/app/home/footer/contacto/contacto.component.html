@@ -1,18 +1,58 @@
-<div class="container">
+<div class="containerHeader"></div>
+
+<div class="centerText container">
     <h2>Contacto</h2>
-    <form action="" name="contactoForm">
-        <label for="nombre"><p>Nombre:</p></label>
-        <input type="text" name="nombre">
+    <form name="mailForm" (ngSubmit)="send()" [formGroup]="mailForm">
+
+        <label class="" for="nombre">Nombre:</label>
         <br>
-        <label for="email"><p>Email:</p></label>
-        <input type="email" name="email">
+        <input type="text" name="nombre" formControlName="nombre" class="customInput">
+        <div *ngIf="mailForm.get('nombre')!.invalid && (mailForm.get('nombre')!.dirty || mailForm.get('nombre')!.touched)">
+            <small class="form-text text-danger" *ngIf="mailForm.get('nombre')?.errors?.required">
+                Campo requerido
+            </small>
+        </div>
+
         <br>
-        <label for="asunto"><p>Asunto:</p></label>
-        <input type="text" name="asunto">
+
+        <label class="" for="email">Email:</label>
         <br>
-        <label for="mensaje"><p>Mensaje:</p></label>
-        <textarea name="mensaje" rows="4" cols="50"></textarea>
+        <input type="email" name="email" formControlName="email" class="customInput">
+        <div *ngIf="mailForm.get('email')!.invalid && (mailForm.get('email')!.dirty || mailForm.get('email')!.touched)">
+            <small class="form-text text-danger" *ngIf="mailForm.get('email')?.errors?.required">
+                Campo requerido
+            </small>
+        </div>
+
         <br>
-        <input type="button" name="enviar" value="Enviar" class="btn btn-primary">
+
+        <label class="" for="asunto">Asunto:</label>
+        <br>
+        <input type="text" name="asunto" formControlName="asunto" class="customInput">
+        <div *ngIf="mailForm.get('asunto')!.invalid && (mailForm.get('asunto')!.dirty || mailForm.get('asunto')!.touched)">
+            <small class="form-text text-danger" *ngIf="mailForm.get('asunto')?.errors?.required">
+                Campo requerido
+            </small>
+        </div>
+
+        <br>
+
+        <label>Mensaje:</label>
+        <br>
+        <textarea name="mensaje" rows="4" cols="30" formControlName="mensaje" class="customInput"></textarea>
+        <div *ngIf="mailForm.get('mensaje')!.invalid && (mailForm.get('mensaje')!.dirty || mailForm.get('mensaje')!.touched)">
+            <small class="form-text text-danger" *ngIf="mailForm.get('mensaje')?.errors?.required">
+                Campo requerido
+            </small>
+        </div>
+        <br>
+        <button [disabled]="mailForm.invalid" class="btn btn-primary enviarBoton">Enviar</button>
     </form>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h3 *ngIf="isMailSent" style="color: green;">Enviado correctamente!</h3>
+
 </div>

@@ -7,6 +7,7 @@ import { EntradasService } from './entradas/entradas.service';
 import { EntradasComponent } from './entradas/entradas.component';
 import { EntradaDetalleComponent } from './entrada-detalle/entrada-detalle.component';
 import { ForoRoutingModule } from './foro-routing.module';
+import { EntradaDetalleService } from './entrada-detalle/entrada-detalle.service';
 
 
 
@@ -16,6 +17,6 @@ import { ForoRoutingModule } from './foro-routing.module';
     CommonModule, ForoRoutingModule
   ],
   exports: [ForoContainerComponent],
-  providers: [SeccionesService, EntradasService]
+  providers: [SeccionesService, EntradasService, EntradaDetalleService]
 })
 export class ForoModule { }

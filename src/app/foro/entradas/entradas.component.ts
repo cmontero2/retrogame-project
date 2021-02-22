@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Entrada } from './entrada';
 import { ActivatedRoute, Params } from '@angular/router';
 import { EntradasService } from './entradas.service';
-import { Seccion } from '../secciones/seccion';
 import { SeccionesService } from '../secciones/secciones.service';
 
 @Component({

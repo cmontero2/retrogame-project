@@ -68,7 +68,7 @@ export class ListaJuegosComponent implements OnInit {
               .subscribe(
                 data => {
                   this.juegos.push(data)
-                  this.juegos.sort((juego1, juego2) => {
+                  /*this.juegos.sort((juego1, juego2) => {
                     if(juego1.nombre === null) {
                       return -1
                     } else if(juego2.nombre === null) {
@@ -76,7 +76,7 @@ export class ListaJuegosComponent implements OnInit {
                     } else {
                       return juego1.nombre!.localeCompare(juego2.nombre || "")
                     }
-                  })
+                  })*/
                 },
                 error => {
                   console.log(error);
@@ -90,6 +90,10 @@ export class ListaJuegosComponent implements OnInit {
         }
       );
     });
+    
+  }
+
+  onClick() {
     
   }
 }

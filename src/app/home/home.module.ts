@@ -15,9 +15,10 @@ import { PrivacidadComponent } from './footer/privacidad/privacidad.component';
 import { CookiesComponent } from './footer/cookies/cookies.component';
 import { PerfilUpdateComponent } from './perfil/perfil-update/perfil-update.component';
 import { MasjugadosComponent } from './masjugados/masjugados.component';
+import { ContactoComponent } from './footer/contacto/contacto.component';
 
 @NgModule({
-  declarations: [HomeContainerComponent, LoginComponent, NoticiasComponent, RegistroComponent, PerfilComponent, EmpresaComponent, NoticiaDetalleComponent, TerminosComponent, PrivacidadComponent, CookiesComponent, PerfilUpdateComponent, MasjugadosComponent],
+  declarations: [HomeContainerComponent, LoginComponent, NoticiasComponent, RegistroComponent, PerfilComponent, EmpresaComponent, NoticiaDetalleComponent, TerminosComponent, PrivacidadComponent, CookiesComponent, PerfilUpdateComponent, MasjugadosComponent, ContactoComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

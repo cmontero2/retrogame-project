@@ -1,11 +1,8 @@
-<!-- <p>entradas works!</p>
-<a routerLink="/foro/entrada-detalle">Entradas-detalle</a> -->
-
 <table class="col-md-12">
         <tr class="row">
-                <th class="col-md-3"><h3>Fecha</h3></th>
+                <th class="col-md-2"><h3>Fecha</h3></th>
 
-                <th class="col-md-7"><h3>Entrada</h3></th>
+                <th class="col-md-8"><h3>Entrada</h3></th>
 
                 <th class="col-md-2"><h3>Usuario</h3></th>
         </tr>
@@ -16,9 +13,9 @@
 
                         <tr class="row">
                               
-                                <td class="col-md-3"><h5>{{entrada.fecha}}</h5></td>
+                                <td class="col-md-2"><h5>{{entrada.fecha}}</h5></td>
                               
-                                <td class="col-md-7"><h5 class="izquierda"><a href="#">{{entrada.titulo}}</a></h5></td>
+                                <td class="col-md-8"><h5 class="izquierda"><a [routerLink]="['/comentarios', entrada.id]">{{entrada.titulo}}</a></h5></td>
                               
                                 <td class="col-md-2"><h5 class="izquierda">{{entrada.usuario_id}}</h5></td>
                               

@@ -8,15 +8,17 @@ img {
     border: 5px solid $pink;
     border-radius: 7px;
     margin-bottom: 20px;
+    float:left
 }
 
 .divPerfil {
     color:$pink;
+    text-align: center;
     
 }
 .divImg{
     float:left;
-    
+    text-align: left;
 }
 .divInfo {
     box-shadow: 0px 1px 25px #e607fa;
@@ -53,11 +55,7 @@ img {
   border-color: $pink;
   text-shadow: $pink 1px 0 15px;
   text-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 30px $pink, 0 0 40px $pink;
-  float: left;
-  margin-top: 20px;
-  position:absolute;
-  top: 50px;
-  left: 800px;
+  margin-left: 10px;
   &:hover{
       background-color: #1C131D;
   }

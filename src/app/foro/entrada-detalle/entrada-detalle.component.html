@@ -1,1 +1,28 @@
-<p>entrada-detalle works!</p>
+<table class="col-md-12">
+    <tr class="row">
+            <th class="col-md-2"><h3>Fecha</h3></th>
+
+            <th class="col-md-8"><h3>Entrada</h3></th>
+
+            <th class="col-md-2"><h3>Usuario</h3></th>
+    </tr>
+
+    <div *ngFor="let comentario of comentarios">
+        
+            <div *ngIf="id==comentario.entrada_id;">
+
+                    <tr class="row">
+                          
+                            <td class="col-md-2"><h5>{{comentario.fecha}}</h5></td>
+                          
+                            <td class="col-md-8"><h5 class="izquierda"><a href="#">{{comentario.texto}}</a></h5></td>
+                          
+                            <td class="col-md-2"><h5 class="izquierda">{{comentario.usuario_id}}</h5></td>
+                          
+                    </tr>
+                    
+            </div>
+
+    </div>
+
+</table>

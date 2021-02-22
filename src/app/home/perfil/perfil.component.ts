@@ -18,6 +18,7 @@ export class PerfilComponent implements OnInit {
   public juegos: any;
   public juegosNombre: any = [];
   public foto?: any;
+  public rutaFoto = "http://localhost/Yii/retrogame-projectAPI/web/img/";
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -32,13 +33,13 @@ export class PerfilComponent implements OnInit {
       this.id = parametros.id;
       console.log("id " + this.id);
     });
-    //this.imgPath = this.foto;
 
     this.perfilService.findById(this.id)
       .subscribe(
         data => {
           this.user = data;
-          console.log('usuario ', this.user)
+          this.foto = this.user.foto;
+          this.imgPath = this.foto ? `${this.rutaFoto}${this.foto}` : '../../../assets/img/usuarios/no-usuario.png';
         },
         error => {
           console.log(error);
@@ -53,17 +54,6 @@ export class PerfilComponent implements OnInit {
       error => {
         console.log(error);
       });
-
-    //saca nombre de foto
-    this.perfilService.findPhotoByName(this.user.foto)
-    .subscribe(
-      data => {
-        this.foto = data;
-      },
-      error => {
-        console.log(error);
-      });
-      
   }
 
   cambiarIdPorJuego(){
@@ -75,7 +65,6 @@ export class PerfilComponent implements OnInit {
       this.juegosService.findById(element.juego_id).subscribe(
         data => {
           this.juegosNombre.push(data);
-          console.log(data);
         }),
       
     );

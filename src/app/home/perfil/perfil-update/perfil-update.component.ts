@@ -17,6 +17,7 @@ export class PerfilUpdateComponent implements OnInit {
   public imgPath?: String;
   public userData?: any;
   public fotoSeleccionada?: File;
+  public rutaFoto = "http://localhost/Yii/retrogame-projectAPI/web/img/";
 
   constructor(
     private fb: FormBuilder,
@@ -49,6 +50,7 @@ export class PerfilUpdateComponent implements OnInit {
     this.accountService.user.subscribe(
       data => {
         this.user = data ? data : new User();
+        console.log("usuario "+this.user);
       }
     );
 
@@ -71,7 +73,7 @@ export class PerfilUpdateComponent implements OnInit {
           this.editForm.get('telf')?.setValue(this.userData.telefono);
           this.editForm.get('nacimiento')?.setValue(this.userData.nacimiento);
           this.editForm.get('foto')?.setValue(this.userData.foto);
-          this.imgPath = this.userData.foto ? `../../../assets/img/usuarios/${this.userData.foto}` : '../../../assets/img/usuarios/no-usuario.png';
+          this.imgPath = this.userData.foto ? `${this.rutaFoto}${this.userData.foto}` : '../../../assets/img/usuarios/no-usuario.png';
         },
         error => {
           console.log(error);
@@ -127,7 +129,6 @@ export class PerfilUpdateComponent implements OnInit {
       this.update();
       this.accountService.upload(this.fotoSeleccionada, this.id.toString()).subscribe(
         data => {
-          console.log(data);
         }
       );
       

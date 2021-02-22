@@ -17,6 +17,7 @@ export class PerfilComponent implements OnInit {
   public imgPath?: String;
   public juegos: any;
   public juegosNombre: any = [];
+  public foto?: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -31,7 +32,7 @@ export class PerfilComponent implements OnInit {
       this.id = parametros.id;
       console.log("id " + this.id);
     });
-    this.imgPath = `../../../assets/img/usuarios/user${this.id}.png`;
+    //this.imgPath = this.foto;
 
     this.perfilService.findById(this.id)
       .subscribe(
@@ -53,6 +54,15 @@ export class PerfilComponent implements OnInit {
         console.log(error);
       });
 
+    //saca nombre de foto
+    this.perfilService.findPhotoByName(this.user.foto)
+    .subscribe(
+      data => {
+        this.foto = data;
+      },
+      error => {
+        console.log(error);
+      });
       
   }
 
@@ -65,9 +75,8 @@ export class PerfilComponent implements OnInit {
       this.juegosService.findById(element.juego_id).subscribe(
         data => {
           this.juegosNombre.push(data);
+          console.log(data);
         }),
-      
-      console.log("juegos " + JSON.stringify(this.juegosNombre)),
       
     );
   }

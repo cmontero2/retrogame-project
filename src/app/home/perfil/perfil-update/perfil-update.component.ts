@@ -124,6 +124,7 @@ export class PerfilUpdateComponent implements OnInit {
       console.error('Error Upload: ' + 'Debe seleccionar una foto');
     } else {
       this.editForm.get('foto')?.setValue(this.fotoSeleccionada.name);
+      this.update();
       this.accountService.upload(this.fotoSeleccionada, this.id.toString()).subscribe(
         data => {
           console.log(data);

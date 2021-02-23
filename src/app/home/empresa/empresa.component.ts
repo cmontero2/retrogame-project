@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UploadGameService } from '../../services/upload-game.service';
 import { AccountService } from '../../services/account.service';
@@ -13,9 +14,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 })
 export class EmpresaComponent implements OnInit {
 
-  juegoCategoria: JuegoCategoria = {};
-  categoriaSeleccionada: number = 1;
-  verCategoriaSeleccionada: number = 0;
+  public juegoCategoria: JuegoCategoria = {};
+  public categoriaSeleccionada: number = 1;
+  public verCategoriaSeleccionada: number = 0;
+  public logo?: File;
+  public isUploaded: boolean = false;
 
   juego_id!: number;
 
@@ -31,6 +34,7 @@ export class EmpresaComponent implements OnInit {
   });
 
   constructor(
+    private router: Router,
     private formBuilder: FormBuilder,
     private uploadGameService: UploadGameService,
     private accountService: AccountService,
@@ -78,7 +82,7 @@ export class EmpresaComponent implements OnInit {
             this.uploadGameService.uploadToGameCategory(this.juegoCategoria)
             .subscribe(
               data => {
-
+                this.subirLogo();
               }, error => {
                 console.log(error);
               }
@@ -93,6 +97,38 @@ export class EmpresaComponent implements OnInit {
       }
     )
     
+  }
+
+  //Captura el archivo seleccionado cada vez que se selecciona un archivo
+  actualizarLogo(event: any) {
+    console.log(event.target.files);
+    this.logo = event.target.files[0];
+    console.log(this.logo?.name);
+
+    if(this.logo!.type.indexOf('image') < 0) {
+      this.logo = undefined;
+    }
+  }
+
+  //POST del logo en la carpeta img de la API
+  subirLogo() {
+    console.log("HOLA", this.logo);
+    if(this.logo) {
+      let espacios = " ";
+      let nombre = this.gameForm.get(['nombre'])?.value.replaceAll(espacios, "").toLowerCase();
+      this.uploadGameService.uploadLogo(this.logo!, nombre)
+      .subscribe(
+        data => {
+          this.isUploaded = true;
+          setTimeout(() => {
+            this.router.navigate(['/home']);
+          },
+          2000);
+        }, error => {
+          console.log(error);
+        }
+      )
+    }
   }
 
 }

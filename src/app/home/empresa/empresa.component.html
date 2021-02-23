@@ -13,7 +13,7 @@
                 Campo requerido
             </small>
             <small class="form-text text-danger" *ngIf="gameForm.get('nombre')?.errors?.minlength">
-                Mínimo 4 letras
+                Mínimo 3 letras
             </small>
         </div>
         <br>
@@ -53,9 +53,13 @@
             </small>
         </div>
         <br>
-    
+
+        <label for="logo">Subir imagen</label>
+        <br>
+        <input type="file" name="logo" (change)="actualizarLogo($event)" class="busqueda"> 
+
         <button [disabled]="gameForm.invalid" class="btn btn-primary subirBoton">SUBIR JUEGO</button>
-    
+        <h2 *ngIf="isUploaded" style="color: green;">Subido correctamente!</h2>
     </form>
     
 </div>

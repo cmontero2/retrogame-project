@@ -20,13 +20,6 @@ export class ContactoComponent implements OnInit {
     mensaje: [null, [Validators.required]]
   });
 
-  /*mailForm = new FormGroup({
-    nombre: new FormControl(null, Validators.required),
-    email: new FormControl(null, Validators.required),
-    asunto: new FormControl(null, Validators.required),
-    mensaje: new FormControl(null, Validators.required)
-  });*/
-
   constructor(
     private contactService: ContactService,
     private formBuilder: FormBuilder
@@ -37,6 +30,7 @@ export class ContactoComponent implements OnInit {
 
   }
 
+  //Set y POST del mail que envía al correo del proyecto
   send() {
     this.mail.nombre = this.mailForm.get(['nombre'])?.value;
     this.mail.email = this.mailForm.get(['email'])?.value;

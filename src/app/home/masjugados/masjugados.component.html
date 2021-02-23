@@ -1,12 +1,12 @@
 <div class="headerDiv">
-    <img src="../../../assets/img/banners/masJugados.jpg" alt="Banner MasJugados">
+    <img src="http://localhost/retrogame-projectAPI/web/img/banners/masJugados.jpg" alt="Banner MasJugados">
     <h2 class="titulo">Los Juegos más jugados</h2>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-md-4" *ngFor="let juego of juegos; index as i">
             <div class="divJuegos borde">
-                <img src="../../../assets/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo" alt="Logo Juego">
+                <img src="http://localhost/retrogame-projectAPI/web/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo" alt="Logo Juego">
                 <h3 class="centrar">{{juego.nombre}}</h3>
                 <a [routerLink]="['/juego', juego.id]" type="button" class="btn btn-success leerMas">Jugar</a>
                 <h5>Visitas: {{juego.visitas}}</h5>

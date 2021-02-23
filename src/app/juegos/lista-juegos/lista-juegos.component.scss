@@ -23,7 +23,7 @@ p {
 .divJuegos {
     overflow: hidden;
     box-shadow: 0 0 5px $pink, 0 0 5px $pink, 0 0 5px $pink, 0 0 5px $pink;
-    height: 365px;
+    min-height: 365px;
     float: left;
     border-radius: 5px;
     border-style: groove;
@@ -71,8 +71,4 @@ p {
 
 .descripcionTitulo {
     color: $blue;
-}
-
-.descripcion {
-    
 }

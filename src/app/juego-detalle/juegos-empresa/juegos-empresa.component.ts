@@ -28,14 +28,17 @@ export class JuegosEmpresaComponent implements OnInit {
 
       this.juegos = [];
 
+      //Recoge el id de la empresa
       this.listaJuegosService.findById(parameters.id)
       .subscribe(
         data => {
           this.empresa_id = data.empresa_id;
+          //Guarda todos los juegos de la misma empresa
           this.listaJuegosService.findByCompanyId(this.empresa_id)
           .subscribe(
             data => {
               this.juegos = data;
+              //Guarda el nombre de la empresa
               this.accountService.getById(String(this.empresa_id))
               .subscribe(
                 data => {

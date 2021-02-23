@@ -11,6 +11,7 @@ export class ContactService {
 
     constructor(private http: HttpClient) { }
 
+    //Llama al action send y le pasa por método POST el mail
     sendMail(mail: Mail): Observable<any> {
         return this.http.post(this.baseUrl + "/send", mail);
     }

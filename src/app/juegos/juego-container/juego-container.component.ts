@@ -8,14 +8,10 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class JuegoContainerComponent implements OnInit {
 
-  id: number=0;
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((parametros: Params) => {
-      this.id = parametros.id;
-      //console.log(this.id);
-    })
+    
   }
 
 }

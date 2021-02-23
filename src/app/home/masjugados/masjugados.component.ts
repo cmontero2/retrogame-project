@@ -15,6 +15,7 @@ export class MasjugadosComponent implements OnInit {
     private listaJuegosService: ListaJuegosService,
   ) { }
 
+  //Devuelve todos los juegos ordenados por visitas
   ngOnInit(): void {
     this.listaJuegosService.findByOrderByVisits()
     .subscribe(

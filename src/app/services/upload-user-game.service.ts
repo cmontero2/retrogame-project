@@ -11,6 +11,7 @@ export class UploadUserGameService {
         private http: HttpClient
     ) { }
 
+    //Registra el id del usuario y el id del juego en la base de datos, tabla usuariosJuego
     uploadUsuarioJuego(usuarioJuego: UsuarioJuego) {
         return this.http.post(URL_API.SERVER_URL_API + "usuarios-juego", usuarioJuego);
     }

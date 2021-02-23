@@ -32,10 +32,12 @@ export class JuegoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+  
+    //Recoge el id de la URL 
     this.route.params.subscribe(parameters => {
       this.id = parameters.id;
 
+      //Si hay un usuario logeado, registra el juego al que ha jugado en la base de datos
       if(this.accountService.userValue.id) {
         this.usuarioJuego.juego_id = parameters.id;
         this.usuarioJuego.usuario_id = Number(this.accountService.userValue.id);
@@ -50,6 +52,7 @@ export class JuegoComponent implements OnInit {
         )
       }
 
+      //Guarda el juego según el id pasado
       this.listaJuegosService.findById(this.id)
       .subscribe(
         data => {
@@ -63,6 +66,7 @@ export class JuegoComponent implements OnInit {
     })
   }
 
+  //Incrementa las visitas en 1 y lo actualiza en la base de datos
   visitIncrement() {
     this.juego.visitas! += 1;
     this.listaJuegosService.update(this.id, this.juego)

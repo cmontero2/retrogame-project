@@ -9,36 +9,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./lista-juegos.component.scss']
 })
 
-
-//
-//ANGULAR A JSON
-//
-/*
-export class ListaJuegosComponent implements OnInit {
-
-  juegos?: Juego[];
-  categoria?: string;
-  constructor(
-    private listaJuegosService: ListaJuegosService,
-    private route: ActivatedRoute
-  ) { }
-
-  ngOnInit(): void {
-    this.route.params.subscribe(parameters => {
-      this.juegos = this.listaJuegosService.getJuegosPorCategoriaId(parameters.id);
-    })
-
-  }
-
-}
-*/
-
-
-
-//
-//ANGULAR A API YII
-//
-
 export class ListaJuegosComponent implements OnInit {
 
   juegos: IJuego[] = [];
@@ -51,11 +21,13 @@ export class ListaJuegosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    //Recoge el id de la categoría
     this.route.params.subscribe(parameters => {
       this.id = parameters.id
 
       this.juegos = [];
       this.ids = [];
+      //Guarda los ids de los juegos de la categoría seleccionada
       this.listaJuegosService.findGamesIdByCategoryId(this.id)
       .subscribe(
         data => {
@@ -63,20 +35,12 @@ export class ListaJuegosComponent implements OnInit {
             this.ids.push(item.juego_id);
           }
 
+          //Guarda los juegos de los ids proporcionados
           for (let id of this.ids) {
             this.listaJuegosService.findById(id)
               .subscribe(
                 data => {
                   this.juegos.push(data)
-                  /*this.juegos.sort((juego1, juego2) => {
-                    if(juego1.nombre === null) {
-                      return -1
-                    } else if(juego2.nombre === null) {
-                      return 1
-                    } else {
-                      return juego1.nombre!.localeCompare(juego2.nombre || "")
-                    }
-                  })*/
                 },
                 error => {
                   console.log(error);

@@ -19,17 +19,16 @@ export class CategoriaDetalleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    //Recoge el id de la categoría
     this.route.params.subscribe(parameters => {
       this.id = parameters.id;
 
+      //Guarda la información de la categoría seleccionada
       this.categoriasService.findById(this.id)
       .subscribe(
         data => {
           this.categoria = data
-          //console.log(data);
-          //console.log(this.categoria);
-        },
-        error => {
+        }, error => {
           console.log(error)
         }
       )

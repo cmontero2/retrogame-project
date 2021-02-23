@@ -58,7 +58,7 @@ p, h5 {
 .divJuegos {
     overflow: hidden;
     box-shadow: 0 0 5px $pink, 0 0 5px $pink, 0 0 5px $pink, 0 0 5px $pink;
-    height: 370px;
+    min-height: 370px;
     float: left;
     border-radius: 5px;
     border-style: groove;

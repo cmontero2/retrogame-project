@@ -25,13 +25,16 @@ export class JuegoDetalleDescripcionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    //Recoge el id del juego
     this.route.params.subscribe(parameters => {
       this.id = parameters.id
 
+      //Guarda los datos del juego en una variable
       this.listaJuegosService.findById(this.id)
       .subscribe(
         data => {
           this.juego = data;
+          //Guarda el nombre de la empresa a través de su id
           this.accountService.getById(String(data.empresa_id))
           .subscribe(
             data => {

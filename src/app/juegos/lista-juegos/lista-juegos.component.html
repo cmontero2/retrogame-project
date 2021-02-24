@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-4" *ngFor="let juego of juegos">
             <div class="divJuegos" id="status">
-                <img src="http://localhost/retrogame-projectAPI/web/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo" alt="Logo Juego">
+                <img src="http://localhost/retrogame-projectAPI/web/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo" alt="Logo {{juego.nombre}}">
                 <h3 class="nombre">{{juego.nombre}}</h3>
                 <a [routerLink]="['/juego', juego.id]" type="button" class="btn btn-success boton">Jugar</a>
                 <hr class="lineaHorizontal">

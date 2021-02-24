@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-3" *ngFor="let juego of juegos">
             <div class="divJuegos" id="status">
-                <img src="http://localhost/retrogame-projectAPI/web/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo" alt="Logo Juego">
+                <img src="http://alum1.iesfsl.org:8081/img/logoGames/{{juego.nombre_archivo}}.jpg" class="logo" alt="Logo Juego">
                 <h3 class="nombre center">{{juego.nombre}}</h3>
                 <a [routerLink]="['/juego', juego.id]" type="button" class="btn btn-success leerMas">Jugar</a>
             </div>

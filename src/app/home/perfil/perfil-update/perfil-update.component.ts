@@ -17,7 +17,7 @@ export class PerfilUpdateComponent implements OnInit {
   public imgPath?: String;
   public userData?: any;
   public fotoSeleccionada?: File;
-  public rutaFoto = "http://localhost/Yii/retrogame-projectAPI/web/img/";
+  public rutaFoto = "http://alum1.iesfsl.org:8081/img";
 
   constructor(
     private fb: FormBuilder,

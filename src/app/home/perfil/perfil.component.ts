@@ -18,7 +18,7 @@ export class PerfilComponent implements OnInit {
   public juegos: any;
   public juegosNombre: any = [];
   public foto?: any;
-  public rutaFoto = "http://localhost/Yii/retrogame-projectAPI/web/img/";
+  public rutaFoto = "http://alum1.iesfsl.org:8081/img";
   public usertoken: any;
   
 

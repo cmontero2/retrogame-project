@@ -100,7 +100,7 @@ export class PerfilUpdateComponent implements OnInit {
       console.log("asd " + JSON.stringify(usuario));
       this.accountService.update(this.id, usuario).subscribe(
         data => {
-          this.router.navigate([`perfil/${this.id}`])
+          this.router.navigate([`perfil`])
         },
         error => console.log(error)
       );
